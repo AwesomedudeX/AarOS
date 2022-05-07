@@ -1,0 +1,1 @@
+cl = ["Make Clock Settings app", "Work on Charts Texture Dictionary from seaborn-darkgrid texture", "Create app for calculating probabilities with binomial distributions (BYJU's Lesson 47)"]
