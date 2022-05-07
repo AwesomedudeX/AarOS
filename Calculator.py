@@ -60,6 +60,3 @@ def calc():
                 print("Invalid operator. please try again.")
 
     print("\nApp Closed.")
-
-
-# calc()
