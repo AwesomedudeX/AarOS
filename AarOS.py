@@ -12,29 +12,6 @@ def aarOS():
         print("\nDate: ", osdate)
         print("Time: ", ostime)
 
-    def login():
-
-        while True:
-
-            username = "Awesomedude"
-            pwd = "1162008"
-            usr = input("\nUsername (enter \'shutdown\' to shut AarOS down): ")
-
-            if usr == "shutdown" or usr == "quit" or usr == "q" or usr == "close" or usr == "exit":
-                print("\nShutting Down...")
-                exit(0)
-
-            else:
-
-                pw = input("Password: ")
-
-                if usr == username and pw == pwd:
-                    print("\nWelcome, Aarish Ayyasami!")
-                    break
-
-                else:
-                    print("Username and/or password is wrong. Please try again.")
-
     def apps():
 
         while True:
@@ -107,7 +84,6 @@ def aarOS():
 
 
     home()
-    login()
 
 
     while True:
