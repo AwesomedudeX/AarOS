@@ -383,7 +383,3 @@ def charts():
 
                 else:
                     print("Invalid chart type. Please try again.")
-
-
-# charts()
-# Test File: "https://student-datasets-bucket.s3.ap-south-1.amazonaws.com/whitehat-ds-datasets/meteorite-landings/meteorite-landings.csv"
