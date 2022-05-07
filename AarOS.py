@@ -118,7 +118,6 @@ def aarOS():
             " - Calculator (calc)",
             " - Charts (ct)",
             " - Checklist (cl)",
-            " - Clock",
             " - Charts Texture Dictionary (ctd)",
             " - File Creator and Editor (fce)",
             " - Guess The Number (gtn)",
