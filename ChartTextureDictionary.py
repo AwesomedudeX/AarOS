@@ -43,5 +43,3 @@ def ctd():
         elif ctype == "style" or ctype == "sheets" or ctype == "ss":
             for i in style:
                 print(" -", i[0]+":", i[1])
-
-# ctd()
