@@ -25,12 +25,14 @@ def ctd():
         ["seaborn-dark", "A combination of the seaborn chart texture and the default chart texture."],
         ["seaborn-dark-palette", "The seaborn-bright texture, but with darker colours."],
         ["seaborn-deep", "Adds a bit more tone to the original seaborn texture."],
-        ["", ""]
+        ["seaborn-muted", "A brightened version of the original seaborn texture."],
+        ["seaborn-pastel", "An extremely brightened version of the original seaborn texture."],
+        ["tableau-colorblind10", "A version of the default texture optimized for the colourblind."]
     ]
 
     while True:
 
-        ctype = input("\nWhich texture type do you want to see (line graph textures - \'line\', style sheets - \'style\' or do you want to quit - \'quit\')? ")
+        ctype = input("\nWhich texture type do you want to see (line graph textures - \'line\', style sheets - \'style\' or do you want to quit - \'quit\')? ").lower()
 
         if ctype == "quit" or ctype == "q" or ctype == "exit" or ctype == "close":
             print("\nApp Closed.")
