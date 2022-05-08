@@ -84,6 +84,7 @@ def aarOS():
 
         applist = [
             " - Calculator (calc)",
+            " - Central Angle Calculator (cac)",
             " - Charts (ct)",
             " - Checklist (cl)",
             " - Charts Texture Dictionary (ctd)",
