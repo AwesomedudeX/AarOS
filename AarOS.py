@@ -23,7 +23,7 @@ def aarOS():
                 break
 
             if app == "Calculator" or app == "calc":
-                import calculator as calc
+                import Calculator as calc
                 calc.calc()
 
             if app == "Central Angle Calculator" or app == "cac" or app == "Central_Angle_Calculator":
