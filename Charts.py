@@ -23,7 +23,9 @@ def charts():
         ["seaborn-dark", "A combination of the seaborn chart texture and the default chart texture."],
         ["seaborn-dark-palette", "The seaborn-bright texture, but with darker colours."],
         ["seaborn-deep", "Adds a bit more tone to the original seaborn texture."],
-        ["", ""]
+        ["seaborn-muted", "A brightened version of the original seaborn texture."],
+        ["seaborn-pastel", "An extremely brightened version of the original seaborn texture."],
+        ["tableau-colorblind10", "A version of the default texture optimized for the colourblind."]
     ]
     stylenames = [i[0] for i in style]
 
