@@ -1,6 +1,7 @@
 def aarOS():
 
     from datetime import datetime as dt
+    import time
 
     def home():
 
@@ -19,7 +20,6 @@ def aarOS():
             app = input("\n\nWhat app would you like to open (type \"home\" to go back to the home page)? ")
 
             if app == "home" or app == "back" or app == "return" or app == "q" or app == "quit" or app == "close" or app == "exit":
-                home()
                 break
 
             if app == "Binomial Distribution Calculator" or app == "bdc" or app == "Binomial_Distribution_Calculator":
@@ -78,7 +78,8 @@ def aarOS():
                 import TriangleAreaFinder as taf
                 taf.taf()
 
-
+        home()
+            
     home()
 
 
@@ -106,6 +107,7 @@ def aarOS():
 
         if start == "q" or start == "quit" or start == "close" or start == "exit" or start == "shutdown":
             print("\nShutting Down...")
+            time.sleep(1)
             exit(0)
 
         elif start == "list" or start == "l":
