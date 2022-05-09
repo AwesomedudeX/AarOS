@@ -87,6 +87,7 @@ def aarOS():
         start = input("\nWhat would you like to do (type \'list\' to list available apps, \'shutdown\' to shut AarOS down or \'open\' to open an app)? ")
 
         applist = [
+            " - Binomial Distribution Calculator (bdc)",
             " - Calculator (calc)",
             " - Central Angle Calculator (cac)",
             " - Charts (ct)",
