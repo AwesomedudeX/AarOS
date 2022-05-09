@@ -22,6 +22,10 @@ def aarOS():
                 home()
                 break
 
+            if app == "Binomial Distribution Calculator" or app == "bdc" or app == "Binomial_Distribution_Calculator":
+                import Binomial_Distribution_Calculator as bdc
+                bdc.bdc()
+
             if app == "Calculator" or app == "calc":
                 import Calculator as calc
                 calc.calc()
