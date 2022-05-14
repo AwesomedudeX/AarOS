@@ -85,14 +85,6 @@ def aarOS():
                 import Morse_Code_Converter as mcc
                 mcc.mcc()
 
-            if app == "Python Library Dictionary" or app == "pld" or app == "Python_Library_Dictionary":
-                import Python_Library_Dictionary as pld
-                pld.pld()
-
-            if app == "pn" or app == "Python Notes" or app == "Python_Notes":
-                import Python_Notes as pn
-                pn.pn()
-
             if app == "rng" or app == "RandomNumberGenerator" or app == "Random Number Generator":
                 import RandomNumberGenerator as rng
                 rng.rng()
@@ -138,8 +130,6 @@ def aarOS():
             " - Guess The Number (gtn)",
             " - Mechanical Advantage Calculator - Type 2 Lever (mac)",
             " - Morse Code Converter (mcc)",
-            " - Python Library Dictionary (pld)",
-            " - Python Notes (pn)",
             " - Random Number Generator (rng)",
             " - Random Password Generator (rpg)",
             " - Rock Paper Scissors (rps)",
