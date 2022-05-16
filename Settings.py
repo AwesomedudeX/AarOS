@@ -316,5 +316,3 @@ name = \"{name}\"
 
     source = open("settingsource.py", "w")
     source.write(write)
-
-# settings()
