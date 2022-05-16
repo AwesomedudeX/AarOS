@@ -6,8 +6,8 @@ def aarOS():
     def home():
 
         print("\n" + "-" * 13 + "\nAarOS Console\n" + "-" * 13)
-        print("\nDate: ", ss.dtf)
-        print("Time: ", ss.tf)
+        print("\nDate: ", ss.d)
+        print("Time: ", ss.t)
 
     def login():
 
@@ -17,24 +17,26 @@ def aarOS():
             pwd = ss.password
             usr = input("\nUsername (enter \'shutdown\' to shut AarOS down): ")
 
-            if usr == "shutdown" or usr == "quit" or usr == "q" or usr == "close" or usr == "exit":
-                print("\nShutting Down...")
-                exit(0)
+            if username != "quit" and username != "q" and username != "close" and username != "exit":
 
-            else:
-
-                pw = input("Password: ")
-
-                if usr == username and pw == pwd:
-
-                    if ss.name != "":
-                        print(f"\nWelcome, {ss.name}!")
-                        break
-                    else:
-                        break
+                if usr == "shutdown" or usr == "quit" or usr == "q" or usr == "close" or usr == "exit" and username != "shutdown":
+                    print("\nShutting Down...")
+                    exit(0)
 
                 else:
-                    print("Username and/or password is wrong. Please try again.")
+
+                    pw = input("Password: ")
+
+                    if usr == username and pw == pwd:
+
+                        if ss.name != "":
+                            print(f"\nWelcome, {ss.name}!")
+                            break
+                        else:
+                            break
+
+                    else:
+                        print("Username and/or password is wrong. Please try again.")
 
     def apps():
 
@@ -68,6 +70,10 @@ def aarOS():
             if app == "ctd" or app == "Chart Texture Dictionary" or app == "ChartTextureDictionary":
                 import ChartTextureDictionary as ctd
                 ctd.ctd()
+
+            if app == "df" or app == "DataFrames" or app == "DataFrame" or app == "dfs":
+                import DataFrames as df
+                df.df()
 
             if app == "File_Creator_and_Editor" or app == "fce" or app == "File Creator and Editor":
                 import File_Creator_and_Editor as fce
@@ -126,6 +132,7 @@ def aarOS():
             " - Charts (ct)",
             " - Checklist (cl)",
             " - Charts Texture Dictionary (ctd)",
+            " - DataFrames (df)",
             " - File Creator and Editor (fce)",
             " - Guess The Number (gtn)",
             " - Mechanical Advantage Calculator - Type 2 Lever (mac)",
@@ -153,7 +160,6 @@ def aarOS():
 
         elif start not in applist:
             print("Invalid input. Please try again.")
-
 
 
 aarOS()
