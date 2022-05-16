@@ -1,16 +1,33 @@
 dtf = "%B, %d %Y"
 tf = "%I:%M:%S %p"
 
-user = ""
-pw = ""
-name = ""
+user = None
+pw = None
+name = None
 
 def settings():
 
     import settingsource as src
 
+    global dtf, tf
+    global user, pw, name
+
     print("\n" + "-" * len("AarOS Settings") + "\nAarOS Settings\n" + "-" * len("AarOS Settings"))
     print("Note: Console must be restarted for changes to take effect - the console will shutdown after closing this app.\n")
+
+    if src.dtf != "":
+        dtf = src.dtf
+    else:
+        dtf = "%B, %d %Y"
+
+    if src.tf != "":
+        tf = src.tf
+    else:
+        tf = "%I:%M:%S %p"
+
+    user = src.username
+    pw = src.password
+    name = src.name
 
     def dt():
 
@@ -26,6 +43,8 @@ def settings():
                 break
 
             elif dt == "date" or dt == "dt" or dt == "d":
+
+                dtf = ""
 
                 while True:
 
@@ -166,6 +185,8 @@ def settings():
 
             elif dt == "time" or dt == "t":
 
+                tf = ""
+
                 while True:
 
                     f = input("Do you want to use 24H or 12H time format? ").upper()
@@ -174,7 +195,7 @@ def settings():
                         tf = tf+"%I:%M"
                         break
 
-                    elif f == "24H" or f == "12 HOUR" or f == "12HR" or f == "12 HR":
+                    elif f == "24H" or f == "24 HOUR" or f == "24HR" or f == "24 HR":
                         tf = tf+"%H:%M"
                         break
 
@@ -210,7 +231,7 @@ def settings():
 
                 while True:
 
-                    h = input("AM/PM (On/Off): ")
+                    h = input("AM/PM (On/Off): ").lower()
 
                     if h == "on" or h == "true" or h == "yes" or h == "y":
                         tf = tf + " %p"
@@ -244,7 +265,7 @@ def settings():
                 user = input("What is your new username? ")
                 pw = input("What is your new password? ")
 
-                print("Information modified successfully.\n\n")
+                print("\nInformation modified successfully.\n")
 
                 break
 
@@ -284,8 +305,10 @@ def settings():
     write = f"""
 from datetime import datetime as dt
 
-dtf = dt.now().strftime(\"{dtf}\")
-tf = dt.now().strftime(\"{tf}\")
+dtf = \"{dtf}\"
+tf = \"{tf}\"
+d = dt.now().strftime(dtf)
+t = dt.now().strftime(tf)
 username = \"{user}\"
 password = \"{pw}\"
 name = \"{name}\"
