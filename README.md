@@ -5,7 +5,7 @@ This is a console that I decided to develop for a fun personal project. It shoul
 
 Also, don't forget to turn on notifications so you know when I'm making updates to apps or releasing new ones. Hope you find this console useful!
 
-App Usage Notes:
+### App Usage Notes:
 
  - Make sure that all the files that you download from here are in the same folder so that they'll work properly. Also, don't change the file names, since this will prevent apps from working.
  - Make sure not to tamper with any of the code unless you know what you're doing. This may affect the functionality of the programs, though there isn't much risk that comes with this other than messing up the source programs, which is specific to your device. Other than that, if you accidentally mess up an app, don't be afraid to just delete it and redownload it from this page.
