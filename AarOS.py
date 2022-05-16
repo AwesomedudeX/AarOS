@@ -71,10 +71,6 @@ def aarOS():
                 import ChartTextureDictionary as ctd
                 ctd.ctd()
 
-            if app == "df" or app == "DataFrames" or app == "DataFrame" or app == "dfs":
-                import DataFrames as df
-                df.df()
-
             if app == "File_Creator_and_Editor" or app == "fce" or app == "File Creator and Editor":
                 import File_Creator_and_Editor as fce
                 fce.fce()
@@ -132,7 +128,6 @@ def aarOS():
             " - Charts (ct)",
             " - Checklist (cl)",
             " - Charts Texture Dictionary (ctd)",
-            " - DataFrames (df)",
             " - File Creator and Editor (fce)",
             " - Guess The Number (gtn)",
             " - Mechanical Advantage Calculator - Type 2 Lever (mac)",
