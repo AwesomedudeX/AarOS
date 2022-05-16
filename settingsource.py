@@ -1,8 +1,10 @@
 
 from datetime import datetime as dt
 
-dtf = dt.now().strftime("%B, %d %Y")
-tf = dt.now().strftime("%I:%M:%S %p")
+dtf = "%B, %d %Y"
+tf = "%I:%M:%S %p"
+d = dt.now().strftime(dtf)
+t = dt.now().strftime(tf)
 username = ""
 password = ""
 name = ""
