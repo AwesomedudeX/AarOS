@@ -9,6 +9,15 @@ def aarOS():
         print("\nDate: ", ss.d)
         print("Time: ", ss.t)
 
+        if ss.hcl == True:
+            print("\nChecklist:\n")
+            for i in range(len(cls.cl)):
+                print(str(i + 1) + ". ", cls.cl[i])
+
+        else:
+            pass
+        
+        
     def login():
 
         while True:
