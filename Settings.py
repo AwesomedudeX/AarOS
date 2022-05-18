@@ -5,12 +5,15 @@ user = None
 pw = None
 name = None
 
+hcl = None
+
 def settings():
 
     import settingsource as src
 
     global dtf, tf
     global user, pw, name
+    global hcl
 
     print("\n" + "-" * len("AarOS Settings") + "\nAarOS Settings\n" + "-" * len("AarOS Settings"))
     print("Note: Console must be restarted for changes to take effect - the console will shutdown after closing this app.\n")
@@ -28,6 +31,8 @@ def settings():
     user = src.username
     pw = src.password
     name = src.name
+
+    hcl = src.hcl
 
     def dt():
 
@@ -275,9 +280,49 @@ def settings():
             else:
                 print("Invalid login info. Please try again.\n")
 
+    def appsettings():
+
+        global hcl
+
+        applist = [
+            "Checklist (cl)"
+        ]
+
+        while True:
+
+            app = input("\nWhich app do you want to change settings for (type \'list\' to list modifiable apps or \'back\' to go back)? ").lower()
+
+            if app == "q" or app == "quit" or app == "close" or app == "exit" or app == "back" or app == "return":
+                break
+
+            elif app == "list" or app == "lst" or app == "l":
+                print()
+                for i in applist:
+                    print(" -", i)
+
+            elif app == "checklist" or app == "cl":
+
+                while True:
+
+                    home = input("Do you want your checklist to be shown on your homepage? ").lower()
+
+                    if home == "yes" or home == "y" or home == "yea" or home == "ye" or home == "ya" or home == "yeah" or home == "yeh" or home == "yah":
+                        hcl = True
+                        break
+                    elif home == "no" or home == "n" or home == "nay" or home == "nah" or home == "na":
+                        hcl = False
+                        break
+                    else:
+                        print("Invalid choice. Please try again.\n")
+
+            else:
+                print("Invalid selection. Please try again.\n")
+
+
     settings = [
         "Date and Time (dt)",
-        "My Info (mi)"
+        "My Info (mi)",
+        "App Settings (as)"
     ]
 
     while True:
@@ -299,6 +344,9 @@ def settings():
         elif choice == "mi" or choice == "my info" or choice == "myinfo" or choice == "info":
             mi()
 
+        elif choice == "app settings" or choice == "appsettings" or choice == "as":
+            appsettings()
+
         else:
             print("Invalid input. Please try again.\n")
 
@@ -312,7 +360,10 @@ t = dt.now().strftime(tf)
 username = \"{user}\"
 password = \"{pw}\"
 name = \"{name}\"
+hcl = {hcl}
     """
 
     source = open("settingsource.py", "w")
     source.write(write)
+
+# settings()
