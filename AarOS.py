@@ -2,6 +2,7 @@ def aarOS():
 
     import time
     import settingsource as ss
+    import checklistsource as cls
 
     def home():
 
