@@ -65,7 +65,7 @@ explanation helps you understand what's really going on behind the scenes.
         choice = input("\nWhat do you want to do (\'calc\' to start the calculator, \'desc\' to view the description of what binomial distributions are or \'quit\' to quit)? ").lower()
 
         if choice == "q" or choice == "quit" or choice == "exit" or choice == "close":
-            print("\nApp closed.")
+            print("\nApp Closed.")
             break
 
         elif choice == "calc" or choice == "start" or choice == "calculator" or choice == "c" or choice == "s":
