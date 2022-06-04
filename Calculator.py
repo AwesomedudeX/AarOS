@@ -11,31 +11,31 @@ def calc():
             num2 = math.pi
 
         if op == "+" or op == "addition" or op == "add" or op == "plus" or op == "sum":
-            print(num1 + num2)
+            print(round(num1 + num2, 7))
 
         elif op == "-" or op == "subtraction" or op == "subtract" or op == "minus":
-            print(num1 - num2)
+            print(round(num1 - num2, 7))
 
         elif op == "x" or op == "*" or op == "multiplication" or op == "multiply" or op == "times":
-            print(num1 * num2)
+            print(round(num1 * num2, 7))
 
         elif op == "÷" or op == "/" or op == "division" or op == "divide" or op == "over" or op == "div":
-            print(num1 / num2)
+            print(round(num1 / num2, 7))
 
         elif op == "remainderdivision" or op == "remainderdiv" or op == "divide with remainder" or op == "division with remainder" or op == "rd" or op == "find remainder" or op == "findremainder":
-            print(num1 // num2, "\nRemainder:", num1 % num2)
+            print(round(num1 // num2, 7), "\nRemainder:", num1 % num2)
 
         elif op == "square root" or op == "sqrt" or op == "√" or op == "v" or op == "squareroot" or op == "root":
-            print(math.sqrt(num1))
+            print(round(math.sqrt(num1), 7))
 
         elif op == "to the power of" or op == "power" or op == "^":
-            print(num1 ** num2)
+            print(round(num1 ** num2, 7))
 
         elif op == "log" or op == "logarithm":
             print(math.log(num1, num2))
 
         elif op == "factorial" or op == "!":
-            print(math.factorial(num1))
+            print(round(math.factorial(num1), 7))
 
 
     while True:
