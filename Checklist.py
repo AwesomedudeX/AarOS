@@ -3,7 +3,7 @@
 def cl():
 
     print("\n\n"+"-"*9+"\nChecklist\n"+"-"*9+"\n")
-    print("Note: Console must be restarted for Checklist changes to be saved - the console will shutdown after closing this app.")
+    print("Note: Console must be restarted for Checklist changes to be saved - the console will shutdown this app is closed.")
     print("\nLoading...\n")
 
     import checklistsource as cls
