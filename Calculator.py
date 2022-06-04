@@ -1,5 +1,8 @@
 def calc():
 
+    print("-" * (len("Calculator")) + "\nCalculator\n" + "-" * len("Calculator"))
+    print("Note: All results will be rounded to the 7th decimal place.\n")
+
     import math
 
     def calculate(num1, op, num2):
@@ -39,9 +42,6 @@ def calc():
 
 
     while True:
-
-        print("-"*(len("Calculator"))+"\nCalculator\n"+"-"*len("Calculator"))
-        print("Note: All results will be rounded to the 7th decimal place.\n")
 
         validops = ["+", "addition", "add", "plus", "sum", "-", "subtraction", "subtract", "minus", "x", "*", "multiplication", "multiply", "times", "÷", "/", "division", "divide", "over", "div", "remainderdivision", "remainderdiv", "divide with remainder", "division with remainder","rd", "find remainder", "findremainder", "square root", "sqrt", "√", "v", "squareroot", "root", "to the power of", "power", "^", "log", "logarithm", "factorial", "!"]
         n1 = input("\nEnter the first number here (type \'-0\' if using pi or \'quit\' to quit the program): ")
