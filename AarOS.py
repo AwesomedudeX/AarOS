@@ -17,8 +17,7 @@ def aarOS():
 
         else:
             pass
-        
-        
+
     def login():
 
         while True:
@@ -40,6 +39,7 @@ def aarOS():
                     if usr == username and pw == pwd:
 
                         if ss.name != "":
+                            print("\n" * 30)
                             print(f"\nWelcome, {ss.name}!")
                             break
                         else:
@@ -53,6 +53,7 @@ def aarOS():
         while True:
 
             app = input("\n\nWhat app would you like to open (type \"home\" to go back to the home page)? ")
+            print("\n\n")
 
             if app == "home" or app == "back" or app == "return" or app == "q" or app == "quit" or app == "close" or app == "exit":
                 break
@@ -80,6 +81,10 @@ def aarOS():
             if app == "ctd" or app == "Chart Texture Dictionary" or app == "ChartTextureDictionary":
                 import ChartTextureDictionary as ctd
                 ctd.ctd()
+
+            if app == "df" or app == "DataFrames" or app == "DataFrame" or app == "dfs":
+                import DataFrames as dfs
+                dfs.df()
 
             if app == "File_Creator_and_Editor" or app == "fce" or app == "File Creator and Editor":
                 import File_Creator_and_Editor as fce
@@ -138,6 +143,7 @@ def aarOS():
             " - Charts (ct)",
             " - Checklist (cl)",
             " - Charts Texture Dictionary (ctd)",
+            " - DataFrames (df)",
             " - File Creator and Editor (fce)",
             " - Guess The Number (gtn)",
             " - Mechanical Advantage Calculator - Type 2 Lever (mac)",
