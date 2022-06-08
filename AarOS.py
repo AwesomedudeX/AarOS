@@ -5,9 +5,6 @@ def aarOS():
     import settingsource as ss
     import checklistsource as cls
 
-    os.system("pip install seaborn")
-    os.system("pip install datetime")
-
     applist = [
         " - AarOS App Manager (am)",
         " - Binomial Distribution Calculator (bdc)",
