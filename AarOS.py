@@ -84,74 +84,73 @@ def aarOS():
 
             else:
 
+                if app == "appmanager" or app == "app manager" or app == "am" or app == "App Manager" or app == "AppManager":
+                    import AppManager
+                    AppManager.appmanager()
 
-                    if app == "appmanager" or app == "app manager" or app == "am" or app == "App Manager" or app == "AppManager":
-                        import AppManager
-                        AppManager.appmanager()
+                if app == "Binomial Distribution Calculator" or app == "bdc" or app == "Binomial_Distribution_Calculator":
+                    import Binomial_Distribution_Calculator as bdc
+                    bdc.bdc()
 
-                    if app == "Binomial Distribution Calculator" or app == "bdc" or app == "Binomial_Distribution_Calculator":
-                        import Binomial_Distribution_Calculator as bdc
-                        bdc.bdc()
+                if app == "Calculator" or app == "calc":
+                    import Calculator as calc
+                    calc.calc()
 
-                    if app == "Calculator" or app == "calc":
-                        import Calculator as calc
-                        calc.calc()
+                if app == "Central Angle Calculator" or app == "cac" or app == "Central_Angle_Calculator":
+                    import Central_Angle_Calculator as cac
+                    cac.cac()
 
-                    if app == "Central Angle Calculator" or app == "cac" or app == "Central_Angle_Calculator":
-                        import Central_Angle_Calculator as cac
-                        cac.cac()
+                if app == "charts" or app == "Charts" or app == "ct":
+                    import Charts as ct
+                    ct.charts()
 
-                    if app == "charts" or app == "Charts" or app == "ct":
-                        import Charts as ct
-                        ct.charts()
+                if app == "Checklist" or app == "checklist" or app == "cl":
+                    import Checklist
+                    Checklist.cl()
 
-                    if app == "Checklist" or app == "checklist" or app == "cl":
-                        import Checklist
-                        Checklist.cl()
+                if app == "ctd" or app == "Chart Texture Dictionary" or app == "ChartTextureDictionary":
+                    import ChartTextureDictionary as ctd
+                    ctd.ctd()
 
-                    if app == "ctd" or app == "Chart Texture Dictionary" or app == "ChartTextureDictionary":
-                        import ChartTextureDictionary as ctd
-                        ctd.ctd()
+                if app == "df" or app == "DataFrames" or app == "DataFrame" or app == "dfs":
+                    import DataFrames as dfs
+                    dfs.df()
 
-                    if app == "df" or app == "DataFrames" or app == "DataFrame" or app == "dfs":
-                        import DataFrames as dfs
-                        dfs.df()
+                if app == "File_Creator_and_Editor" or app == "fce" or app == "File Creator and Editor":
+                    import File_Creator_and_Editor as fce
+                    fce.fce()
 
-                    if app == "File_Creator_and_Editor" or app == "fce" or app == "File Creator and Editor":
-                        import File_Creator_and_Editor as fce
-                        fce.fce()
+                if app == "gtn" or app == "Guess The Number" or app == "Guess_The_Number":
+                    import Guess_The_Number as gtn
+                    gtn.gtn()
 
-                    if app == "gtn" or app == "Guess The Number" or app == "Guess_The_Number":
-                        import Guess_The_Number as gtn
-                        gtn.gtn()
+                if app == "mac" or app == "MACT2L" or app == "Mechanical Advantage Calculator - Type 2 Lever":
+                    import Mech_Advantage_Calculator_for_Type_2_Lever as mac
+                    mac.MACT2L()
 
-                    if app == "mac" or app == "MACT2L" or app == "Mechanical Advantage Calculator - Type 2 Lever":
-                        import Mech_Advantage_Calculator_for_Type_2_Lever as mac
-                        mac.MACT2L()
+                if app == "Morse Code Converter" or app == "MorseCodeConverter" or app == "Morse_Code_Converter" or app == "mcc":
+                    import Morse_Code_Converter as mcc
+                    mcc.mcc()
 
-                    if app == "Morse Code Converter" or app == "MorseCodeConverter" or app == "Morse_Code_Converter" or app == "mcc":
-                        import Morse_Code_Converter as mcc
-                        mcc.mcc()
+                if app == "rng" or app == "RandomNumberGenerator" or app == "Random Number Generator":
+                    import RandomNumberGenerator as rng
+                    rng.rng()
 
-                    if app == "rng" or app == "RandomNumberGenerator" or app == "Random Number Generator":
-                        import RandomNumberGenerator as rng
-                        rng.rng()
+                if app == "Random Password Generator" or app == "rpg" or app == "RandomPasswordGenerator":
+                    import RandomPasswordGenerator as rpg
+                    rpg.rpg()
 
-                    if app == "Random Password Generator" or app == "rpg" or app == "RandomPasswordGenerator":
-                        import RandomPasswordGenerator as rpg
-                        rpg.rpg()
+                if app == "Rock Paper Scissors" or app == "Rock_Paper_Scissors" or app == "rps":
+                    import Rock_Paper_Scissors as rps
+                    rps.rps()
 
-                    if app == "Rock Paper Scissors" or app == "Rock_Paper_Scissors" or app == "rps":
-                        import Rock_Paper_Scissors as rps
-                        rps.rps()
+                if app == "settings":
+                    import Settings
+                    Settings.settings()
 
-                    if app == "settings":
-                        import Settings
-                        Settings.settings()
-
-                    if app == "TriangleAreaFinder" or app == "Triangle Area Finder" or app == "taf":
-                        import TriangleAreaFinder as taf
-                        taf.taf()
+                if app == "TriangleAreaFinder" or app == "Triangle Area Finder" or app == "taf":
+                    import TriangleAreaFinder as taf
+                    taf.taf()
 
 
         home()
