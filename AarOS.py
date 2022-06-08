@@ -1,8 +1,32 @@
 def aarOS():
 
+    import os
     import time
     import settingsource as ss
     import checklistsource as cls
+
+    os.system("pip install seaborn")
+    os.system("pip install datetime")
+
+    applist = [
+        " - AarOS App Manager (am)",
+        " - Binomial Distribution Calculator (bdc)",
+        " - Calculator (calc)",
+        " - Central Angle Calculator (cac)",
+        " - Charts (ct)",
+        " - Checklist (cl)",
+        " - Charts Texture Dictionary (ctd)",
+        " - DataFrames (df)",
+        " - File Creator and Editor (fce)",
+        " - Guess The Number (gtn)",
+        " - Mechanical Advantage Calculator - Type 2 Lever (mac)",
+        " - Morse Code Converter (mcc)",
+        " - Random Number Generator (rng)",
+        " - Random Password Generator (rpg)",
+        " - Rock Paper Scissors (rps)",
+        " - Settings",
+        " - Triangle Area Finder (taf)"
+    ]
 
     def home():
 
@@ -58,69 +82,77 @@ def aarOS():
             if app == "home" or app == "back" or app == "return" or app == "q" or app == "quit" or app == "close" or app == "exit":
                 break
 
-            if app == "Binomial Distribution Calculator" or app == "bdc" or app == "Binomial_Distribution_Calculator":
-                import Binomial_Distribution_Calculator as bdc
-                bdc.bdc()
+            else:
 
-            if app == "Calculator" or app == "calc":
-                import Calculator as calc
-                calc.calc()
 
-            if app == "Central Angle Calculator" or app == "cac" or app == "Central_Angle_Calculator":
-                import Central_Angle_Calculator as cac
-                cac.cac()
+                    if app == "appmanager" or app == "app manager" or app == "am" or app == "App Manager" or app == "AppManager":
+                        import AppManager
+                        AppManager.appmanager()
 
-            if app == "charts" or app == "Charts" or app == "ct":
-                import Charts as ct
-                ct.charts()
+                    if app == "Binomial Distribution Calculator" or app == "bdc" or app == "Binomial_Distribution_Calculator":
+                        import Binomial_Distribution_Calculator as bdc
+                        bdc.bdc()
 
-            if app == "Checklist" or app == "checklist" or app == "cl":
-                import Checklist
-                Checklist.cl()
+                    if app == "Calculator" or app == "calc":
+                        import Calculator as calc
+                        calc.calc()
 
-            if app == "ctd" or app == "Chart Texture Dictionary" or app == "ChartTextureDictionary":
-                import ChartTextureDictionary as ctd
-                ctd.ctd()
+                    if app == "Central Angle Calculator" or app == "cac" or app == "Central_Angle_Calculator":
+                        import Central_Angle_Calculator as cac
+                        cac.cac()
 
-            if app == "df" or app == "DataFrames" or app == "DataFrame" or app == "dfs":
-                import DataFrames as dfs
-                dfs.df()
+                    if app == "charts" or app == "Charts" or app == "ct":
+                        import Charts as ct
+                        ct.charts()
 
-            if app == "File_Creator_and_Editor" or app == "fce" or app == "File Creator and Editor":
-                import File_Creator_and_Editor as fce
-                fce.fce()
+                    if app == "Checklist" or app == "checklist" or app == "cl":
+                        import Checklist
+                        Checklist.cl()
 
-            if app == "gtn" or app == "Guess The Number" or app == "Guess_The_Number":
-                import Guess_The_Number as gtn
-                gtn.gtn()
+                    if app == "ctd" or app == "Chart Texture Dictionary" or app == "ChartTextureDictionary":
+                        import ChartTextureDictionary as ctd
+                        ctd.ctd()
 
-            if app == "mac" or app == "MACT2L" or app == "Mechanical Advantage Calculator - Type 2 Lever":
-                import Mech_Advantage_Calculator_for_Type_2_Lever as mac
-                mac.MACT2L()
+                    if app == "df" or app == "DataFrames" or app == "DataFrame" or app == "dfs":
+                        import DataFrames as dfs
+                        dfs.df()
 
-            if app == "Morse Code Converter" or app == "MorseCodeConverter" or app == "Morse_Code_Converter" or app == "mcc":
-                import Morse_Code_Converter as mcc
-                mcc.mcc()
+                    if app == "File_Creator_and_Editor" or app == "fce" or app == "File Creator and Editor":
+                        import File_Creator_and_Editor as fce
+                        fce.fce()
 
-            if app == "rng" or app == "RandomNumberGenerator" or app == "Random Number Generator":
-                import RandomNumberGenerator as rng
-                rng.rng()
+                    if app == "gtn" or app == "Guess The Number" or app == "Guess_The_Number":
+                        import Guess_The_Number as gtn
+                        gtn.gtn()
 
-            if app == "Random Password Generator" or app == "rpg" or app == "RandomPasswordGenerator":
-                import RandomPasswordGenerator as rpg
-                rpg.rpg()
+                    if app == "mac" or app == "MACT2L" or app == "Mechanical Advantage Calculator - Type 2 Lever":
+                        import Mech_Advantage_Calculator_for_Type_2_Lever as mac
+                        mac.MACT2L()
 
-            if app == "Rock Paper Scissors" or app == "Rock_Paper_Scissors" or app == "rps":
-                import Rock_Paper_Scissors as rps
-                rps.rps()
+                    if app == "Morse Code Converter" or app == "MorseCodeConverter" or app == "Morse_Code_Converter" or app == "mcc":
+                        import Morse_Code_Converter as mcc
+                        mcc.mcc()
 
-            if app == "settings":
-                import Settings
-                Settings.settings()
+                    if app == "rng" or app == "RandomNumberGenerator" or app == "Random Number Generator":
+                        import RandomNumberGenerator as rng
+                        rng.rng()
 
-            if app == "TriangleAreaFinder" or app == "Triangle Area Finder" or app == "taf":
-                import TriangleAreaFinder as taf
-                taf.taf()
+                    if app == "Random Password Generator" or app == "rpg" or app == "RandomPasswordGenerator":
+                        import RandomPasswordGenerator as rpg
+                        rpg.rpg()
+
+                    if app == "Rock Paper Scissors" or app == "Rock_Paper_Scissors" or app == "rps":
+                        import Rock_Paper_Scissors as rps
+                        rps.rps()
+
+                    if app == "settings":
+                        import Settings
+                        Settings.settings()
+
+                    if app == "TriangleAreaFinder" or app == "Triangle Area Finder" or app == "taf":
+                        import TriangleAreaFinder as taf
+                        taf.taf()
+
 
         home()
 
@@ -135,26 +167,6 @@ def aarOS():
     while True:
 
         start = input("\nWhat would you like to do (type \'list\' to list available apps, \'shutdown\' to shut AarOS down or \'open\' to open an app)? ")
-
-        applist = [
-            " - Binomial Distribution Calculator (bdc)",
-            " - Calculator (calc)",
-            " - Central Angle Calculator (cac)",
-            " - Charts (ct)",
-            " - Checklist (cl)",
-            " - Charts Texture Dictionary (ctd)",
-            " - DataFrames (df)",
-            " - File Creator and Editor (fce)",
-            " - Guess The Number (gtn)",
-            " - Mechanical Advantage Calculator - Type 2 Lever (mac)",
-            " - Morse Code Converter (mcc)",
-            " - Random Number Generator (rng)",
-            " - Random Password Generator (rpg)",
-            " - Rock Paper Scissors (rps)",
-            " - Settings",
-            " - Triangle Area Finder (taf)"
-        ]
-
 
         if start == "q" or start == "quit" or start == "close" or start == "exit" or start == "shutdown":
             print("\nShutting Down...")
