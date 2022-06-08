@@ -3,7 +3,7 @@ Houses my console and its compatible apps.
 
 This is a console that I decided to develop for a fun personal project. It should be pretty helpful in terms of data analysis or just everyday use.
 
-Also, don't forget to turn on notifications so you know when I'm making updates to apps or releasing new ones. Hope you find this console useful!
+Also, don't forget to turn on notifications so you know when I'm making updates to apps or releasing new ones, and if you run into any problems, feel free to tell me in the Discussions section. Hope you find this console useful!
 
 ### App Usage Notes:
 
