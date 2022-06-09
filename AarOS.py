@@ -1,6 +1,5 @@
 def aarOS():
 
-    import os
     import time
     import settingsource as ss
     import checklistsource as cls
