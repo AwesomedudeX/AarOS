@@ -15,7 +15,6 @@ def aarOS():
         " - DataFrames (df)",
         " - File Creator and Editor (fce)",
         " - Guess The Number (gtn)",
-        " - Mechanical Advantage Calculator - Type 2 Lever (mac)",
         " - Morse Code Converter (mcc)",
         " - Random Number Generator (rng)",
         " - Random Password Generator (rpg)",
@@ -119,10 +118,6 @@ def aarOS():
                 if app == "gtn" or app == "Guess The Number" or app == "Guess_The_Number":
                     import Guess_The_Number as gtn
                     gtn.gtn()
-
-                if app == "mac" or app == "MACT2L" or app == "Mechanical Advantage Calculator - Type 2 Lever":
-                    import Mech_Advantage_Calculator_for_Type_2_Lever as mac
-                    mac.MACT2L()
 
                 if app == "Morse Code Converter" or app == "MorseCodeConverter" or app == "Morse_Code_Converter" or app == "mcc":
                     import Morse_Code_Converter as mcc
