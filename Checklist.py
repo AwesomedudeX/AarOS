@@ -1,20 +1,20 @@
-''' DON'T run this program '''
-
 def cl():
 
     print("\n\n"+"-"*9+"\nChecklist\n"+"-"*9+"\n")
-    print("Note: Console must be restarted for Checklist changes to be saved - the console will shutdown this app is closed.")
+    print("Note: Console must be restarted for Checklist changes to be saved - the console will shutdown after this app is closed.")
     print("\nLoading...\n")
 
     import checklistsource as cls
+    import os
 
     checklist = cls.cl
 
     def edit():
 
-        item = int(input("Enter the number of the item you want to edit (or type \'return\' to go back): "))
+        item = input("Enter the number of the item you want to edit (or type \'return\' to go back): ")
 
-        if item != "return" and item != "back":
+        if item != "return" and item != "back" and item != "q" and item != "quit" and item != "exit" and item != "menu":
+            item = int(item)
             modify = input("What do you want to change the item to? ")
             checklist[item-1] = modify
             print("Item modified successfully.")
