@@ -1,9 +1,11 @@
 def df():
 
-    import pandas as pd
-
     print("-"*len("DataFrames")+"\nDataFrames\n"+"-"*len("DataFrames"))
-    print("Note: If more than 5 columns are selected, DataFrame will be displayed in mass rows with 5 columns displayed per row.")
+    print("Note: If more than 5 columns are selected, DataFrame will be displayed in mass rows with 5 columns displayed per row.\n\nLoading...\n\n")
+
+    import pandas as pd
+    from sklearn.linear_model import LinearRegression as lreg
+    from sklearn.model_selection import train_test_split as tts
 
     pd.set_option("display.max_rows", None, "display.max_columns", None)
 
@@ -54,7 +56,8 @@ def df():
             "regular (reg): A regular table view of the DataFrame.",
             "information (info): Shows an overview of the contents in the DataFrame.",
             "describe (desc): Shows numerical statistics like mean, standard deviation, etc.",
-            "value counts (vc): Shows the number of times each value appears in a column."
+            "value counts (vc): Shows the number of times each value appears in a column.",
+            "find value (fv): Shows occurences of a chosen value and the location(s) of those occurences."
         ]
 
         if action == "q" or action == "quit" or action == "close" or action == "exit" or action == "return":
@@ -121,8 +124,47 @@ def df():
                 else:
                     print("Invalid column. Please try again.")
 
+            elif action == "find" or action == "search" or action == "value search" or action == "find value" or action == "vs" or action == "fv":
+
+                cnum = input("How many columns do you want to use (type \'all\' for all columns)? ")
+
+                if cnum == "all":
+                    cols = [i for i in df.columns]
+                else:
+                    cnum = int(cnum)
+                    cols = []
+
+                    for i in range(cnum):
+                        col = input(f"Column {i + 1}: ")
+                        if col in df.columns:
+                            cols.append(col)
+                        else:
+                            print(f"The \'{col}\' column is not in this DataFrame.\n")
+                            break
+
+
+                value = input("What value do you want to search for? ").lower()
+                view = input("Do you want to view the occurences of this value (y/n)? ").lower()
+
+                for x in cols:
+
+                    print(f"\n\'{x}\' Column:\n")
+                    count = 0
+
+                    for y in df[x]:
+                        if str(y).lower() == value:
+                            count += 1
+
+                    print(f"Found {count} occurences of {value}.\n")
+
+                    if view == "yes" or view == "y" or view == "ye" or view == "yeah" or view == "ya" or view == "yep" or view == "yea" or view == "yah" or view == "yeh":
+
+                        print("Occurences:\n")
+
+                        for z in range(len(df[x])):
+                            if str(df[x][z]).lower() == value:
+                                print(f" - Row {z+1}")
+
+
             else:
                 print("Invalid choice. Please try again.\n")
-
-# df()
-# Test File: "https://student-datasets-bucket.s3.ap-south-1.amazonaws.com/whitehat-ds-datasets/meteorite-landings/meteorite-landings.csv"
