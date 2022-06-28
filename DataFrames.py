@@ -50,14 +50,14 @@ def df():
                 df = pd.read_csv(url)
 
 
-        action = input("\nWhat format do you want to view the DataFrame in (type \'formats\' to view formats that you can use or \'quit\' to quit)? ").lower()
+        action = input("\nWhat do you want to do (type \'formats\' to view formats that you can use or \'quit\' to quit)? ").lower()
 
         fts = [
             "regular (reg): A regular table view of the DataFrame.",
             "information (info): Shows an overview of the contents in the DataFrame.",
             "describe (desc): Shows numerical statistics like mean, standard deviation, etc.",
             "value counts (vc): Shows the number of times each value appears in a column.",
-            "find value (fv): Shows occurences of a chosen value and the location(s) of those occurences."
+            "find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences."
         ]
 
         if action == "q" or action == "quit" or action == "close" or action == "exit" or action == "return":
@@ -77,7 +77,7 @@ def df():
 
                 if column == "all":
                     s = int(input("Enter the starting row number for your selection: "))
-                    e = int(input("Enter the ending row number for your selection: ")) - 1
+                    e = int(input("Enter the ending row number for your selection: ")) + 1
                     print(f"\n{df[s:e]}")
 
                 elif column == "multi" or column == "multiple":
@@ -165,6 +165,8 @@ def df():
                             if str(df[x][z]).lower() == value:
                                 print(f" - Row {z+1}")
 
-
             else:
                 print("Invalid choice. Please try again.\n")
+
+# df()
+# Test File: "https://student-datasets-bucket.s3.ap-south-1.amazonaws.com/whitehat-ds-datasets/air-quality/AirQualityUCI.csv"
