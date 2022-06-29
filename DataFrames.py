@@ -57,7 +57,8 @@ def df():
             "information (info): Shows an overview of the contents in the DataFrame.",
             "describe (desc): Shows numerical statistics like mean, standard deviation, etc.",
             "value counts (vc): Shows the number of times each value appears in a column.",
-            "find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences."
+            "find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences.",
+            "find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value."
         ]
 
         if action == "q" or action == "quit" or action == "close" or action == "exit" or action == "return":
@@ -165,8 +166,54 @@ def df():
                             if str(df[x][z]).lower() == value:
                                 print(f" - Row {z+1}")
 
+            elif action == "find and replace" or action == "fr" or action == "replace" or action == "rep":
+
+                print("\nDisclaimer: DataFrame modifications will only be applied in the current session.\n")
+
+                value = input("What value do you want to search for? ").lower()
+                rep = input("What value do you want to replace it with? ")
+                view = input("Do you want to view the occurences of this value (y/n)? ").lower()
+
+                for x in df.columns:
+
+                    print(f"\n\'{x}\' Column:\n")
+                    count = 0
+                    lst = []
+
+                    for y in df[x]:
+                        if str(y).lower() == value:
+                            count += 1
+
+                    if count == 0:
+                        print(f"Could not find occurences of {value}.\n")
+
+                    else:
+
+                        if view == "yes" or view == "y" or view == "ye" or view == "yeah" or view == "ya" or view == "yep" or view == "yea" or view == "yah" or view == "yeh":
+
+                            print("Occurences:\n")
+
+                            for o in range(len(df[x])):
+                                if str(df[x][y]).lower() == value:
+                                    print(f" - Row {o+1}")
+
+                        print(f"Found {count} occurences of {value}.\n")
+
+                        replace = input(f"\nDo you want to replace the occurences of \'{value}\' in the \'{x}\' column (y/n)? ").lower()
+
+                        if replace == "yes" or replace == "y" or replace == "ye" or replace == "yeah" or replace == "ya" or replace == "yep" or replace == "yea" or replace == "yah" or replace == "yeh":
+
+                            for i in df[x]:
+
+                                if str(df[x][y]).lower() == str(value).lower():
+                                    lst.append(rep)
+
+                                else:
+                                    lst.append(str(df[x][y]).lower())
+
+                            df.drop(columns=[x])
+                            df[x] = pd.Series(lst)
+
+
             else:
                 print("Invalid choice. Please try again.\n")
-
-# df()
-# Test File: "https://student-datasets-bucket.s3.ap-south-1.amazonaws.com/whitehat-ds-datasets/air-quality/AirQualityUCI.csv"
