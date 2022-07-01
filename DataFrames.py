@@ -38,9 +38,6 @@ def df():
 
     while True:
 
-        if url == "q" or url == "quit" or url == "close" or url == "exit" or url == "return":
-            break
-
         if sdf == "no" or sdf == "n" or sdf == "nay" or sdf == "nah" or sdf == "na":
 
             url = input("\nEnter the download link for the dataframe that you want to view (or type \'quit\' to quit): ")
@@ -52,8 +49,7 @@ def df():
             else:
                 print("\nLoading DataFrame...\n")
                 df = pd.read_csv(url)
-
-
+        
         action = input("\nWhat do you want to do (type \'formats\' to view formats that you can use or \'quit\' to quit)? ").lower()
 
         fts = [
