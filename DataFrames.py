@@ -3,10 +3,12 @@ def df():
     print("-"*len("DataFrames")+"\nDataFrames\n"+"-"*len("DataFrames"))
     print("Note: If more than 5 columns are selected, DataFrame will be displayed in mass rows with 5 columns displayed per row.\n\nLoading...\n\n")
 
+    import warnings
     import pandas as pd
     from sklearn.linear_model import LinearRegression as lreg
     from sklearn.model_selection import train_test_split as tts
 
+    warnings.filterwarnings("ignore")
     pd.set_option("display.max_rows", None, "display.max_columns", None)
 
     while True:
@@ -57,6 +59,7 @@ def df():
             "information (info): Shows an overview of the contents in the DataFrame.",
             "describe (desc): Shows numerical statistics like mean, standard deviation, etc.",
             "value counts (vc): Shows the number of times each value appears in a column.",
+            "prediction model (pred): Creates a prediction model that can predict values based on the data that is given.",
             "find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences.",
             "find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value."
         ]
@@ -124,6 +127,63 @@ def df():
                     print(df[column].value_counts())
                 else:
                     print("Invalid column. Please try again.")
+
+            elif action == "pred" or action == "prediction" or action == "predict" or action == "predict value" or action == "p" or action == "prediction model":
+
+                cnum = input("How many columns do you want to use as feature (x axis) variables (type \'auto\' to automatically select the best columns for prediction)? ").lower()
+                s = input("Enter the starting row number for your selection (type \'all\' to select all rows - this is more accurate but will result in a large predicted output): ")
+
+                if s == "all" or s == "everything":
+                    s = 0
+                    e = df.shape[0]
+
+                else:
+                    e = int(input("Enter the ending row number for your selection: ")) + 1
+
+                if cnum == "auto" or cnum == "automatic":
+
+                    predcol = input("What column do you want to predict? ")
+                    t = df.loc[s:e, predcol]
+
+                    print("\nCreating model...\n")
+
+                    cols = []
+
+                    for i in range(len(df.corr()[predcol])):
+                        if df.corr()[predcol][i] >= 0.5:
+                            cols.append(df.corr()[predcol].index[i])
+
+                else:
+
+                    cnum = int(cnum)
+                    cols = [input(f"Column {i+1}: ") for i in range(cnum)]
+                    t = df[input("What column do you want to predict? ")]
+
+                    print("\nCreating model...\n")
+
+                for x in df.columns:
+
+                    if type(df[x][0]) != int and type(df[x][0]) != float:
+                        dfd = pd.get_dummies(df[x], dtype=int)
+                        df.drop(columns=[x])
+
+                        for y in dfd.columns:
+                            df[y] = dfd[y]
+
+                f = df.loc[s:e, cols]
+
+                xtrain, xtest, ytrain, ytest = tts(f, t, test_size=0.3, random_state=20)
+                lr = lreg().fit(xtrain, ytrain)
+                pred = lr.predict(xtest)
+
+                print(f"Mean of Predicted Values: {pred.mean()}\n\nModel Accuracy: {lr.score(xtest, ytest)*100}%.")
+
+                view = input("Would you like to view a list of the predicted values? ").lower()
+
+                if view == "yes" or view == "y" or view == "ye" or view == "ya" or view == "yep" or view == "yeah" or view == "yea" or view == "yah":
+                    print("\nPredicted Values:\n")
+                    for i in pred:
+                        print(f" - {i}")
 
             elif action == "find" or action == "search" or action == "value search" or action == "find value" or action == "vs" or action == "fv":
 
@@ -213,7 +273,6 @@ def df():
 
                             df.drop(columns=[x])
                             df[x] = pd.Series(lst)
-
 
             else:
                 print("Invalid choice. Please try again.\n")
