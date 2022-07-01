@@ -17,5 +17,5 @@ Also, don't forget to turn on notifications so you know when I'm making updates 
 
 1. First, open up the start menu and search for "powershell". Then, click "Run as administrator".
 2. After this, head to the folder with the AarOS file in it, right-click on the folder, and click "Copy as path".
-3. Then, go back to Powershell, and type "cd", followed by a space and the copied path (press "Ctrl-V" to paste).
-4. Finally, type ./AarOS.py to run the console.
+3. Then, go back to Powershell, and type "cd", followed by a space and the copied path (press "Ctrl-V" to paste), and press Enter.
+4. Finally, type ./AarOS.py and press Enter to run the console.
