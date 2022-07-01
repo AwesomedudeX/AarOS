@@ -49,7 +49,7 @@ def df():
             else:
                 print("\nLoading DataFrame...\n")
                 df = pd.read_csv(url)
-        
+
         action = input("\nWhat do you want to do (type \'formats\' to view formats that you can use or \'quit\' to quit)? ").lower()
 
         fts = [
