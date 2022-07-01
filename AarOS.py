@@ -2,7 +2,6 @@ def aarOS():
 
     import time
     import settingsource as ss
-    import checklistsource as cls
 
     applist = [
         " - AarOS App Manager (am)",
@@ -30,6 +29,7 @@ def aarOS():
         print("Time: ", ss.t)
 
         if ss.hcl == True:
+            import checklistsource as cls
             print("\nChecklist:\n")
             for i in range(len(cls.cl)):
                 print(str(i + 1) + ". ", cls.cl[i])
@@ -156,7 +156,7 @@ def aarOS():
 
     while True:
 
-        start = input("\nWhat would you like to do (type \'list\' to list available apps, \'shutdown\' to shut AarOS down or \'open\' to open an app)? ")
+        start = input("\nWhat would you like to do (type \'list\' to list AarOS apps, \'shutdown\' to shut AarOS down or \'open\' to open an app)? ")
 
         if start == "q" or start == "quit" or start == "close" or start == "exit" or start == "shutdown":
             print("\nShutting Down...")
@@ -164,7 +164,7 @@ def aarOS():
             exit(0)
 
         elif start == "list" or start == "l":
-            print("")
+            print("\n(Note: This is a list of all apps available for download on AarOS; not a list of installed apps)\n")
             for i in applist:
                 print(i)
 
