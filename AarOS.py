@@ -58,7 +58,7 @@ def aarOS():
                     if usr == username and pw == pwd:
 
                         if ss.name != "":
-                            print("\n" * 30)
+                            print("\n" * 100)
                             print(f"\nWelcome, {ss.name}!")
                             break
                         else:
