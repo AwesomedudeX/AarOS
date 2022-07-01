@@ -4,6 +4,7 @@ def df():
     print("Note: If more than 5 columns are selected, DataFrame will be displayed in mass rows with 5 columns displayed per row.\n\nLoading...\n\n")
 
     import warnings
+    import os
     import pandas as pd
     from sklearn.linear_model import LinearRegression as lreg
     from sklearn.model_selection import train_test_split as tts
@@ -17,13 +18,14 @@ def df():
 
         if sdf == "yes" or sdf == "y" or sdf == "yea" or sdf == "ye" or sdf == "ya" or sdf == "yeah" or sdf == "yeh" or sdf == "yah":
 
-            url = input("\nEnter the download link for the dataframe that you want to view (or type \'quit\' to quit): ")
+            url = input("\nEnter the download link for the dataframe that you want to view (type \'quit\' to quit): ")
 
             if url == "q" or url == "quit" or url == "close" or url == "exit" or url == "return":
                 print("\nApp Closed.")
                 break
 
             else:
+
                 print("\nLoading DataFrame...\n")
                 df = pd.read_csv(url)
                 break
@@ -61,7 +63,8 @@ def df():
             "value counts (vc): Shows the number of times each value appears in a column.",
             "prediction model (pred): Creates a prediction model that can predict values based on the data that is given.",
             "find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences.",
-            "find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value."
+            "find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value.",
+            "save as (s): Lets you save the DataFrame as a .csv file."
         ]
 
         if action == "q" or action == "quit" or action == "close" or action == "exit" or action == "return":
@@ -273,6 +276,13 @@ def df():
 
                             df.drop(columns=[x])
                             df[x] = pd.Series(lst)
+
+            elif action == "save" or action == "save as" or action == "s":
+
+                loc = input("What do you want to name your saved file? ")
+                loc = loc+".csv"
+                file = open(loc, "w")
+                file.write(str(df))
 
             else:
                 print("Invalid choice. Please try again.\n")
