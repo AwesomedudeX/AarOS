@@ -111,9 +111,9 @@ def aarOS():
                     import DataFrames as dfs
                     dfs.df()
 
-                if app == "File_Creator_and_Editor" or app == "fce" or app == "File Creator and Editor":
-                    import File_Creator_and_Editor as fce
-                    fce.fce()
+                if app == "File_Manager" or app == "fm" or app == "File Manager":
+                    import File_Manager as fm
+                    fm.fm()
 
                 if app == "gtn" or app == "Guess The Number" or app == "Guess_The_Number":
                     import Guess_The_Number as gtn
