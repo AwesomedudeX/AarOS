@@ -1027,15 +1027,15 @@ def df():
             else:
                 print(\"Invalid choice. Please try again.\\n\")
 """
-    fce = """
-def fce():
+    fm = """
+def fm():
 
     print(\"-\"*23+\"\\nFile Creator and Editor\\n\"+\"-\"*23)
-    print(\"\\n(Note: Restart the app to apply changes)\")
+    print(\"\\n(Note: Restart the console to apply changes)\")
 
     while True:
 
-        action = str(input(\"\\nEnter what you want to do here (\\\'write\\\' - rewrites the file, \\\'add\\\' - lets you add more text to your file, \\\'read\\\' - lets you read the file, or \\\'quit\\\' to quit the software): \"))
+        action = str(input(\"\\nEnter what you want to do here (\\\'write\\\' - rewrites the file, \\\'add\\\' - lets you add more text to your file, \\\'read\\\' - lets you read the file, or \\\'quit\\\' to quit the software): \")).lower()
 
         if action == \"q\" or action == \"quit\" or action == \"close\" or action == \"exit\":
             print(\"\\nApp Closed.\")
@@ -1043,25 +1043,43 @@ def fce():
 
         else:
 
-            name = str(input(\"Enter the name of the file (use \\\'.txt\\\', \\\'.py\\\', etc. after the file name): \"))
-
             if action == \"write\" or action == \"w\":
-                text = str(input(\"Enter your text here: \"))
+
+                name = str(input(\"Enter the name of the file with the extension (\\\'.txt\\\', \\\'.py\\\', etc.): \"))
+
                 file = open(name, \"w\")
-                file.write(text)
+
+                print(\"\\n(Type \\\'/q/\\\' to exit the editor)\\n\\n\")
+
+                line = 1
+
+                text = input(f\"Line {line}: \")
+                line += 1
+
+                if text != \"/q/\":
+
+                    write = text
+
+                    while True:
+
+                        if text == \"/q/\":
+                            break
+
+                        else:
+
+                            text = input(f\"Line {line}: \")
+                            write = write+\"\\n\"+text
+                            line += 1
+
+                    file.write(write)
+
                 print(name, \"was rewritten successfully.\")
 
-
-            elif action == \"add\" or action == \"a\":
-                text = str(input(\"Enter your text here: \"))
-                file = open(name, \"a\")
-                file.write(text)
-                print(\"Text added successfully to\", name+\".\")
-
-
             elif action == \"read\" or action == \"r\":
+                name = str(input(\"Enter the name of the file with the extension (\\\'.txt\\\', \\\'.py\\\', etc.): \"))
                 file = open(name, \"r\")
-                file.read()
+                read = file.read()
+                print(f\"\\n{\'-\'*200}\\n{read}\\n{\'-\'*200}\\n\")
 
 
             else:
@@ -2285,7 +2303,7 @@ def taf():
         " - Checklist (cl)",
         " - Charts Texture Dictionary (ctd)",
         " - DataFrames (df)",
-        " - File Creator and Editor (fce)",
+        " - File Manager (fm)",
         " - Guess The Number (gtn)",
         " - Morse Code Converter (mcc)",
         " - Random Number Generator (rng)",
@@ -2342,10 +2360,10 @@ def taf():
                     app = open("DataFrames.py", "w")
                     app.write(dfs)
 
-                elif app == "file_creator_and_editor" or app == "fce" or app == "file creator and editor":
+                elif app == "file_manager" or app == "fm" or app == "file manager":
                     print(f"The {app} app was installed successfully.")
-                    app = open("File_Creator_and_Editor.py", "w")
-                    app.write(fce)
+                    app = open("File_Manager.py", "w")
+                    app.write(fm)
 
                 elif app == "gtn" or app == "guess the number" or app == "guess_the_number":
                     print(f"The {app} app was installed successfully.")
