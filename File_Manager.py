@@ -1,7 +1,7 @@
 def fm():
 
     print("-"*23+"\nFile Creator and Editor\n"+"-"*23)
-    print("\n(Note: Restart the console to apply changes)")
+    print("\n(Note: Shut down the console to apply changes)")
 
     while True:
 
