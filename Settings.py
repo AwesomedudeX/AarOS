@@ -365,5 +365,3 @@ hcl = {hcl}
 
     source = open("settingsource.py", "w")
     source.write(write)
-
-# settings()
