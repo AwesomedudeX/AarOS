@@ -12,7 +12,7 @@ def aarOS():
         " - Checklist (cl)",
         " - Charts Texture Dictionary (ctd)",
         " - DataFrames (df)",
-        " - File Creator and Editor (fce)",
+        " - File Manager (fm)",
         " - Guess The Number (gtn)",
         " - Morse Code Converter (mcc)",
         " - Random Number Generator (rng)",
