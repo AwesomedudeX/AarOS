@@ -594,7 +594,7 @@ def charts():
 def cl():
 
     print(\"\\n\\n\"+\"-\"*9+\"\\nChecklist\\n\"+\"-\"*9+\"\\n\")
-    print(\"Note: Console must be restarted for Checklist changes to be saved - the console will shutdown after this app is closed.\")
+    print(\"Note: Console must be shut down for Checklist changes to be saved.\")
     print(\"\\nLoading...\\n")
 
     import checklistsource as cls
@@ -1013,7 +1013,17 @@ def df():
 
                             df.drop(columns=[x])
                             df[x] = pd.Series(lst)
+            
+            elif action == "save" or action == "save as" or action == "s":
 
+                print("\nNote: Console must be shut down for file(s) to be saved.\n")
+
+                loc = input("What do you want to name your saved file? ")
+                loc = loc+".csv"
+                file = open(loc, "w")
+                file.write(str(df))
+            
+            
             else:
                 print(\"Invalid choice. Please try again.\\n\")
 """
@@ -1871,7 +1881,7 @@ def settings():
     global hcl
 
     print(\"\\n\" + \"-\" * len(\"AarOS Settings\") + \"\\nAarOS Settings\\n\" + \"-\" * len(\"AarOS Settings\"))
-    print(\"Note: Console must be restarted for changes to take effect - the console will shutdown after closing this app.\\n\")
+    print(\"Note: Console must be shut down for changes to take effect.\\n\")
 
     if src.dtf != \"\":
         dtf = src.dtf
