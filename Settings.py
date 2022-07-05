@@ -16,7 +16,7 @@ def settings():
     global hcl
 
     print("\n" + "-" * len("AarOS Settings") + "\nAarOS Settings\n" + "-" * len("AarOS Settings"))
-    print("Note: Console must be restarted for changes to take effect.\n")
+    print("Note: Console must be shut down for changes to take effect.\n")
 
     if src.dtf != "":
         dtf = src.dtf
