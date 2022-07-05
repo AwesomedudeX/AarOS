@@ -275,10 +275,15 @@ def df():
 
             elif action == "save" or action == "save as" or action == "s":
 
+                print("\nNote: Console must be shut down for file(s) to be saved.\n")
+
                 loc = input("What do you want to name your saved file? ")
                 loc = loc+".csv"
                 file = open(loc, "w")
                 file.write(str(df))
+
+            elif action == "edit" or action == "modify":
+                
 
             else:
                 print("Invalid choice. Please try again.\n")
