@@ -100,7 +100,7 @@ def calc():
         if num1 == \"-0\":
             num1 = math.pi
 
-        if num2 == -0:
+        if num2 == \"-0\":
             num2 = math.pi
 
         if op == \"+\" or op == \"addition\" or op == \"add\" or op == \"plus\" or op == \"sum\":
@@ -125,7 +125,7 @@ def calc():
             print(round(num1 ** num2, 7))
 
         elif op == \"log\" or op == \"logarithm\":
-            print(math.log(num1, num2))
+            print(round(math.log(num1, num2)), 7)
 
         elif op == \"factorial\" or op == \"!\":
             print(round(math.factorial(num1), 7))
