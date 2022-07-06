@@ -740,7 +740,7 @@ def ctd():
     dfs = """
 def df():
 
-    print(\"-\"*len(\"DataFrames\")+\"\\nDataFrames\\n\"+\"-\\"*len(\"DataFrames\"))
+    print(\"-\"*len(\"DataFrames\")+\"\\nDataFrames\\n\"+\"-\"*len(\"DataFrames\"))
     print(\"Note: If more than 5 columns are selected, DataFrame will be displayed in mass rows with 5 columns displayed per row.\\n\\nLoading...\\n\\n\")
 
     import warnings
