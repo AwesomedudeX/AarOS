@@ -2371,7 +2371,7 @@ def taf():
 
                 elif app == "checklist" or app == "cl":
                     print(f"The {app} app was installed successfully.")
-                    app = open("Checklist.py")
+                    app = open("Checklist.py", "w")
                     app.write(cl)
 
                 elif app == "ctd" or app == "chart texture dictionary" or app == "charttexturedictionary":
