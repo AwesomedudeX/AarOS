@@ -1051,7 +1051,7 @@ def fm():
 
                 file = open(name, \"w\")
 
-                print(\"\\n(Type \\\'/q/\\\' to exit the editor)\n\n\")
+                print(\"\\n(Type \\\'/q/\\\' to exit the editor)\\n\\n\")
 
                 line = 1
 
