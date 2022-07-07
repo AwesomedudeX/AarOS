@@ -4,7 +4,6 @@ def df():
     print("Note: If more than 5 columns are selected, DataFrame will be displayed in mass rows with 5 columns displayed per row.\n\nLoading...\n\n")
 
     import warnings
-    import os
     import pandas as pd
     from sklearn.linear_model import LinearRegression as lreg
     from sklearn.model_selection import train_test_split as tts
@@ -18,14 +17,13 @@ def df():
 
         if sdf == "yes" or sdf == "y" or sdf == "yea" or sdf == "ye" or sdf == "ya" or sdf == "yeah" or sdf == "yeh" or sdf == "yah":
 
-            url = input("\nEnter the download link for the dataframe that you want to view (type \'quit\' to quit): ")
+            url = input("\nEnter the download link for the dataframe that you want to view (or type \'quit\' to quit): ")
 
             if url == "q" or url == "quit" or url == "close" or url == "exit" or url == "return":
                 print("\nApp Closed.")
                 break
 
             else:
-
                 print("\nLoading DataFrame...\n")
                 df = pd.read_csv(url)
                 break
@@ -37,6 +35,9 @@ def df():
             print("Invalid response.\n")
 
     while True:
+
+        if url == "q" or url == "quit" or url == "close" or url == "exit" or url == "return":
+            break
 
         if sdf == "no" or sdf == "n" or sdf == "nay" or sdf == "nah" or sdf == "na":
 
@@ -50,6 +51,7 @@ def df():
                 print("\nLoading DataFrame...\n")
                 df = pd.read_csv(url)
 
+
         action = input("\nWhat do you want to do (type \'formats\' to view formats that you can use or \'quit\' to quit)? ").lower()
 
         fts = [
@@ -60,7 +62,8 @@ def df():
             "prediction model (pred): Creates a prediction model that can predict values based on the data that is given.",
             "find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences.",
             "find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value.",
-            "save as (s): Lets you save the DataFrame as a .csv file."
+            "save as (s): Lets you save the DataFrame as a .csv file.",
+            "edit/modify: Lets you edit values in the DataFrame."
         ]
 
         if action == "q" or action == "quit" or action == "close" or action == "exit" or action == "return":
@@ -272,7 +275,7 @@ def df():
 
                             df.drop(columns=[x])
                             df[x] = pd.Series(lst)
-
+            
             elif action == "save" or action == "save as" or action == "s":
 
                 print("\nNote: Console must be shut down for file(s) to be saved.\n")
@@ -283,7 +286,36 @@ def df():
                 file.write(str(df))
 
             elif action == "edit" or action == "modify":
-                
 
+                col = input("\nWhat column do you want to edit? ")
+                lst = list(df[col])
+
+                print(f"\n\nEditing {col}:\n")
+
+                while True:
+
+                    row = input("\nWhat row do you want to edit (type \'return\' to go back)? ")
+
+                    if row == "q" or row == "quit" or row == "close" or row == "exit" or row == "return" or row == "back":
+                        break
+
+                    else:
+
+                        row = int(row)-1
+
+                        print(f"\nCurrent Value: {lst[row]}")
+
+                        value = input("New value: ")
+
+                        try:
+                            value = float(value)
+                        except:
+                            value = str(value)
+
+                        lst[row] = value
+
+                df.drop(columns=[col])
+                df[col] = pd.Series(lst)
+            
             else:
                 print("Invalid choice. Please try again.\n")
