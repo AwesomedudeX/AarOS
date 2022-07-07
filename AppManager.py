@@ -788,7 +788,7 @@ def df():
                 break
 
             else:
-                print(\"\\nLoading DataFrame...\\n\")
+                print(\"\\nLoading DataFrame...\n\")
                 df = pd.read_csv(url)
 
 
@@ -801,7 +801,9 @@ def df():
             \"value counts (vc): Shows the number of times each value appears in a column.\",
             \"prediction model (pred): Creates a prediction model that can predict values based on the data that is given.\",
             \"find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences.\",
-            \"find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value.\"
+            \"find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value.\",
+            \"save as (s): Lets you save the DataFrame as a .csv file.\",
+            \"edit/modify: Lets you edit values in the DataFrame.\"
         ]
 
         if action == \"q\" or action == \"quit\" or action == \"close\" or action == \"exit\" or action == \"return\":
@@ -885,7 +887,7 @@ def df():
                     predcol = input(\"What column do you want to predict? \")
                     t = df.loc[s:e, predcol]
 
-                    print(\"\\nCreating model...\\n\")
+                    print(\"\\nCreating model...\n\")
 
                     cols = []
 
@@ -1014,15 +1016,46 @@ def df():
                             df.drop(columns=[x])
                             df[x] = pd.Series(lst)
             
-            elif action == "save" or action == "save as" or action == "s":
+            elif action == \"save\" or action == \"save as\" or action == \"s\":
 
-                print("\\nNote: Console must be shut down for file(s) to be saved.\\n")
+                print(\"\\nNote: Console must be shut down for file(s) to be saved.\\n\")
 
-                loc = input("What do you want to name your saved file? ")
-                loc = loc+".csv"
-                file = open(loc, "w")
+                loc = input(\"What do you want to name your saved file? \")
+                loc = loc+\".csv\"
+                file = open(loc, \"w\")
                 file.write(str(df))
-            
+
+            elif action == \"edit\" or action == \"modify\":
+
+                col = input(\"\\nWhat column do you want to edit? \")
+                lst = list(df[col])
+
+                print(f\"\\n\\nEditing {col}:\\n\")
+
+                while True:
+
+                    row = input(\"\nWhat row do you want to edit (type \\\'return\\\' to go back)? \")
+
+                    if row == \"q\" or row == \"quit\" or row == \"close\" or row == \"exit\" or row == \"return\" or row == \"back\":
+                        break
+
+                    else:
+
+                        row = int(row)-1
+
+                        print(f\"\\nCurrent Value: {lst[row]}\")
+
+                        value = input(\"New value: \")
+
+                        try:
+                            value = float(value)
+                        except:
+                            value = str(value)
+
+                        lst[row] = value
+
+                df.drop(columns=[col])
+                df[col] = pd.Series(lst)
             
             else:
                 print(\"Invalid choice. Please try again.\\n\")
