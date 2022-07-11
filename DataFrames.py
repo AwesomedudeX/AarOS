@@ -17,7 +17,20 @@ def df():
 
         if sdf == "yes" or sdf == "y" or sdf == "yea" or sdf == "ye" or sdf == "ya" or sdf == "yeah" or sdf == "yeh" or sdf == "yah":
 
-            url = input("\nEnter the download link for the dataframe that you want to view (or type \'quit\' to quit): ")
+            while True:
+
+                useexisting = input("Do you want to use an existing DataFrame for this session? ").lower()
+
+                if useexisting == "yes" or useexisting == "y" or useexisting == "yea" or useexisting == "ye" or useexisting == "ya" or useexisting == "yeah" or useexisting == "yeh" or useexisting == "yah":
+                    url = input("\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \'quit\' to quit): ")+".csv"
+                    break
+
+                elif useexisting == "no" or useexisting == "n" or useexisting == "nay" or useexisting == "nah" or useexisting == "na":
+                    url = input("\nEnter the download link for the dataframe that you want to use (or type \'quit\' to quit): ")
+                    break
+
+                else:
+                    print("Invalid choice.\n")
 
             if url == "q" or url == "quit" or url == "close" or url == "exit" or url == "return":
                 print("\nApp Closed.")
@@ -41,7 +54,20 @@ def df():
 
         if sdf == "no" or sdf == "n" or sdf == "nay" or sdf == "nah" or sdf == "na":
 
-            url = input("\nEnter the download link for the dataframe that you want to view (or type \'quit\' to quit): ")
+            while True:
+
+                useexisting = input("Do you want to use an existing DataFrame for this session? ").lower()
+
+                if useexisting == "yes" or useexisting == "y" or useexisting == "yea" or useexisting == "ye" or useexisting == "ya" or useexisting == "yeah" or useexisting == "yeh" or useexisting == "yah":
+                    url = input("\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \'quit\' to quit): ")+".csv"
+                    break
+
+                elif useexisting == "no" or useexisting == "n" or useexisting == "nay" or useexisting == "nah" or useexisting == "na":
+                    url = input("\nEnter the download link for the dataframe that you want to use (or type \'quit\' to quit): ")
+                    break
+
+                else:
+                    print("Invalid choice.\n")
 
             if url == "q" or url == "quit" or url == "close" or url == "exit" or url == "return":
                 print("\nApp Closed.")
@@ -275,15 +301,17 @@ def df():
 
                             df.drop(columns=[x])
                             df[x] = pd.Series(lst)
-            
+
             elif action == "save" or action == "save as" or action == "s":
 
                 print("\nNote: Console must be shut down for file(s) to be saved.\n")
 
                 loc = input("What do you want to name your saved file? ")
                 loc = loc+".csv"
-                file = open(loc, "w")
-                file.write(str(df))
+
+                df.to_csv(loc)
+                print(f"Successfully saved file as {loc}.")
+
 
             elif action == "edit" or action == "modify":
 
