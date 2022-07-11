@@ -757,7 +757,20 @@ def df():
 
         if sdf == \"yes\" or sdf == \"y\" or sdf == \"yea\" or sdf == \"ye\" or sdf == \"ya\" or sdf == \"yeah\" or sdf == \"yeh\" or sdf == \"yah\":
 
-            url = input(\"\\nEnter the download link for the dataframe that you want to view (or type \\\'quit\\\' to quit): \")
+            while True:
+
+                useexisting = input(\"Do you want to use an existing DataFrame for this session? \").lower()
+
+                if useexisting == \"yes\" or useexisting == \"y\" or useexisting == \"yea\" or useexisting == \"ye\" or useexisting == \"ya\" or useexisting == \"yeah\" or useexisting == \"yeh\" or useexisting == \"yah\":
+                    url = input(\"\\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \\\'quit\\\' to quit): \")+\".csv\"
+                    break
+
+                elif useexisting == \"no\" or useexisting == \"n\" or useexisting == \"nay\" or useexisting == \"nah\" or useexisting == \"na\":
+                    url = input(\"\\nEnter the download link for the dataframe that you want to use (or type \\\'quit\\\' to quit): \")
+                    break
+
+                else:
+                    print(\"Invalid choice.\\n\")
 
             if url == \"q\" or url == \"quit\" or url == \"close\" or url == \"exit\" or url == \"return\":
                 print(\"\\nApp Closed.\")
@@ -781,14 +794,27 @@ def df():
 
         if sdf == \"no\" or sdf == \"n\" or sdf == \"nay\" or sdf == \"nah\" or sdf == \"na\":
 
-            url = input(\"\\nEnter the download link for the dataframe that you want to view (or type \\\'quit\\\' to quit): \")
+            while True:
+
+                useexisting = input(\"Do you want to use an existing DataFrame for this session? \").lower()
+
+                if useexisting == \"yes\" or useexisting == \"y\" or useexisting == \"yea\" or useexisting == \"ye\" or useexisting == \"ya\" or useexisting == \"yeah\" or useexisting == \"yeh\" or useexisting == \"yah\":
+                    url = input(\"\\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \\\'quit\\\' to quit): \")+\".csv\"
+                    break
+
+                elif useexisting == \"no\" or useexisting == \"n\" or useexisting == \"nay\" or useexisting == \"nah\" or useexisting == \"na\":
+                    url = input(\"\\nEnter the download link for the dataframe that you want to use (or type \\\'quit\\\' to quit): \")
+                    break
+
+                else:
+                    print(\"Invalid choice.\\n\")
 
             if url == \"q\" or url == \"quit\" or url == \"close\" or url == \"exit\" or url == \"return\":
                 print(\"\\nApp Closed.\")
                 break
 
             else:
-                print(\"\\nLoading DataFrame...\n\")
+                print(\"\\nLoading DataFrame...\\n\")
                 df = pd.read_csv(url)
 
 
@@ -887,7 +913,7 @@ def df():
                     predcol = input(\"What column do you want to predict? \")
                     t = df.loc[s:e, predcol]
 
-                    print(\"\\nCreating model...\n\")
+                    print(\"\\nCreating model...\\n\")
 
                     cols = []
 
@@ -1021,20 +1047,22 @@ def df():
                 print(\"\\nNote: Console must be shut down for file(s) to be saved.\\n\")
 
                 loc = input(\"What do you want to name your saved file? \")
-                loc = loc+\".csv\"
-                file = open(loc, \"w\")
-                file.write(str(df))
+                loc = loc+\".csv"
 
-            elif action == \"edit\" or action == \"modify\":
+                df.to_csv(loc)
+                print(f"Successfully saved file as {loc}.")
 
-                col = input(\"\\nWhat column do you want to edit? \")
+
+            elif action == "edit" or action == "modify":
+
+                col = input("\\nWhat column do you want to edit? ")
                 lst = list(df[col])
 
-                print(f\"\\n\\nEditing {col}:\\n\")
+                print(f"\\n\\nEditing {col}:\\n\")
 
                 while True:
 
-                    row = input(\"\nWhat row do you want to edit (type \\\'return\\\' to go back)? \")
+                    row = input(\"\\nWhat row do you want to edit (type \\\'return\\\' to go back)? \")
 
                     if row == \"q\" or row == \"quit\" or row == \"close\" or row == \"exit\" or row == \"return\" or row == \"back\":
                         break
