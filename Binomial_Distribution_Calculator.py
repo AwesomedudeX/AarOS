@@ -1,3 +1,4 @@
+
 def bdc():
 
     print("\n" + "-" * len("Binomial Distribution Calculator") + "\nBinomial Distribution Calculator\n" + "-" * len("Binomial Distribution Calculator"))
@@ -19,21 +20,25 @@ def bdc():
 
     def pcbd():
 
-        n = int(input("\nEnter the total number of events that you want to use: "))
-        sub = int(input("Enter the total number of possibilities that there are for each event: "))
-        sp = int(input("Enter the total number of possibilities for each event that are successful: "))
-        r = int(input("Enter the total number of events that you want to be successful: "))
+        try:
+            n = int(input("\nEnter the total number of events that you want to use: "))
+            sub = int(input("Enter the total number of possibilities that there are for each event: "))
+            sp = int(input("Enter the total number of possibilities for each event that are successful: "))
+            r = int(input("Enter the total number of events that you want to be successful: "))
 
-        s = sp / sub
-        f = 1 - s
+            s = sp / sub
+            f = 1 - s
 
-        ways = factorial(n) / (factorial(r) * factorial(n - r))
-        prob = s ** r * f ** (n - r) * ways
+            ways = factorial(n) / (factorial(r) * factorial(n - r))
+            prob = s ** r * f ** (n - r) * ways
 
-        if r == 1:
-            print(f"The probability of the event being successful in this case is {round(prob, 9) * 100}%.")
-        else:
-            print(f"The probability of {r} out of {n} events being successful in this case is {round(prob, 9) * 100}%.")
+            if r == 1:
+                print(f"The probability of the event being successful in this case is {round(prob, 9) * 100}%.")
+            else:
+                print(f"The probability of {r} out of {n} events being successful in this case is {round(prob, 9) * 100}%.")
+
+        except:
+            print("\nThere was an error. Please try again.\n")
 
     desc = """
 Binomial distributions are used to figure out probabilities of double-layered possibilities. What this means, is that instead of finding the probability of getting
@@ -65,7 +70,7 @@ explanation helps you understand what's really going on behind the scenes.
         choice = input("\nWhat do you want to do (\'calc\' to start the calculator, \'desc\' to view the description of what binomial distributions are or \'quit\' to quit)? ").lower()
 
         if choice == "q" or choice == "quit" or choice == "exit" or choice == "close":
-            print("\nApp Closed.")
+            print("\nApp closed.")
             break
 
         elif choice == "calc" or choice == "start" or choice == "calculator" or choice == "c" or choice == "s":
