@@ -2395,7 +2395,8 @@ def taf():
         " - Random Password Generator (rpg)",
         " - Rock Paper Scissors (rps)",
         " - Settings",
-        " - Triangle Area Finder (taf)"
+        " - Triangle Area Finder (taf)",
+        " - Install all apps (all)"
     ]
 
 
@@ -2484,6 +2485,38 @@ def taf():
                     print(f"The {app} app was installed successfully.")
                     app = open("TriangleAreaFinder.py", "w")
                     app.write(taf)
+                    
+                elif app == "everything" or app == "all" or app == "install everything" or app == "install all apps" or app == "inst all" or app == "inst everything" or app == "inst all apps":
+                    print("\nInstalling all apps...\n")
+                    app = open("Binomial_Distribution_Calculator.py")
+                    app.write(bdc)
+                    app = open("Calculator.py")
+                    app.write(calc)
+                    app = open("Charts.py")
+                    app.write(ct)
+                    app = open("ChartTextureDictionary.py")
+                    app.write(ctd)
+                    app = open("Checklist.py")
+                    app.write(cl)
+                    app = open("DataFrames.py")
+                    app.write(dfs)
+                    app = open("File_Manager.py")
+                    app.write(fm)
+                    app = open("Guess_The_Number.py")
+                    app.write(gtn)
+                    app = open("Morse_Code_Converter.py")
+                    app.write(mcc)
+                    app = open("RandomNumberGenerator.py")
+                    app.write(rng)
+                    app = open("RandomPasswordGenerator.py")
+                    app.write(rpg)
+                    app = open("Rock_Paper_Scissors.py")
+                    app.write(rps)
+                    app = open("Settings.py")
+                    app.write(settings)
+                    app = open("TriangleAreaFinder.py")
+                    app.write(taf)
+                    print("All apps installed successfully.\n")
 
                 else:
                     print(f"{app} is not an app on the AarOS console.")
@@ -2558,6 +2591,25 @@ def taf():
                 elif app == "triangleareafinder" or app == "triangle area finder" or app == "taf":
                     os.remove("TriangleAreaFinder.py")
                     print(f"The {app} app was removed successfully.")
+                    
+                elif app == "everything" or app == "all":
+                    print("\nDeleting all apps...\n")
+                    os.remove("Binomial_Distribution_Calculator.py")
+                    os.remove("Calculator.py")
+                    os.remove("Charts.py")
+                    os.remove("ChartTextureDictionary.py")
+                    os.remove("Checklist.py")
+                    os.remove("DataFrames.py")
+                    os.remove("File_Manager.py")
+                    os.remove("Guess_The_Number.py")
+                    os.remove("Morse_Code_Converter.py")
+                    os.remove("RandomNumberGenerator.py")
+                    os.remove("RandomPasswordGenerator.py")
+                    os.remove("Rock_Paper_Scissors.py")
+                    os.remove("Settings.py")
+                    os.remove("TriangleAreaFinder.py")
+                    print("All apps deleted successfully.\n")
+
 
                 else:
                     print(f"{app} is not an app on the AarOS console.")
