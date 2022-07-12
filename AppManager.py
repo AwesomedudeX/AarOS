@@ -29,21 +29,26 @@ def bdc():
 
     def pcbd():
 
-        n = int(input(\"\\nEnter the total number of events that you want to use: \"))
-        sub = int(input(\"Enter the total number of possibilities that there are for each event: \"))
-        sp = int(input(\"Enter the total number of possibilities for each event that are successful: \"))
-        r = int(input(\"Enter the total number of events that you want to be successful: \"))
+        try:
 
-        s = sp / sub
-        f = 1 - s
+            n = int(input(\"\\nEnter the total number of events that you want to use: \"))
+            sub = int(input(\"Enter the total number of possibilities that there are for each event: \"))
+            sp = int(input(\"Enter the total number of possibilities for each event that are successful: \"))
+            r = int(input(\"Enter the total number of events that you want to be successful: \"))
+    
+            s = sp / sub
+            f = 1 - s
+    
+            ways = factorial(n) / (factorial(r) * factorial(n - r))
+            prob = s ** r * f ** (n - r) * ways
+    
+            if r == 1:
+                print(f\"The probability of the event being successful in this case is {round(prob, 9) * 100}%.\")
+            else:
+                print(f\"The probability of {r} out of {n} events being successful in this case is {round(prob, 9) * 100}%.\")
 
-        ways = factorial(n) / (factorial(r) * factorial(n - r))
-        prob = s ** r * f ** (n - r) * ways
-
-        if r == 1:
-            print(f\"The probability of the event being successful in this case is {round(prob, 9) * 100}%.\")
-        else:
-            print(f\"The probability of {r} out of {n} events being successful in this case is {round(prob, 9) * 100}%.\")
+        except:
+            print("There was an error. Please try again.")
 
     desc = \"\"\"
 Binomial distributions are used to figure out probabilities of double-layered possibilities. What this means, is that instead of finding the probability of getting
@@ -2485,7 +2490,7 @@ def taf():
                     print(f"The {app} app was installed successfully.")
                     app = open("TriangleAreaFinder.py", "w")
                     app.write(taf)
-                    
+
                 elif app == "everything" or app == "all" or app == "install everything" or app == "install all apps" or app == "inst all" or app == "inst everything" or app == "inst all apps":
                     print("\nInstalling all apps...\n")
                     app = open("Binomial_Distribution_Calculator.py")
@@ -2591,7 +2596,7 @@ def taf():
                 elif app == "triangleareafinder" or app == "triangle area finder" or app == "taf":
                     os.remove("TriangleAreaFinder.py")
                     print(f"The {app} app was removed successfully.")
-                    
+
                 elif app == "everything" or app == "all":
                     print("\nDeleting all apps...\n")
                     os.remove("Binomial_Distribution_Calculator.py")
