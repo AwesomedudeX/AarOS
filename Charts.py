@@ -282,7 +282,7 @@ def charts():
         "bar graph: \'bar\'",
         "line graph: \'line\'",
         "scatter graph: \'scatter\'",
-        "full-scale scatter graph (for the entire DataFrame): \'fss\'",
+        "full-scale scatter graph (for the entire DataFrame): 'fss'",
         "regression plot: \'regplot\'",
         "joint bar and scatter plot: \'jp\'",
         "pie chart: \'pie\'",
@@ -291,97 +291,102 @@ def charts():
 
     while True:
 
-        ctype = input("\nWhat type of chart would you like to use (type \'ctypes\' to view chart types or \'quit\' to quit)? ").lower()
+        try:
 
-        if ctype == "quit" or ctype == "q" or ctype == "exit" or ctype == "close":
-            print("\nApp Closed.")
-            break
+            ctype = input("\nWhat type of chart would you like to use (type \'ctypes\' to view chart types or \'quit\' to quit)? ").lower()
 
-        elif ctype == "ctypes" or ctype == "cts" or ctype == "chart types":
+            if ctype == "quit" or ctype == "q" or ctype == "exit" or ctype == "close":
+                print("\nApp Closed.")
+                break
 
-            print()
+            elif ctype == "ctypes" or ctype == "cts" or ctype == "chart types":
 
-            for i in cts:
-                print(" -", i)
+                print()
 
-            print()
+                for i in cts:
+                    print(" -", i)
 
-        else:
-
-            title = input("What title would you like to use for your chart? ")
-            bg = input("What chart style do you want to use (view Chart Texture Dictionary for chart styles)? ")
-
-            if bg not in stylenames:
-                print("Invalid chart style. Please try again.")
+                print()
 
             else:
 
-                plt.style.use(bg)
+                title = input("What title would you like to use for your chart? ")
+                bg = input("What chart style do you want to use (view Chart Texture Dictionary for chart styles)? ")
 
-                if ctype == "bp" or ctype == "boxplot":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    bp()
-                    plt.show()
-
-                elif ctype == "hg" or ctype == "histogram":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    hg()
-                    plt.show()
-
-                elif ctype == "bar" or ctype == "bar graph":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    bar()
-                    plt.show()
-
-                elif ctype == "line" or ctype == "line graph":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    line()
-                    plt.show()
-
-                elif ctype == "scatter" or ctype == "scatter plot":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    scatter()
-                    plt.show()
-
-                elif ctype == "regplot" or ctype == "regression plot" or ctype == "rplt":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    regplot()
-                    plt.show()
-
-                elif ctype == "jp" or ctype == "jointplot" or ctype == "joint plot" or ctype == "jplt":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    jp()
-                    plt.show()
-
-                elif ctype == "fss" or ctype == "pplt" or ctype == "full-scale scatter graph" or ctype == "pairplot":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    pplt()
-                    plt.show()
-
-                elif ctype == "pie" or ctype == "pie chart":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    pie()
-                    plt.show()
-
-                elif ctype == "hm" or ctype == "htmp" or ctype == "heatmap" or ctype == "heat map":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    hm()
-                    plt.show()
-
-                elif ctype == "jp" or ctype == "joint plot" or ctype == "jointplot":
-                    plt.title(title)
-                    jp()
-                    plt.show()
+                if bg not in stylenames:
+                    print("Invalid chart style. Please try again.")
 
                 else:
-                    print("Invalid chart type. Please try again.")
+
+                    plt.style.use(bg)
+
+                    if ctype == "bp" or ctype == "boxplot":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        bp()
+                        plt.show()
+
+                    elif ctype == "hg" or ctype == "histogram":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        hg()
+                        plt.show()
+
+                    elif ctype == "bar" or ctype == "bar graph":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        bar()
+                        plt.show()
+
+                    elif ctype == "line" or ctype == "line graph":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        line()
+                        plt.show()
+
+                    elif ctype == "scatter" or ctype == "scatter plot":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        scatter()
+                        plt.show()
+
+                    elif ctype == "regplot" or ctype == "regression plot" or ctype == "rplt":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        regplot()
+                        plt.show()
+
+                    elif ctype == "jp" or ctype == "jointplot" or ctype == "joint plot" or ctype == "jplt":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        jp()
+                        plt.show()
+
+                    elif ctype == "fss" or ctype == "pplt" or ctype == "full-scale scatter graph" or ctype == "pairplot":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        pplt()
+                        plt.show()
+
+                    elif ctype == "pie" or ctype == "pie chart":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        pie()
+                        plt.show()
+
+                    elif ctype == "hm" or ctype == "htmp" or ctype == "heatmap" or ctype == "heat map":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        hm()
+                        plt.show()
+
+                    elif ctype == "jp" or ctype == "joint plot" or ctype == "jointplot":
+                        plt.title(title)
+                        jp()
+                        plt.show()
+
+                    else:
+                        print("Invalid chart type. Please try again.")
+
+        except:
+            print("\nThere was an error. Please try again.\n")
