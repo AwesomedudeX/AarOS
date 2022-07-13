@@ -113,32 +113,32 @@ def calc():
             num1 = float(num1)
             num2 = float(num2)
 
-            if op == \"+\" or op == \"addition\" or op == \"add\" or op == \"plus\" or op == \"sum\":
-                print(round(num1 + num2, 7))
-    
-            elif op == \"-\" or op == \"subtraction\" or op == \"subtract\" or op == \"minus\":
-                print(round(num1 - num2, 7))
-    
-            elif op == \"x\" or op == \"*\" or op == \"multiplication\" or op == \"multiply\" or op == \"times\":
-                print(round(num1 * num2, 7))
-    
-            elif op == \"/\" or op == \"division\" or op == \"divide\" or op == \"over\" or op == \"div\":
-                print(round(num1 / num2, 7))
-    
-            elif op == \"remainderdivision\" or op == \"remainderdiv\" or op == \"divide with remainder\" or op == \"division with remainder\" or op == \"rd\" or op == \"find remainder\" or op == \"findremainder\":
-                print(f\"{round(num1 // num2, 7)}\\nRemainder: {num1 % num2}\")
-    
-            elif op == \"square root\" or op == \"sqrt\" or op == \"v\" or op == \"squareroot\" or op == \"root\":
-                print(round(math.sqrt(num1), 7))
-    
-            elif op == \"to the power of\" or op == \"power\" or op == \"^\":
-                print(round(num1 ** num2, 7))
-    
-            elif op == \"log\" or op == \"logarithm\":
-                print(round(math.log(num1, num2), 7))
-    
-            elif op == \"factorial\" or op == \"!\":
-                print(round(math.factorial(num1), 7))
+        if op == \"+\" or op == \"addition\" or op == \"add\" or op == \"plus\" or op == \"sum\":
+            print(round(num1 + num2, 7))
+
+        elif op == \"-\" or op == \"subtraction\" or op == \"subtract\" or op == \"minus\":
+            print(round(num1 - num2, 7))
+
+        elif op == \"x\" or op == \"*\" or op == \"multiplication\" or op == \"multiply\" or op == \"times\":
+            print(round(num1 * num2, 7))
+
+        elif op == \"/\" or op == \"division\" or op == \"divide\" or op == \"over\" or op == \"div\":
+            print(round(num1 / num2, 7))
+
+        elif op == \"remainderdivision\" or op == \"remainderdiv\" or op == \"divide with remainder\" or op == \"division with remainder\" or op == \"rd\" or op == \"find remainder\" or op == \"findremainder\":
+            print(f\"{round(num1 // num2, 7)}\\nRemainder: {num1 % num2}\")
+
+        elif op == \"square root\" or op == \"sqrt\" or op == \"v\" or op == \"squareroot\" or op == \"root\":
+            print(round(math.sqrt(num1), 7))
+
+        elif op == \"to the power of\" or op == \"power\" or op == \"^\":
+            print(round(num1 ** num2, 7))
+
+        elif op == \"log\" or op == \"logarithm\":
+            print(round(math.log(num1, num2), 7))
+
+        elif op == \"factorial\" or op == \"!\":
+            print(round(math.factorial(num1), 7))
 
 
     while True:
@@ -152,7 +152,6 @@ def calc():
         else:
             
             try:
-                n1 = float(n1)
                 op = input(\"Enter the operator here: \")
 
                 if op in validops:
@@ -173,41 +172,46 @@ def cac():
     print(\"\\nCentral Angle Calculator (Circle Graphs):\")
 
     while True:
-
-        method = input(\"\\nEnter the calculation method you would like to use in here (\\\'percentage\\\', \\\'quantity\\\' or \\\'quit\\\' to quit): \")
-
-        if method == \"quit\" or method == \"exit\" or method == \"q\" or method == \"close\":
-            print(\"\\nApp Closed.\")
-            break
-
-        elif method == \"percentage\" or method == \"p\" or method == \"pct\" or method == \"P\" or method == \"Percentage\" or method == \"PCT\" or method == \"percent\" or method == \"Percent\":
-
-            p = float(input(\"Enter the percentage in here: \"))
-            angle = p*3.6
-
-            print(\"The central angle for this section is\", angle, end=\" degrees.\\n\\n\")
-
-        elif method == \"quantity\" or method == \"qu\" or method == \"QU\" or method == \"Quantity\" or method == \"qty\" or method == \"QTY\":
-
-            quantity = float(input(\"Enter the quantity of the section in here: \"))
-            total = float(input(\"Enter the total quantity of all sections in here: \"))
-            p = quantity/total*100
-            angle = p*3.6
-
-            if quantity > total:
-                quantity = input(\"Quantity is greater than total. Please enter a value less than or equal to the total: \")
+        
+        try:
+        
+            method = input(\"\\nEnter the calculation method you would like to use in here (\\\'percentage\\\', \\\'quantity\\\' or \\\'quit\\\' to quit): \")
+    
+            if method == \"quit\" or method == \"exit\" or method == \"q\" or method == \"close\":
+                print(\"\\nApp Closed.\")
+                break
+    
+            elif method == \"percentage\" or method == \"p\" or method == \"pct\" or method == \"P\" or method == \"Percentage\" or method == \"PCT\" or method == \"percent\" or method == \"Percent\":
+    
+                p = float(input(\"Enter the percentage in here: \"))
+                angle = p*3.6
+    
+                print(\"The central angle for this section is\", angle, end=\" degrees.\\n\\n\")
+    
+            elif method == \"quantity\" or method == \"qu\" or method == \"QU\" or method == \"Quantity\" or method == \"qty\" or method == \"QTY\":
+    
+                quantity = float(input(\"Enter the quantity of the section in here: \"))
                 total = float(input(\"Enter the total quantity of all sections in here: \"))
                 p = quantity/total*100
                 angle = p*3.6
-
+    
+                if quantity > total:
+                    quantity = input(\"Quantity is greater than total. Please enter a value less than or equal to the total: \")
+                    total = float(input(\"Enter the total quantity of all sections in here: \"))
+                    p = quantity/total*100
+                    angle = p*3.6
+    
+                else:
+                    print(\"The central angle for this section is\", angle, end=\" degrees.\\n\")
+                    print(\"This section accounts for\", p, end=\"%\")
+                    print(\" of the circle graph.\")
+    
+    
             else:
-                print(\"The central angle for this section is\", angle, end=\" degrees.\\n\")
-                print(\"This section accounts for\", p, end=\"%\")
-                print(\" of the circle graph.\")
-
-
-        else:
-            print(\"Invalid input. Please try again.\")
+                print(\"Invalid input. Please try again.\")
+                
+        except:
+            print(\"\\nThere was an error. Please try again.\\n\")
 """
     ct = """
 def charts():
@@ -502,106 +506,106 @@ def charts():
     ]
 
     while True:
-
-        ctype = input(\"\\nWhat type of chart would you like to use (type \\\'ctypes\\\' to view chart types or \\\'quit\\\' to quit)? \").lower()
-
-        if ctype == \"quit\" or ctype == \"q\" or ctype == \"exit\" or ctype == \"close\":
-            print(\"\\nApp Closed.\")
-            break
-
-        elif ctype == \"ctypes\" or ctype == \"cts\" or ctype == \"chart types\":
-
-            print()
-
-            for i in cts:
-                print(\" -\", i)
-
-            print()
-
-        else:
-
-            title = input(\"What title would you like to use for your chart? \")
-            bg = input(\"What chart style do you want to use (view Chart Texture Dictionary for chart styles)? \")
-
-            if bg not in stylenames:
-                print(\"Invalid chart style. Please try again.\")
-
+        
+        try:
+        
+            ctype = input(\"\\nWhat type of chart would you like to use (type \\\'ctypes\\\' to view chart types or \\\'quit\\\' to quit)? \").lower()
+    
+            if ctype == \"quit\" or ctype == \"q\" or ctype == \"exit\" or ctype == \"close\":
+                print(\"\\nApp Closed.\")
+                break
+    
+            elif ctype == \"ctypes\" or ctype == \"cts\" or ctype == \"chart types\":
+    
+                print()
+    
+                for i in cts:
+                    print(\" -\", i)
+    
+                print()
+    
             else:
-
-                plt.style.use(bg)
-
-                if ctype == \"bp\" or ctype == \"boxplot\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    bp()
-                    plt.show()
-
-                elif ctype == \"hg\" or ctype == \"histogram\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    hg()
-                    plt.show()
-
-                elif ctype == \"bar\" or ctype == \"bar graph\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    bar()
-                    plt.show()
-
-                elif ctype == \"line\" or ctype == \"line graph\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    line()
-                    plt.show()
-
-                elif ctype == \"scatter\" or ctype == \"scatter plot\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    scatter()
-                    plt.show()
-
-                elif ctype == \"regplot\" or ctype == \"regression plot\" or ctype == \"rplt\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    regplot()
-                    plt.show()
-
-                elif ctype == \"jp\" or ctype == \"jointplot\" or ctype == \"joint plot\" or ctype == \"jplt\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    jp()
-                    plt.show()
-
-                elif ctype == \"fss\" or ctype == \"pplt\" or ctype == \"full-scale scatter graph\" or ctype == \"pairplot\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    pplt()
-                    plt.show()
-
-                elif ctype == \"pie\" or ctype == \"pie chart\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    pie()
-                    plt.show()
-
-                elif ctype == \"hm\" or ctype == \"htmp\" or ctype == \"heatmap\" or ctype == \"heat map\":
-                    plt.figure(figsize=(20, 7))
-                    plt.title(title)
-                    hm()
-                    plt.show()
-
-                elif ctype == \"jp\" or ctype == \"joint plot\" or ctype == \"jointplot\":
-                    plt.title(title)
-                    jp()
-                    plt.show()
-
+    
+                title = input(\"What title would you like to use for your chart? \")
+                bg = input(\"What chart style do you want to use (view Chart Texture Dictionary for chart styles)? \")
+    
+                if bg not in stylenames:
+                    print(\"Invalid chart style. Please try again.\")
+    
                 else:
-                    print(\"Invalid chart type. Please try again.\")
-
-
-# charts()
-# Test File: \"https://student-datasets-bucket.s3.ap-south-1.amazonaws.com/whitehat-ds-datasets/meteorite-landings/meteorite-landings.csv\"
-
+    
+                    plt.style.use(bg)
+    
+                    if ctype == \"bp\" or ctype == \"boxplot\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        bp()
+                        plt.show()
+    
+                    elif ctype == \"hg\" or ctype == \"histogram\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        hg()
+                        plt.show()
+    
+                    elif ctype == \"bar\" or ctype == \"bar graph\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        bar()
+                        plt.show()
+    
+                    elif ctype == \"line\" or ctype == \"line graph\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        line()
+                        plt.show()
+    
+                    elif ctype == \"scatter\" or ctype == \"scatter plot\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        scatter()
+                        plt.show()
+    
+                    elif ctype == \"regplot\" or ctype == \"regression plot\" or ctype == \"rplt\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        regplot()
+                        plt.show()
+    
+                    elif ctype == \"jp\" or ctype == \"jointplot\" or ctype == \"joint plot\" or ctype == \"jplt\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        jp()
+                        plt.show()
+    
+                    elif ctype == \"fss\" or ctype == \"pplt\" or ctype == \"full-scale scatter graph\" or ctype == \"pairplot\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        pplt()
+                        plt.show()
+    
+                    elif ctype == \"pie\" or ctype == \"pie chart\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        pie()
+                        plt.show()
+    
+                    elif ctype == \"hm\" or ctype == \"htmp\" or ctype == \"heatmap\" or ctype == \"heat map\":
+                        plt.figure(figsize=(20, 7))
+                        plt.title(title)
+                        hm()
+                        plt.show()
+    
+                    elif ctype == \"jp\" or ctype == \"joint plot\" or ctype == \"jointplot\":
+                        plt.title(title)
+                        jp()
+                        plt.show()
+    
+                    else:
+                        print(\"Invalid chart type. Please try again.\")
+        
+        except:
+            print(\"\\nThere was an error. Please try again.\\n\")
 """
     cl = """
 def cl():
