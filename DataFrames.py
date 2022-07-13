@@ -19,7 +19,7 @@ def df():
 
             while True:
 
-                useexisting = input("Do you want to use an existing DataFrame for this session? ").lower()
+                useexisting = input("Do you want to use a .csv file on this device for this session? ").lower()
 
                 if useexisting == "yes" or useexisting == "y" or useexisting == "yea" or useexisting == "ye" or useexisting == "ya" or useexisting == "yeah" or useexisting == "yeh" or useexisting == "yah":
                     url = input("\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \'quit\' to quit): ")+".csv"
@@ -56,7 +56,7 @@ def df():
 
             while True:
 
-                useexisting = input("Do you want to use an existing DataFrame for this session? ").lower()
+                useexisting = input("Do you want to use a .csv file on this device for this session? ").lower()
 
                 if useexisting == "yes" or useexisting == "y" or useexisting == "yea" or useexisting == "ye" or useexisting == "ya" or useexisting == "yeah" or useexisting == "yeh" or useexisting == "yah":
                     url = input("\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \'quit\' to quit): ")+".csv"
