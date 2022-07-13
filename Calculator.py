@@ -12,36 +12,36 @@ def calc():
 
         if num2.lower() == "pi":
             num2 = math.pi
-            
+
         else:
-            
+
             num1 = float(num1)
             num2 = float(num2)
 
             if op == "+" or op == "addition" or op == "add" or op == "plus" or op == "sum":
                 print(round(num1 + num2, 7))
-    
+
             elif op == "-" or op == "subtraction" or op == "subtract" or op == "minus":
                 print(round(num1 - num2, 7))
-    
+
             elif op == "x" or op == "*" or op == "multiplication" or op == "multiply" or op == "times":
                 print(round(num1 * num2, 7))
-    
+
             elif op == "/" or op == "division" or op == "divide" or op == "over" or op == "div":
                 print(round(num1 / num2, 7))
-    
+
             elif op == "remainderdivision" or op == "remainderdiv" or op == "divide with remainder" or op == "division with remainder" or op == "rd" or op == "find remainder" or op == "findremainder":
                 print(f"{round(num1 // num2, 7)}\nRemainder: {num1 % num2}")
-    
+
             elif op == "square root" or op == "sqrt" or op == "v" or op == "squareroot" or op == "root":
                 print(round(math.sqrt(num1), 7))
-    
+
             elif op == "to the power of" or op == "power" or op == "^":
                 print(round(num1 ** num2, 7))
-    
+
             elif op == "log" or op == "logarithm":
                 print(round(math.log(num1, num2), 7))
-    
+
             elif op == "factorial" or op == "!":
                 print(round(math.factorial(num1), 7))
 
@@ -55,18 +55,17 @@ def calc():
             break
 
         else:
-            
+
             try:
-                n1 = float(n1)
                 op = input("Enter the operator here: ")
 
                 if op in validops:
                     n2 = input("Enter the second number here (type \'pi\' if using pi): ")
                     calculate(n1, op, n2)
-    
+
                 else:
                     print("Invalid operator. please try again.")
-                    
+
             except:
                 print("\nThere was an error. Please try again.\n")
 
