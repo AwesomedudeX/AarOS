@@ -2335,7 +2335,7 @@ def settings():
         else:
             print(\"Invalid input. Please try again.\\n\")
 
-    write = f\\\"\\\"\\\"
+    write = f\"\"\"
 from datetime import datetime as dt
 
 dtf = \\\"{dtf}\\\"
@@ -2507,6 +2507,8 @@ def taf():
                     print("\nInstalling all apps...\n")
                     app = open("Binomial_Distribution_Calculator.py", "w")
                     app.write(bdc)
+                    app = open("Central_Angle_Calculator.py", "w")
+                    app.write(cac)
                     app = open("Calculator.py", "w")
                     app.write(calc)
                     app = open("Charts.py", "w")
@@ -2612,6 +2614,7 @@ def taf():
                 elif app == "everything" or app == "all":
                     print("\nDeleting all apps...\n")
                     os.remove("Binomial_Distribution_Calculator.py")
+                    os.remove("Central_Angle_Calculator.py")
                     os.remove("Calculator.py")
                     os.remove("Charts.py")
                     os.remove("ChartTextureDictionary.py")
