@@ -2635,28 +2635,33 @@ def taf():
                     print(f"{app} is not an app on the AarOS console.")
 
     while True:
+        
+        try:
 
-        choice = input("\nWhat do you want to do (type \'actions\' for a list of things that you can do)? ").lower()
-
-        if choice == "q" or choice == "quit" or choice == "close" or choice == "exit":
-            print("\nApp Closed.")
-            break
-
-        elif choice == "acts" or choice == "actions" or choice == "choices":
-            print()
-            for i in acts:
-                print(i)
-
-        elif choice == "apps" or choice == "list" or choice == "lst" or choice == "l" or choice == "applications" or choice == "list apps" or choice == "list applications" or choice == "lst apps" or choice == "lst applications" or choice == "l apps" or choice == "l applications":
-            print()
-            for i in apps:
-                print(i)
-
-        elif choice == "del" or choice == "delete" or choice == "remove" or choice == "uninstall" or choice == "uninst":
-            delete()
-
-        elif choice == "install" or choice == "inst" or choice == "download" or choice == "get":
-            install()
-
-        else:
-            print("Invalid choice. Please try again.")
+            choice = input("\nWhat do you want to do (type \'actions\' for a list of things that you can do)? ").lower()
+    
+            if choice == "q" or choice == "quit" or choice == "close" or choice == "exit":
+                print("\nApp Closed.")
+                break
+    
+            elif choice == "acts" or choice == "actions" or choice == "choices":
+                print()
+                for i in acts:
+                    print(i)
+    
+            elif choice == "apps" or choice == "list" or choice == "lst" or choice == "l" or choice == "applications" or choice == "list apps" or choice == "list applications" or choice == "lst apps" or choice == "lst applications" or choice == "l apps" or choice == "l applications":
+                print()
+                for i in apps:
+                    print(i)
+    
+            elif choice == "del" or choice == "delete" or choice == "remove" or choice == "uninstall" or choice == "uninst":
+                delete()
+    
+            elif choice == "install" or choice == "inst" or choice == "download" or choice == "get":
+                install()
+    
+            else:
+                print("Invalid choice. Please try again.")
+                
+        except:
+            print("There was an error, Please try again.")
