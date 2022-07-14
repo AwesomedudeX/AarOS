@@ -8,5 +8,6 @@ t = dt.now().strftime(tf)
 username = ""
 password = ""
 name = ""
+age = None
+maxhr = None
 hcl = True
-    
