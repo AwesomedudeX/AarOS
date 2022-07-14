@@ -1989,15 +1989,17 @@ tf = \"%I:%M:%S %p\"
 user = None
 pw = None
 name = None
-
+age = None
 hcl = None
+maxhr = None
 
 def settings():
 
     import settingsource as src
 
     global dtf, tf
-    global user, pw, name
+    global user, pw
+    global name, age, maxhr
     global hcl
 
     print(\"\\n\" + \"-\" * len(\"AarOS Settings\") + \"\\nAarOS Settings\\n\" + \"-\" * len(\"AarOS Settings\"))
@@ -2015,7 +2017,10 @@ def settings():
 
     user = src.username
     pw = src.password
+
     name = src.name
+    age = src.age
+    maxhr = src.maxhr
 
     hcl = src.hcl
 
@@ -2027,7 +2032,7 @@ def settings():
         while True:
 
             mfts = [\"\\\'short\\\' - Shortened version of the month name\", \"\\\'full\\\' - Full month name\", \"\\\'num\\\' - Month number\"]
-            dt = input(\"\\nWould you like to change settings for date or time (\\\'date\\\' for date, \\\'time\\\' for time or \\\'back\\\' to go back)? \").lower()
+            dt = input(\"Would you like to change settings for date or time (\\\'date\\\' for date, \\\'time\\\' for time or \\\'back\\\' to go back)? \").lower()
 
             if dt == \"return\" or dt == \"r\" or dt == \"back\" or dt == \"b\" or dt == \"exit\" or dt == \"close\" or dt == \"q\" or dt == \"quit\":
                 break
@@ -2241,29 +2246,58 @@ def settings():
         global user
         global pw
         global name
+        global age
+        global maxhr
 
-        while True:
+        userlogin = input(\"\\nEnter your login info to continue (Don't enter anything if you haven't set your login info yet):\\nUsername (Enter \\\'back\\\' to return to the settings menu): \")
+        pwlogin = input(\"Password: \")
 
-            userlogin = input(\"\\nEnter your login info to continue (Don't enter anything if you haven't set your login info yet):\\nUsername (Enter \\\'back\\\' to return to the settings menu): \")
-            pwlogin = input(\"Password: \")
+        if userlogin == src.username and pwlogin == src.password:
 
-            if userlogin == src.username and pwlogin == src.password:
+            print(\"Login successful.\")
 
-                print(\"Login successful.\")
+            while True:
 
-                name = input(\"\\nWhat is your name? \")
-                user = input(\"What is your new username? \")
-                pw = input(\"What is your new password? \")
+                try:
 
-                print(\"\\nInformation modified successfully.\\n\")
+                    section = input(\"\\nWhat information do you want to change (type \\\'pi\\\' for personal information, \\\'login\\\' for login information or \\\'back\\\' to go back)? \")
 
-                break
+                    if section == \"pi\" or section == \"personal info\" or section == \"personal information\":
 
-            elif userlogin == \"q\" or userlogin == \"quit\" or userlogin == \"exit\" or userlogin == \"close\" or userlogin == \"return\" or userlogin == \"back\":
-                break
+                        name = input(\"\\nWhat is your name? \")
+                        age = int(input(\"\\nHow old are you (years)? \"))
 
-            else:
-                print(\"Invalid login info. Please try again.\\n\")
+                        if age >= 30:
+                            maxhr = 207 - (0.7 * age)
+                        else:
+                            maxhr = 220 - age
+
+                        print(\"\\nInformation modified successfully.\\n\")
+
+                    elif section == \"login\" or section == \"account info\" or section == \"sign in info\" or section == \"sign in information\" or section == \"acc info\" or section == \"account information\" or section == \"login info\" or section == \"login information\" or section == \"acc information\":
+                        user = input(\"What is your new username? \")
+                        pw = input(\"What is your new password? \")
+                        print(\"\\nInformation modified successfully.\\n\")
+
+                    elif section == \"q\" or section == \"quit\" or section == \"exit\" or section == \"close\" or section == \"return\" or section == \"back\":
+                        break
+
+                    else:
+                        print(\"Invalid choice. Please try again.\\n\")
+
+                except:
+                    name = src.name
+                    age = src.age
+                    user = src.username
+                    pw = src.password
+                    maxhr = src.maxhr
+                    print(\"There was an error. Please try again.\")
+
+        elif userlogin == \"q\" or userlogin == \"quit\" or userlogin == \"exit\" or userlogin == \"close\" or userlogin == \"return\" or userlogin == \"back\":
+            pass
+
+        else:
+            print(\"Invalid login info. Please try again.\\n\")
 
     def appsettings():
 
@@ -2345,12 +2379,13 @@ t = dt.now().strftime(tf)
 username = \\\"{user}\\\"
 password = \\\"{pw}\\\"
 name = \\\"{name}\\\"
+age = {age}
+maxhr = {maxhr}
 hcl = {hcl}
-    \"\"\"
+\"\"\"
 
-    source = open("settingsource.py", "w")
-    source.write(write)
-"""
+    source = open(\"settingsource.py\", \"w\")
+    source.write(write)"""
     taf = """
 def taf():
 
