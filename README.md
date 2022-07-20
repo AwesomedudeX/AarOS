@@ -1,11 +1,22 @@
 # AarOS
 Houses my console and its compatible apps.
 
-This is a console that I decided to develop for a fun personal project. It should be pretty helpful in terms of data analysis or just everyday use.
+This is a terminal-based console that I decided to develop for a fun personal project. It should be pretty helpful in terms of data analysis or just everyday use. One thing to note though: this console is built specifically for WindowsOS computers. I've tested it with MacOS and some features are not available when this is run there. As for Linux or other OS computers, they have not been tested, so I cannot guarantee full functionality on there.
 
 Also, don't forget to read the app usage notes if this is your first time using the console, and turn on notifications so you know when I'm making updates to apps or releasing new ones, and if you run into any problems, feel free to tell me in the Discussions section. Hope you find this console useful!
 
-### Usage Notes:
+## On First Use:
+
+You will need to install Python 3.10 or later using the link in the About section. After this, you will need to install pip along with the required modules. To do this, open up Powershell (step 1 of Running AarOS on Windows Powershell) and type "py -m ensurepip --upgrade". Next, just type in these commands to install the required modules:
+
+1. pip install seaborn
+2. pip install sklearn
+3. pip install datetime
+4. pip install numpy
+
+Once all of these commands have run, the console will be ready for use.
+
+## Usage Notes:
 
  - You will need to download the source programs and App Manager manually, as they will not be included in the App Manager. All other apps, however, can be downloaded using the App Manager.
  - Make sure that all the files that you download from here are in the same folder so that they'll work properly. Also, don't change the file names, since this will prevent apps from working.
@@ -13,7 +24,7 @@ Also, don't forget to read the app usage notes if this is your first time using 
  - The App Manager, Checklist, Settings, DataFrames and File Manager apps all require the console to be run on Powershell (Windows), or if the app crashes due to lack of resources, then it will require an IDE to save changes, so if you want to use them, then you can use the instructions below to run the console using Powershell.
  - Don't run any of the apps separately, as they will not do anything. However, if you run the Checklist app, it will reset, so do not do this unless you want a quick way to reset it.
 
-### Running AarOS on Windows Powershell:
+## Running AarOS on Windows Powershell:
 
  1. First, open up the start menu, search for "powershell" and run it.
  2. After this, head to the folder with the AarOS file in it, right-click on the folder, and click "Copy as path".
