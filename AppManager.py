@@ -2266,10 +2266,11 @@ def settings():
                     if section == \"pi\" or section == \"personal info\" or section == \"personal information\":
 
                         milst = [
-                            \"Change Name: name\",
-                            \"Change Age: age\",
-                            \"Change Weight: weight\",
-                            \"Change Height: height\"
+                            \"Name\",
+                            \"Age\",
+                            \"Sex\",
+                            \"Weight\",
+                            \"Height\"
                         ]
 
                         while True:
@@ -2286,6 +2287,8 @@ def settings():
 
                             elif section == \"age\" or section == \"a\":
                                 age = int(input(\"\\nHow old are you (years)? \"))
+                                
+                            elif section == \"sex\" or section == \"s\"
 
                             elif section == \"weight\" or section == \"w\" or section == \"mass\" or section == \"m\":
                                 weight = float(input(\"\\nWhat is your weight (in kilograms)? \"))
