@@ -292,7 +292,7 @@ def settings():
 
                         while True:
 
-                            section = input("What do you want to change (type \'list\' to list information that you can change or \'return\' to go back)? ").lower()
+                            section = input("\nWhat do you want to change (type \'list\' to list information that you can change or \'return\' to go back)? ").lower()
 
                             if section == "name" or section == "n":
                                 name = input("\nWhat is your name? ")
