@@ -1990,6 +1990,7 @@ user = None
 pw = None
 name = None
 age = None
+sex = None
 weight = None
 height = None
 hcl = None
@@ -2001,7 +2002,7 @@ def settings():
 
     global dtf, tf
     global user, pw
-    global name, age, maxhr, weight, height
+    global name, age, sex, maxhr, weight, height
     global hcl
 
     print(\"\\n\" + \"-\" * len(\"AarOS Settings\") + \"\\nAarOS Settings\\n\" + \"-\" * len(\"AarOS Settings\"))
@@ -2022,6 +2023,7 @@ def settings():
 
     name = src.name
     age = src.age
+    sex = src.sex
     maxhr = src.maxhr
     weight = src.weight
     height = src.height
@@ -2248,7 +2250,7 @@ def settings():
     def mi():
 
         global user, pw
-        global name, age, maxhr, weight, height
+        global name, age, sex, maxhr, weight, height
 
         userlogin = input(\"\\nEnter your login info to continue (Don't enter anything if you haven't set your login info yet):\\nUsername (Enter \\\'back\\\' to return to the settings menu): \")
         pwlogin = input(\"Password: \")
@@ -2288,8 +2290,9 @@ def settings():
                             elif section == \"age\" or section == \"a\":
                                 age = int(input(\"\\nHow old are you (years)? \"))
                                 
-                            elif section == \"sex\" or section == \"s\"
-
+                            elif section == \"sex\" or section == \"s\":
+                                sex = int(input(\"\\nWhat sex are you (type 0 for female or 1 for male)? \"))
+                            
                             elif section == \"weight\" or section == \"w\" or section == \"mass\" or section == \"m\":
                                 weight = float(input(\"\\nWhat is your weight (in kilograms)? \"))
 
@@ -2415,6 +2418,9 @@ username = \\\"{user}\\\"
 password = \\\"{pw}\\\"
 name = \\\"{name}\\\"
 age = {age}
+sex = {sex}
+weight = {weight}
+height = {height}
 maxhr = {maxhr}
 hcl = {hcl}
 \"\"\"
