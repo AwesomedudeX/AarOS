@@ -2,6 +2,7 @@ def aarOS():
 
     import time
     import settingsource as ss
+    from datetime import datetime as dt
 
     applist = [
         " - AarOS App Manager (am)",
@@ -25,8 +26,8 @@ def aarOS():
     def home():
 
         print("\n" + "-" * 13 + "\nAarOS Console\n" + "-" * 13)
-        print("\nDate: ", ss.d)
-        print("Time: ", ss.t)
+        print("\nDate: ", dt.now().strftime(ss.dtf))
+        print("Time: ", dt.now().strftime(ss.tf))
 
         if ss.hcl == True:
             import checklistsource as cls
