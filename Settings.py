@@ -275,12 +275,25 @@ def settings():
 
                 try:
 
-                    section = input("\nWhat information do you want to change (type \'pi\' for personal information, \'login\' for login information or \'back\' to go back)? ")
+                    section = input("\nWhat information do you want to change (type \'pi\' for personal information, \'login\' for login information or \'back\' to go back)? ").lower()
 
                     if section == "pi" or section == "personal info" or section == "personal information":
 
-                        name = input("\nWhat is your name? ")
-                        age = int(input("\nHow old are you (years)? "))
+                        while True:
+
+                            section = input("What do you want to change (type \'list\' to list information that you can change or \'return\' to go back)? ").lower()
+
+                            if section == "name" or section == "n":
+                                name = input("\nWhat is your name? ")
+
+                            elif section == "age" or section == "a":
+                                age = int(input("\nHow old are you (years)? "))
+
+                            elif section == "q" or section == "quit" or section == "exit" or section == "close" or section == "return" or section == "back":
+                                break
+
+                            else:
+                                print("Invalid choice. Please try again.\n")
 
                         if age >= 30:
                             maxhr = 207 - (0.7 * age)
