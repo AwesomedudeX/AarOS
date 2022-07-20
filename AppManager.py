@@ -1990,6 +1990,8 @@ user = None
 pw = None
 name = None
 age = None
+weight = None
+height = None
 hcl = None
 maxhr = None
 
@@ -1999,7 +2001,7 @@ def settings():
 
     global dtf, tf
     global user, pw
-    global name, age, maxhr
+    global name, age, maxhr, weight, height
     global hcl
 
     print(\"\\n\" + \"-\" * len(\"AarOS Settings\") + \"\\nAarOS Settings\\n\" + \"-\" * len(\"AarOS Settings\"))
@@ -2021,6 +2023,8 @@ def settings():
     name = src.name
     age = src.age
     maxhr = src.maxhr
+    weight = src.weight
+    height = src.height
 
     hcl = src.hcl
 
@@ -2264,19 +2268,37 @@ def settings():
 
                     if section == \"pi\" or section == \"personal info\" or section == \"personal information\":
 
+                        milst = [
+                            \"Change Name: name\",
+                            \"Change Age: age\",
+                            \"Change Weight: weight\",
+                            \"Change Height: height\"
+                        ]
+
                         while True:
-                        
+
                             section = input(\"What do you want to change (type \\\'list\\\' to list information that you can change or \\\'return\\\' to go back)? \").lower()
-                            
+
                             if section == \"name\" or section == \"n\":
                                 name = input(\"\\nWhat is your name? \")
-                                
+
+                            elif section == \"list\" or section == \"lst\" or section == \"l\":
+                                print()
+                                for i in milst:
+                                    print(f\" - {i}\")
+
                             elif section == \"age\" or section == \"a\":
                                 age = int(input(\"\\nHow old are you (years)? \"))
-                                
+
+                            elif section == \"weight\" or section == \"w\" or section == \"mass\" or section == \"m\":
+                                weight = float(input(\"\\nWhat is your weight (in kilograms)? \"))
+
+                            elif section == \"height\" or section == \"h\":
+                                height = float(input(\"\\nHow tall are you (in centimetres)? \"))
+
                             elif section == \"q\" or section == \"quit\" or section == \"exit\" or section == \"close\" or section == \"return\" or section == \"back\":
                                 break
-    
+
                             else:
                                 print(\"Invalid choice. Please try again.\\n\")
 
