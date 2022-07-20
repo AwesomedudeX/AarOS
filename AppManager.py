@@ -2247,11 +2247,8 @@ def settings():
 
     def mi():
 
-        global user
-        global pw
-        global name
-        global age
-        global maxhr
+        global user, pw
+        global name, age, maxhr, weight, height
 
         userlogin = input(\"\\nEnter your login info to continue (Don't enter anything if you haven't set your login info yet):\\nUsername (Enter \\\'back\\\' to return to the settings menu): \")
         pwlogin = input(\"Password: \")
