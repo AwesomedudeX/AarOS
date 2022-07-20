@@ -14,7 +14,7 @@ You will need to install Python 3.10 or later using the link in the About sectio
 3. pip install datetime
 4. pip install numpy
 
-Once all of these commands have run, the console will be ready for use.
+Once all of these commands have run, the console will be ready for use. One last thing; I suggest entering all of your personal information into the Settings app, as certain features may rely on these for full functionality. Don't worry though - none of these features will be stored anywhere other than your device, as the console cannot access the internet or anything of the sort, making it isolated to your device alone.
 
 ## Usage Notes:
 
