@@ -398,12 +398,8 @@ def settings():
             print("Invalid input. Please try again.\n")
 
     write = f"""
-from datetime import datetime as dt
-
 dtf = \"{dtf}\"
 tf = \"{tf}\"
-d = dt.now().strftime(dtf)
-t = dt.now().strftime(tf)
 username = \"{user}\"
 password = \"{pw}\"
 name = \"{name}\"
