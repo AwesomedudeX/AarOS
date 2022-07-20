@@ -4,5 +4,7 @@ username = ""
 password = ""
 name = ""
 age = None
+weight = None
+height = None
 maxhr = None
 hcl = True
