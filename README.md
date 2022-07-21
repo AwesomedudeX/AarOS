@@ -7,7 +7,7 @@ Also, don't forget to read the app usage notes if this is your first time using 
 
 ## On First Use:
 
-You will need to install Python 3.10 or later using the link in the About section. After this, you will need to install pip along with the required modules. To do this, open up Powershell (step 1 of Running AarOS on Windows Powershell) and type "py -m ensurepip --upgrade". Next, just type in these commands to install the required modules:
+You will need to install Python 3.10 or later using the link in the About section. After this, you will need to install pip along with the required modules. To do this, download the get-pip program and save it to a folder. Then, navigate to the file, right-click on it and click "Copy as path". Next, open up Powershell (step 1 of Running AarOS on Windows Powershell), type "cd", followed by the copied path and press Enter. From here, type "./get-pip.py" and wait for the program to install Pip onto your device - it's the Python tool that'll be used to install modules so that you can use them with Python programs. Finally, just type in these commands to install the required modules:
 
 1. pip install seaborn
 2. pip install sklearn
