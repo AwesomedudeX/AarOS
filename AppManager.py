@@ -1962,7 +1962,7 @@ def rps():
 
         else:
 
-            if ui == \"Rock\" or ui == \"r\\" or ui == \"rock\" or ui == \"R\" or ui == 1:
+            if ui == \"Rock\" or ui == \"r\" or ui == \"rock\" or ui == \"R\" or ui == 1:
                 user = 0
                 check()
 
