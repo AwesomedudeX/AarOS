@@ -1,3 +1,4 @@
+
 hist = []
 choices = ["Rock", "Paper", "Scissors"]
 wins = 0
@@ -97,7 +98,3 @@ def rps():
             rnds += 1
             rhist = "Round "+str(rnds)+": "+ui+" VS "+choices[com]+": "+str(wins)+"-"+str(losses)
             hist.append(rhist)
-
-# rps()
-
-
