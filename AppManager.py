@@ -1220,14 +1220,14 @@ explanation helps you understand what's really going on behind the scenes.
                                         day = int(day)
 
                                         if day == x[2]:
-                                            print(\"\\n\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + f\"\\n{src.exercises[int(enum) - 1][0]}\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + \"\n\")
+                                            print(\"\\n\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + f\"\\n{src.exercises[int(enum) - 1][0]}\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + \"\\n\")
                                             print(f\"Date: {exercises[int(enum) - 1][1]}/{exercises[int(enum) - 1][2]}/{exercises[int(enum) - 1][3]}\")
                                             print(f\"Time: {exercises[int(enum) - 1][4]}\")
                                             print(f\"Duration: {exercises[int(enum) - 1][5]} minutes\")
                                             print(f\"Calories Burnt: {exercises[int(enum) - 1][6]}\")
 
                                     else:
-                                        print(\"\\n\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + f\"\\n{src.exercises[int(enum) - 1][0]}\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + \"\n\")
+                                        print(\"\\n\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + f\"\\n{src.exercises[int(enum) - 1][0]}\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + \"\\n\")
                                         print(f\"Date: {exercises[int(enum) - 1][1]}/{exercises[int(enum) - 1][2]}/{exercises[int(enum) - 1][3]}\")
                                         print(f\"Time: {exercises[int(enum) - 1][4]}\")
                                         print(f\"Duration: {exercises[int(enum) - 1][5]} minutes\")
