@@ -7,8 +7,7 @@ def appmanager():
 
     print("\nLoading...\n")
 
-    bdc = """
-def bdc():
+    bdc = """def bdc():
 
     print(\"\\n\" + \"-\" * len(\"Binomial Distribution Calculator\") + \"\\nBinomial Distribution Calculator\\n\" + \"-\" * len(\"Binomial Distribution Calculator\"))
     print(\"(Disclaimer: All results for this calculator will be rounded to the 7th decimal place to prevent glitches)\\n\")
@@ -92,8 +91,7 @@ explanation helps you understand what's really going on behind the scenes.
         else:
             print(\"Invalid input. Please try again.\\n\")
 """
-    calc = """
-def calc():
+    calc = """def calc():
 
     print(\"-\" * (len(\"Calculator\")) + \"\\nCalculator\\n\" + \"-\" * len(\"Calculator\"))
     print(\"Note: All results will be rounded to the 7th decimal place.\\n\")
@@ -166,8 +164,7 @@ def calc():
 
     print(\"\\nApp Closed.\")
 """
-    cac = """
-def cac():
+    cac = """def cac():
 
     print(\"\\nCentral Angle Calculator (Circle Graphs):\")
 
@@ -213,8 +210,7 @@ def cac():
         except:
             print(\"\\nThere was an error. Please try again.\\n\")
 """
-    ct = """
-def charts():
+    ct = """def charts():
 
     print(\"\\n\" + \"-\" * 6 + \"\\nCharts\\n\" + \"-\" * 6 + \"\\n\")
     print(\"(Disclaimer: You may have to wait a few seconds to a minute for the program to create your chart; once you create one, you will need to close it to resume the app)\\n\\nLoading...\")
@@ -607,8 +603,7 @@ def charts():
         except:
             print(\"\\nThere was an error. Please try again.\\n\")
 """
-    cl = """
-def cl():
+    cl = """def cl():
 
     print(\"\\n\\n\"+\"-\"*9+\"\\nChecklist\\n\"+\"-\"*9+\"\\n\")
     print(\"Note: Console must be shut down for Checklist changes to be saved.\")
@@ -702,8 +697,7 @@ def cl():
     else:
         source.write(\"]\")
 """
-    ctd = """
-def ctd():
+    ctd = """def ctd():
 
     print(\"\\n\" + \"-\" * len(\"Chart Texture Dictionary\") + \"\\nChart Texture Dictionary\\n\" + \"-\" * len(\"Chart Texture Dictionary\"))
 
@@ -754,8 +748,7 @@ def ctd():
         else:
             print(\"Invalid input. Please try again.\\n\")
 """
-    dfs = """
-def df():
+    dfs = """def df():
 
     print(\"-\"*len(\"DataFrames\")+\"\\nDataFrames\\n\"+\"-\"*len(\"DataFrames\"))
     print(\"Note: If more than 5 columns are selected, DataFrame will be displayed in mass rows with 5 columns displayed per row.\\n\\nLoading...\\n\\n\")
@@ -1105,8 +1098,150 @@ def df():
             else:
                 print(\"Invalid choice. Please try again.\\n\")
 """
-    fm = """
-def fm():
+    fit = """def fit():
+
+    print(\"-\"*len(\"AarOS Fitness\")+\"\\nAarOS Fitness\\n\"+\"-\"*len(\"AarOS Fitness\"))
+    print(\"\\nNote: You can update your information in the Settings app.\\n\\nLoading...\\n\\n\")
+
+    import settingsource as ss
+    import fitsource as src
+
+    exercises = src.exercises
+
+    acts = {
+        \"info\": \"Lets you view your fitness-related information\",
+        \"new\": \"Lets you log a new exercise\",
+        \"view\": \"Lets you view your exercises\",
+        \"quit\": \"Closes the app\"
+    }
+    info = {
+        \"Age\": ss.age,
+        \"Sex\": ss.sex,
+        \"Maximum Heart Rate\": str(ss.maxhr) + \"BPM\",
+        \"Weight\": None,
+        \"Height\": None,
+        \"BMI\": None,
+        \"Average Calories Burnt Per Day\": None
+    }
+
+    if ss.weight != None:
+        info[\"Weight\"] = str(ss.weight) + \"kg\"
+    else:
+        info[\"Weight\"] = \"N/A\"
+
+    if ss.height != None:
+        info[\"Height\"] = str(ss.height) + \"cm\"
+    else:
+        info[\"Height\"] = \"N/A\"
+
+    if info[\"Height\"] != \"N/A\" and info[\"Weight\"] != \"N/A\":
+        info[\"BMI\"] = round(float(info[\"Weight\"][:-2]) / (float(info[\"Height\"][:-2])/100) ** 2)
+    else:
+        info[\"BMI\"] = \"N/A\"
+
+    if info[\"Sex\"] == 1 and info[\"Height\"] != \"N/A\" and info[\"Weight\"] != \"N/A\" and info[\"Age\"] != None:
+        info[\"Average Calories Burnt Per Day\"] = str(round(66 + (6.2 * ss.weight) + (12.7 * ss.height) - (6.76 * ss.age)))
+        info[\"Sex\"] = \"Male\"
+    elif info[\"Sex\"] == 0 and info[\"Height\"] != \"N/A\" and info[\"Weight\"] != \"N/A\" and info[\"Age\"] != None:
+        info[\"Average Calories Burnt Per Day\"] = str(round(655.1 + (4.35 * ss.weight) + (4.7 * ss.height) - (4.7 * ss.age)))
+        info[\"Sex\"] = \"Male\"
+    else:
+        info[\"Average Calories Burnt Per Day\"] = \"N/A\"
+        info[\"Sex\"] = \"N/A\"
+
+    while True:
+
+        choice = input(\"\\nWhat do you want to do (type \\\'actions\\\' to list things that you can do or type \\\'quit\\\' to quit)? \").lower()
+
+        if choice == \"q\" or choice == \"quit\" or choice == \"close\" or choice == \"exit\" or choice == \"back\" or choice == \"return\" or choice == \"exit\":
+            print(\"\\nApp Closed.\")
+            break
+
+        else:
+
+                if choice == \"acts\" or choice == \"actions\" or choice == \"choices\" or choice == \"lst\":
+                    print()
+                    for x, y in zip(acts.keys(), acts.values()):
+                        print(f\" - {x}: {y}.\")
+
+                elif choice == \"info\" or choice == \"my info\" or choice == \"information\" or choice == \"my information\":
+                    print()
+                    for x, y in zip(info.keys(), info.values()):
+                        print(f\"{x}: {y}\")
+
+                elif choice == \"log\" or choice == \"log exercise\" or choice == \"add exercise\" or choice == \"new exercise\" or choice == \"new\" or choice == \"add\":
+
+                    exercise = input(\"\\nWhat exercise did you do (type \\\'return\\\' to go back)? \")
+
+                    if exercise != \"return\" and exercise != \"back\" and exercise != \"quit\" and exercise != \"q\" and exercise != \"menu\":
+                        duration = int(input(\"How long did you do it (minutes)? \"))
+                        met = float(input(\"What is the MET Score for this exercise? \"))
+                        month = int(input(\"What month (number) did you do this exercise? \"))
+                        day = int(input(\"What day (number) did you do this exercise? \"))
+                        year = int(input(\"What year did you do this exercise? \"))
+                        time = input(\"What was the time that day when you did this exercise? \")
+                        exercises.append([exercise, month, day, year, time, duration, round(0.0175*met*float(info[\"Weight\"][:-2])*duration)])
+
+                elif choice == \"list\" or choice == \"view\" or choice == \"exercises\" or choice == \"view exercises\":
+
+                    year = input(\"What year do you want to search for (type \\\'return\\\' to go back)? \")
+
+                    if year != \"return\" and year != \"back\" and year != \"quit\" and year != \"q\" and year != \"menu\":
+
+                        year = int(year)
+                        month = input(\"What month (number) do you want to search for (type \\\'all\\\' for all months)? \")
+                        day = input(\"What day (number) do you want to search for (type \\\'all\\\' for all days)? \")
+
+                        for x in exercises:
+                            if year == x[3]:
+                                if month != \"all\" and month != \"everything\":
+                                    month = int(month)
+
+                                    if month == x[1]:
+
+                                        if day != \"all\" and day != \"everything\":
+                                            day = int(day)
+
+                                            if day == x[2]:
+                                                print(\"\\n\\n\" + \"-\" * len(x[0]) + f\"\\n{x[0]}\\n\" + \"-\" * len(x[0]) + \"\\n\")
+                                                print(f\"Date: {x[1]}/{x[2]}/{x[3]}\")
+                                                print(f\"Time: {x[4]}\")
+                                                print(f\"Duration: {x[5]} minutes\")
+                                                print(f\"Calories Burnt: {x[6]}\")
+                                        else:
+                                            print(\"\\n\\n\" + \"-\" * len(x[0]) + f\"\\n{x[0]}\\n\" + \"-\" * len(x[0]) + \"\\n\")
+                                            print(f\"Date: {x[1]}/{x[2]}/{x[3]}\")
+                                            print(f\"Time: {x[4]}\")
+                                            print(f\"Duration: {x[5]} minutes\")
+                                            print(f\"Calories Burnt: {x[6]}\")
+
+                                else:
+                                    if day != \"all\" and day != \"everything\":
+                                        day = int(day)
+
+                                        if day == x[2]:
+                                            print(\"\\n\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + f\"\\n{src.exercises[int(enum) - 1][0]}\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + \"\n\")
+                                            print(f\"Date: {exercises[int(enum) - 1][1]}/{exercises[int(enum) - 1][2]}/{exercises[int(enum) - 1][3]}\")
+                                            print(f\"Time: {exercises[int(enum) - 1][4]}\")
+                                            print(f\"Duration: {exercises[int(enum) - 1][5]} minutes\")
+                                            print(f\"Calories Burnt: {exercises[int(enum) - 1][6]}\")
+
+                                    else:
+                                        print(\"\\n\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + f\"\\n{src.exercises[int(enum) - 1][0]}\\n\" + \"-\" * len(src.exercises[int(enum) - 1][0]) + \"\n\")
+                                        print(f\"Date: {exercises[int(enum) - 1][1]}/{exercises[int(enum) - 1][2]}/{exercises[int(enum) - 1][3]}\")
+                                        print(f\"Time: {exercises[int(enum) - 1][4]}\")
+                                        print(f\"Duration: {exercises[int(enum) - 1][5]} minutes\")
+                                        print(f\"Calories Burnt: {exercises[int(enum) - 1][6]}\")
+
+
+                else:
+                    print(\"Invalid choice. Please try again.\\n\")
+
+    write = f\"exercises = {exercises}\"
+
+    source = open(\"fitsource.py\", \"w\")
+    source.write(write)"""
+    fm = """def fm():
 
     print(\"-\"*23+\"\\nFile Creator and Editor\\n\"+\"-\"*23)
     print(\"\\n(Note: Shut down the console to apply changes)\")
@@ -1187,8 +1322,7 @@ def fm():
             else:
                 print(\"Invalid option. Please try again.\")
 """
-    gtn = """
-def gtn():
+    gtn = """def gtn():
 
     import random
 
@@ -1322,8 +1456,7 @@ def gtn():
             print(\"\\nThere was an error.\")
             errors += 1
 """
-    mcc = """
-def mcc():
+    mcc = """def mcc():
     def mte(s):
 
         l = []
@@ -1653,8 +1786,7 @@ def mcc():
         else:
             print(\"Invalid input. Please try again.\")
 """
-    rng = """
-def rng():
+    rng = """def rng():
 
     while True:
 
@@ -1679,8 +1811,7 @@ def rng():
                 numpar2 = power2-1
                 num = random.randint(numpar1, numpar2)
                 print(\"Here is your number:\", num)"""
-    rpg = """
-def rpg():
+    rpg = """def rpg():
 
     while True:
 
@@ -1881,8 +2012,7 @@ def rpg():
 
             print(\"Here is your password:\", pstr)
 """
-    rps = """
-hist = []
+    rps = """hist = []
 choices = [\"Rock\", \"Paper\", \"Scissors\"]
 wins = 0
 losses = 0
@@ -1982,8 +2112,7 @@ def rps():
             rhist = \"Round \"+str(rnds)+\": \"+ui+\" VS \"+choices[com]+\": \"+str(wins)+\"-\"+str(losses)
             hist.append(rhist)
 """
-    settings = """
-dtf = \"%B, %d %Y\"
+    settings = """dtf = \"%B, %d %Y\"
 tf = \"%I:%M:%S %p\"
 
 user = None
@@ -2427,8 +2556,7 @@ hcl = {hcl}
 
     source = open(\"settingsource.py\", \"w\")
     source.write(write)"""
-    taf = """
-def taf():
+    taf = """def taf():
 
     while True:
 
@@ -2481,6 +2609,7 @@ def taf():
         " - Checklist (cl)",
         " - Charts Texture Dictionary (ctd)",
         " - DataFrames (df)",
+        " - AarOS Fit (fit)"
         " - File Manager (fm)",
         " - Guess The Number (gtn)",
         " - Morse Code Converter (mcc)",
@@ -2497,7 +2626,7 @@ def taf():
 
         while True:
 
-            app = input("What app do you want to install (type \'back\' to go back)? ").lower()
+            app = input("What app do you want to install (type \'back\' to go back or \'all\' to install all apps)? ").lower()
 
             if app == "home" or app == "back" or app == "return" or app == "q" or app == "quit" or app == "close" or app == "exit":
                 break
@@ -2505,79 +2634,84 @@ def taf():
             else:
 
                 if app == "binomial distribution calculator" or app == "bdc" or app == "binomial_distribution_calculator":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Binomial_Distribution_Calculator.py", "w")
                     app.write(bdc)
+                    print(f"The Binomial Distribution Calculator app was installed successfully.")
 
                 elif app == "calculator" or app == "calc":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Calculator.py", "w")
                     app.write(calc)
+                    print(f"The Calculator app was installed successfully.")
 
                 elif app == "central angle calculator" or app == "cac" or app == "central_angle_calculator":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Central_Angle_Calculator.py", "w")
                     app.write(cac)
+                    print(f"The Central Angle Calculator app was installed successfully.")
 
                 elif app == "charts" or app == "charts" or app == "ct":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Charts.py", "w")
                     app.write(ct)
+                    print(f"The Charts app was installed successfully.")
 
                 elif app == "checklist" or app == "cl":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Checklist.py", "w")
                     app.write(cl)
+                    print(f"The Checklist app was installed successfully.")
 
                 elif app == "ctd" or app == "chart texture dictionary" or app == "charttexturedictionary":
-                    print(f"The {app} app was installed successfully.")
                     app = open("ChartTextureDictionary.py", "w")
                     app.write(ctd)
+                    print(f"The Chart Texture Dictionary app was installed successfully.")
 
                 elif app == "df" or app == "dataframes" or app == "dataframe" or app == "dfs":
-                    print(f"The {app} app was installed successfully.")
                     app = open("DataFrames.py", "w")
                     app.write(dfs)
+                    print(f"The DataFrames app was installed successfully.")
+
+                elif app == "fit" or app == "aaros fit" or app == "aaros fitness" or app == "fitness":
+                    app = open("AarOSFit.py", "w")
+                    app.write(fit)
+                    print(f"The AarOS Fit app was installed successfully.")
 
                 elif app == "file_manager" or app == "fm" or app == "file manager":
-                    print(f"The {app} app was installed successfully.")
                     app = open("File_Manager.py", "w")
                     app.write(fm)
+                    print(f"The File Manager app was installed successfully.")
 
                 elif app == "gtn" or app == "guess the number" or app == "guess_the_number":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Guess_The_Number.py", "w")
                     app.write(gtn)
+                    print(f"The Guess The Number app was installed successfully.")
 
                 elif app == "morse code converter" or app == "morsecodeconverter" or app == "morse_code_converter" or app == "mcc":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Morse_Code_Converter.py", "w")
                     app.write(mcc)
+                    print(f"The Morse Code Converter app was installed successfully.")
 
                 elif app == "rng" or app == "randomnumbergenerator" or app == "random number generator":
-                    print(f"The {app} app was installed successfully.")
                     app = open("RandomNumberGenerator.py", "w")
                     app.write(rng)
+                    print(f"The Random Number Generator app was installed successfully.")
 
                 elif app == "random password generator" or app == "rpg" or app == "randompasswordgenerator":
-                    print(f"The {app} app was installed successfully.")
                     app = open("RandomPasswordGenerator.py", "w")
                     app.write(rpg)
+                    print(f"The Random Password Generator app was installed successfully.")
 
                 elif app == "rock paper scissors" or app == "rock_paper_scissors" or app == "rps":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Rock_Paper_Scissors.py", "w")
                     app.write(rps)
+                    print(f"The Rock Paper Scissors app was installed successfully.")
 
                 elif app == "settings":
-                    print(f"The {app} app was installed successfully.")
                     app = open("Settings.py", "w")
                     app.write(settings)
+                    print(f"The Settings app was installed successfully.")
 
                 elif app == "triangleareafinder" or app == "triangle area finder" or app == "taf":
-                    print(f"The {app} app was installed successfully.")
                     app = open("TriangleAreaFinder.py", "w")
                     app.write(taf)
+                    print(f"The Triangle Area Finder app was installed successfully.")
 
                 elif app == "everything" or app == "all" or app == "install everything" or app == "install all apps" or app == "inst all" or app == "inst everything" or app == "inst all apps":
                     print("\nInstalling all apps...\n")
@@ -2595,6 +2729,8 @@ def taf():
                     app.write(cl)
                     app = open("DataFrames.py", "w")
                     app.write(dfs)
+                    app = open("AarOSFit.py", "w")
+                    app.write(fit)
                     app = open("File_Manager.py", "w")
                     app.write(fm)
                     app = open("Guess_The_Number.py", "w")
@@ -2620,7 +2756,7 @@ def taf():
 
         while True:
 
-            app = input("What app do you want to delete (type \'back\' to go back)? ").lower()
+            app = input("What app do you want to delete (type \'back\' to go back or \'all\' to delete all apps)? ").lower()
 
             if app == "home" or app == "back" or app == "return" or app == "q" or app == "quit" or app == "close" or app == "exit":
                 break
@@ -2629,63 +2765,63 @@ def taf():
 
                 if app == "binomial distribution calculator" or app == "bdc" or app == "binomial_distribution_calculator":
                     os.remove("Binomial_Distribution_Calculator.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Binomial Distribution Calculator app was removed successfully.")
 
                 elif app == "calculator" or app == "calc":
                     os.remove("Calculator.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Calculator app was removed successfully.")
 
                 elif app == "central angle calculator" or app == "cac" or app == "central_angle_calculator":
                     os.remove("Central_Angle_Calculator.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Central Angle Calculator app was removed successfully.")
 
                 elif app == "charts" or app == "charts" or app == "ct":
                     os.remove("Charts.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Charts app was removed successfully.")
 
                 elif app == "checklist" or app == "cl":
                     os.remove("Checklist.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Checklist app was removed successfully.")
 
                 elif app == "ctd" or app == "chart texture dictionary" or app == "charttexturedictionary":
                     os.remove("ChartTextureDictionary.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Chart Texture Dictionary app was removed successfully.")
 
                 elif app == "df" or app == "dataframes" or app == "dataframe" or app == "dfs":
                     os.remove("DataFrames.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The DataFrames app was removed successfully.")
 
-                elif app == "file_creator_and_editor" or app == "fce" or app == "file creator and editor":
-                    os.remove("File_Creator_and_Editor.py")
-                    print(f"The {app} app was removed successfully.")
+                elif app == "file_manager" or app == "fm" or app == "file manager":
+                    os.remove("File_Manager.py")
+                    print(f"The File Manager app was removed successfully.")
 
                 elif app == "gtn" or app == "guess the number" or app == "guess_the_number":
                     os.remove("Guess_The_Number.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Guess The Number app was removed successfully.")
 
                 elif app == "morse code converter" or app == "morsecodeconverter" or app == "morse_code_converter" or app == "mcc":
                     os.remove("Morse_Code_Converter.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Morse Code Converter app was removed successfully.")
 
                 elif app == "rng" or app == "randomnumbergenerator" or app == "random number generator":
                     os.remove("RandomNumberGenerator.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Random Number Generator app was removed successfully.")
 
                 elif app == "random password generator" or app == "rpg" or app == "randompasswordgenerator":
                     os.remove("RandomPasswordGenerator.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Random Password Generator app was removed successfully.")
 
                 elif app == "rock paper scissors" or app == "rock_paper_scissors" or app == "rps":
                     os.remove("Rock_Paper_Scissors.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Rock Paper Scissors app was removed successfully.")
 
                 elif app == "settings":
                     os.remove("Settings.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Settings app was removed successfully.")
 
                 elif app == "triangleareafinder" or app == "triangle area finder" or app == "taf":
                     os.remove("TriangleAreaFinder.py")
-                    print(f"The {app} app was removed successfully.")
+                    print(f"The Triangle Area Finder app was removed successfully.")
 
                 elif app == "everything" or app == "all":
                     print("\nDeleting all apps...\n")
@@ -2696,6 +2832,7 @@ def taf():
                     os.remove("ChartTextureDictionary.py")
                     os.remove("Checklist.py")
                     os.remove("DataFrames.py")
+                    os.remove("AarOSFit.py")
                     os.remove("File_Manager.py")
                     os.remove("Guess_The_Number.py")
                     os.remove("Morse_Code_Converter.py")
