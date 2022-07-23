@@ -113,7 +113,9 @@ def aarOS():
                     import DataFrames as dfs
                     dfs.df()
 
-
+                if app == "fit" or app == "fitness" or app == "aaros fit" or app == "aaros fitness":
+                    import AarOSFit as fit
+                    fit.fit()
 
                 if app == "file_manager" or app == "fm" or app == "file manager":
                     import File_Manager as fm
