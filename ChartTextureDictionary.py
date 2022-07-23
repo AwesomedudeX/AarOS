@@ -32,16 +32,24 @@ def ctd():
 
     while True:
 
-        ctype = input("\nWhich texture type do you want to see (line graph textures - \'line\', style sheets - \'style\' or do you want to quit - \'quit\')? ").lower()
+        try:
 
-        if ctype == "quit" or ctype == "q" or ctype == "exit" or ctype == "close":
-            print("\nApp Closed.")
-            break
+            ctype = input("\nWhich texture type do you want to see (line graph textures - \'line\', style sheets - \'style\' or do you want to quit - \'quit\')? ").lower()
 
-        elif ctype == "line" or ctype == "plot":
-             for i in line:
-                 print(" -", i)
+            if ctype == "quit" or ctype == "q" or ctype == "exit" or ctype == "close":
+                print("\nApp Closed.")
+                break
 
-        elif ctype == "style" or ctype == "sheets" or ctype == "ss":
-            for i in style:
-                print(" -", i[0]+":", i[1])
+            elif ctype == "line" or ctype == "plot":
+                 for i in line:
+                     print(" -", i)
+
+            elif ctype == "style" or ctype == "sheets" or ctype == "ss":
+                for i in style:
+                    print(" -", i[0]+":", i[1])
+
+            else:
+                print("Invalid input. Please try again.\n")
+
+        except:
+            print("There was an error. Please try again.")
