@@ -50,15 +50,17 @@ def fit():
         info["Sex"] = "N/A"
 
     while True:
+    
+        try:
 
-        choice = input("\nWhat do you want to do (type \'actions\' to list things that you can do or type \'quit\' to quit)? ").lower()
-
-        if choice == "q" or choice == "quit" or choice == "close" or choice == "exit" or choice == "back" or choice == "return" or choice == "exit":
-            print("\nApp Closed.")
-            break
-
-        else:
-
+            choice = input("\nWhat do you want to do (type \'actions\' to list things that you can do or type \'quit\' to quit)? ").lower()
+    
+            if choice == "q" or choice == "quit" or choice == "close" or choice == "exit" or choice == "back" or choice == "return" or choice == "exit":
+                print("\nApp Closed.")
+                break
+    
+            else:
+    
                 if choice == "acts" or choice == "actions" or choice == "choices" or choice == "lst":
                     print()
                     for x, y in zip(acts.keys(), acts.values()):
@@ -132,12 +134,18 @@ def fit():
                                         print(f"Time: {exercises[int(enum) - 1][4]}")
                                         print(f"Duration: {exercises[int(enum) - 1][5]} minutes")
                                         print(f"Calories Burnt: {exercises[int(enum) - 1][6]}")
-
-
                 else:
                     print("Invalid choice. Please try again.\n")
 
-    write = f"exercises = {exercises}"
+        except:
+            print("There was an error. Please try again.")    
 
-    source = open("fitsource.py", "w")
-    source.write(write)
+    try:
+    
+        write = f"exercises = {exercises}"
+    
+        source = open("fitsource.py", "w")
+        source.write(write)
+    
+    except:
+        print("There was an error saving your exercises. Please try again.")
