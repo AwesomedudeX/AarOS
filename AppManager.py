@@ -1,9 +1,9 @@
 def appmanager():
-
     import os
 
-    print("-"*len("AarOS App Manager")+"\nAarOS App Manager\n"+"-"*len("AarOS App Manager"))
-    print("Note: Console must be restarted for App Store changes to be saved - the console will shutdown after this app is closed.")
+    print("-" * len("AarOS App Manager") + "\nAarOS App Manager\n" + "-" * len("AarOS App Manager"))
+    print(
+        "Note: Console must be restarted for App Store changes to be saved - the console will shutdown after this app is closed.")
 
     print("\nLoading...\n")
 
@@ -34,13 +34,13 @@ def appmanager():
             sub = int(input(\"Enter the total number of possibilities that there are for each event: \"))
             sp = int(input(\"Enter the total number of possibilities for each event that are successful: \"))
             r = int(input(\"Enter the total number of events that you want to be successful: \"))
-    
+
             s = sp / sub
             f = 1 - s
-    
+
             ways = factorial(n) / (factorial(r) * factorial(n - r))
             prob = s ** r * f ** (n - r) * ways
-    
+
             if r == 1:
                 print(f\"The probability of the event being successful in this case is {round(prob, 9) * 100}%.\")
             else:
@@ -105,9 +105,9 @@ explanation helps you understand what's really going on behind the scenes.
 
         if num2.lower() == \"pi\":
             num2 = math.pi
-            
+
         else:
-            
+
             num1 = float(num1)
             num2 = float(num2)
 
@@ -148,17 +148,17 @@ explanation helps you understand what's really going on behind the scenes.
             break
 
         else:
-            
+
             try:
                 op = input(\"Enter the operator here: \")
 
                 if op in validops:
                     n2 = input(\"Enter the second number here (type \\\'pi\\\' if using pi): \")
                     calculate(n1, op, n2)
-    
+
                 else:
                     print(\"Invalid operator. please try again.\")
-                    
+
             except:
                 print(\"\\nThere was an error. Please try again.\\n\")
 
@@ -169,44 +169,44 @@ explanation helps you understand what's really going on behind the scenes.
     print(\"\\nCentral Angle Calculator (Circle Graphs):\")
 
     while True:
-        
+
         try:
-        
+
             method = input(\"\\nEnter the calculation method you would like to use in here (\\\'percentage\\\', \\\'quantity\\\' or \\\'quit\\\' to quit): \")
-    
+
             if method == \"quit\" or method == \"exit\" or method == \"q\" or method == \"close\":
                 print(\"\\nApp Closed.\")
                 break
-    
+
             elif method == \"percentage\" or method == \"p\" or method == \"pct\" or method == \"P\" or method == \"Percentage\" or method == \"PCT\" or method == \"percent\" or method == \"Percent\":
-    
+
                 p = float(input(\"Enter the percentage in here: \"))
                 angle = p*3.6
-    
+
                 print(\"The central angle for this section is\", angle, end=\" degrees.\\n\\n\")
-    
+
             elif method == \"quantity\" or method == \"qu\" or method == \"QU\" or method == \"Quantity\" or method == \"qty\" or method == \"QTY\":
-    
+
                 quantity = float(input(\"Enter the quantity of the section in here: \"))
                 total = float(input(\"Enter the total quantity of all sections in here: \"))
                 p = quantity/total*100
                 angle = p*3.6
-    
+
                 if quantity > total:
                     quantity = input(\"Quantity is greater than total. Please enter a value less than or equal to the total: \")
                     total = float(input(\"Enter the total quantity of all sections in here: \"))
                     p = quantity/total*100
                     angle = p*3.6
-    
+
                 else:
                     print(\"The central angle for this section is\", angle, end=\" degrees.\\n\")
                     print(\"This section accounts for\", p, end=\"%\")
                     print(\" of the circle graph.\")
-    
-    
+
+
             else:
                 print(\"Invalid input. Please try again.\")
-                
+
         except:
             print(\"\\nThere was an error. Please try again.\\n\")
 """
@@ -502,104 +502,104 @@ explanation helps you understand what's really going on behind the scenes.
     ]
 
     while True:
-        
+
         try:
-        
+
             ctype = input(\"\\nWhat type of chart would you like to use (type \\\'ctypes\\\' to view chart types or \\\'quit\\\' to quit)? \").lower()
-    
+
             if ctype == \"quit\" or ctype == \"q\" or ctype == \"exit\" or ctype == \"close\":
                 print(\"\\nApp Closed.\")
                 break
-    
+
             elif ctype == \"ctypes\" or ctype == \"cts\" or ctype == \"chart types\":
-    
+
                 print()
-    
+
                 for i in cts:
                     print(\" -\", i)
-    
+
                 print()
-    
+
             else:
-    
+
                 title = input(\"What title would you like to use for your chart? \")
                 bg = input(\"What chart style do you want to use (view Chart Texture Dictionary for chart styles)? \")
-    
+
                 if bg not in stylenames:
                     print(\"Invalid chart style. Please try again.\")
-    
+
                 else:
-    
+
                     plt.style.use(bg)
-    
+
                     if ctype == \"bp\" or ctype == \"boxplot\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         bp()
                         plt.show()
-    
+
                     elif ctype == \"hg\" or ctype == \"histogram\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         hg()
                         plt.show()
-    
+
                     elif ctype == \"bar\" or ctype == \"bar graph\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         bar()
                         plt.show()
-    
+
                     elif ctype == \"line\" or ctype == \"line graph\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         line()
                         plt.show()
-    
+
                     elif ctype == \"scatter\" or ctype == \"scatter plot\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         scatter()
                         plt.show()
-    
+
                     elif ctype == \"regplot\" or ctype == \"regression plot\" or ctype == \"rplt\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         regplot()
                         plt.show()
-    
+
                     elif ctype == \"jp\" or ctype == \"jointplot\" or ctype == \"joint plot\" or ctype == \"jplt\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         jp()
                         plt.show()
-    
+
                     elif ctype == \"fss\" or ctype == \"pplt\" or ctype == \"full-scale scatter graph\" or ctype == \"pairplot\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         pplt()
                         plt.show()
-    
+
                     elif ctype == \"pie\" or ctype == \"pie chart\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         pie()
                         plt.show()
-    
+
                     elif ctype == \"hm\" or ctype == \"htmp\" or ctype == \"heatmap\" or ctype == \"heat map\":
                         plt.figure(figsize=(20, 7))
                         plt.title(title)
                         hm()
                         plt.show()
-    
+
                     elif ctype == \"jp\" or ctype == \"joint plot\" or ctype == \"jointplot\":
                         plt.title(title)
                         jp()
                         plt.show()
-    
+
                     else:
                         print(\"Invalid chart type. Please try again.\")
-        
+
         except:
             print(\"\\nThere was an error. Please try again.\\n\")
 """
@@ -634,68 +634,76 @@ explanation helps you understand what's really going on behind the scenes.
     ]
 
     while True:
-
-        action = input(\"\\nWhat do you want to do (type \\\'actions\\\' for a list of things you can do)? \")
-
-        if action == \"q\" or action == \"quit\" or action == \"close\" or action == \"exit\":
-            print(\"\\nApp Closed.\")
-            break
-
-        elif action == \"actions\" or action == \"options\" or action == \"acts\" or action == \"opts\":
-            print()
-            for i in actions:
-                print(\" - \", i)
-
-        elif action == \"list\" or action == \"view\":
-            print()
-            for i in range(len(checklist)):
-                print(str(i+1)+\". \", checklist[i])
-
-        elif action == \"add\" or action == \"new\" or action == \"create\":
-            add = input(\"What are you adding to your checklist? \")
-            checklist.append(add)
-            print(\"Item added successfully.\")
-
-        elif action == \"change\" or action == \"edit\" or action == \"modify\":
-            edit()
-
-        elif action == \"del\" or action == \"delete\" or action == \"remove\":
-            delete = int(input(\"\\nEnter the number for the item that you want to delete: \"))
-            if delete <= len(checklist):
-                checklist.pop(delete-1)
-                print(\"Item\",  delete, \"deleted successfully.\")
-            else:
-                print(\"There is no item\", \"\\\'"+delete+\"\\\'\", \"in your checklist.\")
-
-
-        elif action == \"reset\" or action == \"clear\":
-
-            reset = input(\"Are you sure (y/n)? \")
-
-            if reset == \"y\" or reset == \"Y\" or reset == \"Yes\" or reset == \"yes\":
-                checklist = []
-                print(\"Checklist was cleared successfully.\")
-            elif reset == \"No\" or reset == \"no\" or reset == \"n\" or reset == \"N\":
+    
+        try:
+    
+            action = input(\"\\nWhat do you want to do (type \\\'actions\\\' for a list of things you can do)? \")
+    
+            if action == \"q\" or action == \"quit\" or action == \"close\" or action == \"exit\":
+                print(\"\\nApp Closed.\")
+                break
+    
+            elif action == \"actions\" or action == \"options\" or action == \"acts\" or action == \"opts\":
                 print()
+                for i in actions:
+                    print(\" - \", i)
+    
+            elif action == \"list\" or action == \"view\":
+                print()
+                for i in range(len(checklist)):
+                    print(str(i+1)+\". \", checklist[i])
+    
+            elif action == \"add\" or action == \"new\" or action == \"create\":
+                add = input(\"What are you adding to your checklist? \")
+                checklist.append(add)
+                print(\"Item added successfully.\")
+    
+            elif action == \"change\" or action == \"edit\" or action == \"modify\":
+                edit()
+    
+            elif action == \"del\" or action == \"delete\" or action == \"remove\":
+                delete = int(input(\"\\nEnter the number for the item that you want to delete: \"))
+                if delete <= len(checklist):
+                    checklist.pop(delete-1)
+                    print(\"Item\", delete, \"deleted successfully.\")
+                else:
+                    print(\"There is no item\", delete, \"in your checklist.\")
+    
+    
+            elif action == \"reset\" or action == \"clear\":
+    
+                reset = input(\"Are you sure (y/n)? \")
+    
+                if reset == \"y\" or reset == \"Y\" or reset == \"Yes\" or reset == \"yes\":
+                    checklist = []
+                    print(\"Checklist was cleared successfully.\")
+                elif reset == \"No\" or reset == \"no\" or reset == \"n\" or reset == \"N\":
+                    print()
+                else:
+                    print(\"Invalid input.\")
+    
             else:
-                print(\"Invalid input.\")
-
+                print(\"Invalid input. Please try again.\\n\")
+        
+        except:
+            print(\"There was an error. Please try again.\")
+    
+    try:
+        source = open(\"checklistsource.py\", \"w\")
+        source.write(\"cl = [\")
+    
+        source = open(\"checklistsource.py\", \"a\")
+    
+        for i in range(len(checklist)-1):
+            source.write(\"\\\"\"+checklist[i]+\"\\\"\"+\", \")
+    
+        if len(checklist) > 0:
+            source.write(\"\\\"\" + checklist[len(checklist) - 1] + \"\\\"\" + \"]\")
         else:
-            print(\"Invalid input. Please try again.\\n\")
+            source.write(\"]\")
 
-
-    source = open(\"checklistsource.py\", \"w\")
-    source.write(\"cl = [\")
-
-    source = open(\"checklistsource.py\", \"a\")
-
-    for i in range(len(checklist)-1):
-        source.write(\"\\\"\"+checklist[i]+\"\\\"\"+\", \")
-
-    if len(checklist) > 0:
-        source.write(\"\\\"\" + checklist[len(checklist) - 1] + \"\\\"\" + \"]\")
-    else:
-        source.write(\"]\")
+    except:
+        print(\"There was an error saving the checklist.\")
 """
     ctd = """def ctd():
 
@@ -731,22 +739,27 @@ explanation helps you understand what's really going on behind the scenes.
 
     while True:
 
-        ctype = input(\"\\nWhich texture type do you want to see (line graph textures - \\\'line\\\', style sheets - \\\'style\\\' or do you want to quit - \\\'quit\\\')? \").lower()
-
-        if ctype == \"quit\" or ctype == \"q\" or ctype == \"exit\" or ctype == \"close\":
-            print(\"\\nApp Closed.\")
-            break
-
-        elif ctype == \"line\" or ctype == \"plot\":
-             for i in line:
-                 print(\" -\", i)
-
-        elif ctype == \"style\" or ctype == \"sheets\" or ctype == \"ss\":
-            for i in style:
-                print(\" -\", i[0]+\":\", i[1])
-
-        else:
-            print(\"Invalid input. Please try again.\\n\")
+        try:
+        
+            ctype = input(\"\\nWhich texture type do you want to see (line graph textures - \\\'line\\\', style sheets - \\\'style\\\' or do you want to quit - \\\'quit\\\')? \").lower()
+        
+            if ctype == \"quit\" or ctype == \"q\" or ctype == \"exit\" or ctype == \"close\":
+                print(\"\\nApp Closed.\")
+                break
+        
+            elif ctype == \"line\" or ctype == \"plot\":
+                 for i in line:
+                     print(\" -\", i)
+        
+            elif ctype == \"style\" or ctype == \"sheets\" or ctype == \"ss\":
+                for i in style:
+                    print(\" -\", i[0]+\":\", i[1])
+        
+            else:
+                print(\"Invalid input. Please try again.\\n\")
+                
+        except:
+            print(\"There was an error. Please try again.\")
 """
     dfs = """def df():
 
@@ -762,341 +775,351 @@ explanation helps you understand what's really going on behind the scenes.
     pd.set_option(\"display.max_rows\", None, \"display.max_columns\", None)
 
     while True:
-
-        sdf = input(\"Do you want to keep using the same DataFrame for this session? \").lower()
-
-        if sdf == \"yes\" or sdf == \"y\" or sdf == \"yea\" or sdf == \"ye\" or sdf == \"ya\" or sdf == \"yeah\" or sdf == \"yeh\" or sdf == \"yah\":
-
-            while True:
-
-                useexisting = input(\"Do you want to use a .csv file on this device for this session? \").lower()
-
-                if useexisting == \"yes\" or useexisting == \"y\" or useexisting == \"yea\" or useexisting == \"ye\" or useexisting == \"ya\" or useexisting == \"yeah\" or useexisting == \"yeh\" or useexisting == \"yah\":
-                    url = input(\"\\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \\\'quit\\\' to quit): \")+\".csv\"
-                    break
-
-                elif useexisting == \"no\" or useexisting == \"n\" or useexisting == \"nay\" or useexisting == \"nah\" or useexisting == \"na\":
-                    url = input(\"\\nEnter the download link for the dataframe that you want to use (or type \\\'quit\\\' to quit): \")
-                    break
-
-                else:
-                    print(\"Invalid choice.\\n\")
-
-            if url == \"q\" or url == \"quit\" or url == \"close\" or url == \"exit\" or url == \"return\":
-                print(\"\\nApp Closed.\")
-                break
-
-            else:
-                print(\"\\nLoading DataFrame...\\n\")
-                df = pd.read_csv(url)
-                break
-
-        elif sdf == \"no\" or sdf == \"n\" or sdf == \"nay\" or sdf == \"nah\" or sdf == \"na\":
-            break
-
-        else:
-            print(\"Invalid response.\\n\")
-
-    while True:
-
-        if url == \"q\" or url == \"quit\" or url == \"close\" or url == \"exit\" or url == \"return\":
-            break
-
-        if sdf == \"no\" or sdf == \"n\" or sdf == \"nay\" or sdf == \"nah\" or sdf == \"na\":
-
-            while True:
-
-                useexisting = input(\"Do you want to use a .csv file on this device for this session? \").lower()
-
-                if useexisting == \"yes\" or useexisting == \"y\" or useexisting == \"yea\" or useexisting == \"ye\" or useexisting == \"ya\" or useexisting == \"yeah\" or useexisting == \"yeh\" or useexisting == \"yah\":
-                    url = input(\"\\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \\\'quit\\\' to quit): \")+\".csv\"
-                    break
-
-                elif useexisting == \"no\" or useexisting == \"n\" or useexisting == \"nay\" or useexisting == \"nah\" or useexisting == \"na\":
-                    url = input(\"\\nEnter the download link for the dataframe that you want to use (or type \\\'quit\\\' to quit): \")
-                    break
-
-                else:
-                    print(\"Invalid choice.\\n\")
-
-            if url == \"q\" or url == \"quit\" or url == \"close\" or url == \"exit\" or url == \"return\":
-                print(\"\\nApp Closed.\")
-                break
-
-            else:
-                print(\"\\nLoading DataFrame...\\n\")
-                df = pd.read_csv(url)
-
-
-        action = input(\"\\nWhat do you want to do (type \\\'formats\\\' to view formats that you can use or \\\'quit\\\' to quit)? \").lower()
-
-        fts = [
-            \"regular (reg): A regular table view of the DataFrame.\",
-            \"information (info): Shows an overview of the contents in the DataFrame.\",
-            \"describe (desc): Shows numerical statistics like mean, standard deviation, etc.\",
-            \"value counts (vc): Shows the number of times each value appears in a column.\",
-            \"prediction model (pred): Creates a prediction model that can predict values based on the data that is given.\",
-            \"find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences.\",
-            \"find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value.\",
-            \"save as (s): Lets you save the DataFrame as a .csv file.\",
-            \"edit/modify: Lets you edit values in the DataFrame.\"
-        ]
-
-        if action == \"q\" or action == \"quit\" or action == \"close\" or action == \"exit\" or action == \"return\":
-            print(\"\\nApp Closed.\")
-            break
-
-        elif action == \"formats\" or action == \"fts\" or action == \"f\":
-            print()
-            for i in fts:
-                print(\" -\", i)
-
-        else:
-
-            if action == \"regular\" or action == \"reg\" or action == \"plain\" or action == \"df\" or action == \"dataframe\" or action == \"table\":
-
-                column = input(\"Enter the column you want to search for in here (type \\\'all\\\' to view all columns or \\\'multi\\\' to view multiple columns): \").lower()
-
-                if column == \"all\":
-                    s = int(input(\"Enter the starting row number for your selection: \"))
-                    e = int(input(\"Enter the ending row number for your selection: \")) + 1
-                    print(f\"\\n{df[s:e]}\")
-
-                elif column == \"multi\" or column == \"multiple\":
-
-                    cnum = int(input(\"How many columns do you want to select? \"))
-                    cols = []
-
-                    for i in range(cnum):
-                        col = input(f\"Column {i + 1}: \")
-                        if col in df.columns:
-                            cols.append(col)
-                        else:
-                            print(f\"The \\\'{col}\\\' column is not in this DataFrame.\\n\")
-                            break
-
-                    if len(cols) == cnum:
-                        s = int(input(\"Enter the starting row number for your selection: \"))
-                        e = int(input(\"Enter the ending row number for your selection: \")) - 1
-
-                        print(f\"\\n{df.loc[s:e, cols]}\")
-
+    
+        try:
+    
+            sdf = input(\"Do you want to keep using the same DataFrame for this session? \").lower()
+    
+            if sdf == \"yes\" or sdf == \"y\" or sdf == \"yea\" or sdf == \"ye\" or sdf == \"ya\" or sdf == \"yeah\" or sdf == \"yeh\" or sdf == \"yah\":
+    
+                while True:
+    
+                    useexisting = input(\"Do you want to use a .csv file on this device for this session? \").lower()
+    
+                    if useexisting == \"yes\" or useexisting == \"y\" or useexisting == \"yea\" or useexisting == \"ye\" or useexisting == \"ya\" or useexisting == \"yeah\" or useexisting == \"yeh\" or useexisting == \"yah\":
+                        url = input(\"\\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \\\'quit\\\' to quit): \")+\".csv\"
+                        break
+    
+                    elif useexisting == \"no\" or useexisting == \"n\" or useexisting == \"nay\" or useexisting == \"nah\" or useexisting == \"na\":
+                        url = input(\"\\nEnter the download link for the dataframe that you want to use (or type \\\'quit\\\' to quit): \")
+                        break
+    
                     else:
-                        pass
-
+                        print(\"Invalid choice.\\n\")
+    
+                if url == \"q\" or url == \"quit\" or url == \"close\" or url == \"exit\" or url == \"return\":
+                    print(\"\\nApp Closed.\")
+                    break
+    
                 else:
-
-                    if column in df.columns:
+                    print(\"\\nLoading DataFrame...\\n\")
+                    df = pd.read_csv(url)
+                    break
+    
+            elif sdf == \"no\" or sdf == \"n\" or sdf == \"nay\" or sdf == \"nah\" or sdf == \"na\":
+                break
+    
+            else:
+                print(\"Invalid response.\\n\")
+        
+        except:
+            print(\"There was an error. Please try again.\")
+        
+    while True:
+    
+        try:
+    
+            if url == \"q\" or url == \"quit\" or url == \"close\" or url == \"exit\" or url == \"return\":
+                break
+    
+            if sdf == \"no\" or sdf == \"n\" or sdf == \"nay\" or sdf == \"nah\" or sdf == \"na\":
+    
+                while True:
+    
+                    useexisting = input(\"Do you want to use a .csv file on this device for this session? \").lower()
+    
+                    if useexisting == \"yes\" or useexisting == \"y\" or useexisting == \"yea\" or useexisting == \"ye\" or useexisting == \"ya\" or useexisting == \"yeah\" or useexisting == \"yeh\" or useexisting == \"yah\":
+                        url = input(\"\\nEnter the name (without the extension) or path of the dataframe that you want to use (or type \\\'quit\\\' to quit): \")+\".csv\"
+                        break
+    
+                    elif useexisting == \"no\" or useexisting == \"n\" or useexisting == \"nay\" or useexisting == \"nah\" or useexisting == \"na\":
+                        url = input(\"\\nEnter the download link for the dataframe that you want to use (or type \\\'quit\\\' to quit): \")
+                        break
+    
+                    else:
+                        print(\"Invalid choice.\\n\")
+    
+                if url == \"q\" or url == \"quit\" or url == \"close\" or url == \"exit\" or url == \"return\":
+                    print(\"\\nApp Closed.\")
+                    break
+    
+                else:
+                    print(\"\\nLoading DataFrame...\\n\")
+                    df = pd.read_csv(url)
+    
+    
+            action = input(\"\\nWhat do you want to do (type \\\'formats\\\' to view formats that you can use or \\\'quit\\\' to quit)? \").lower()
+    
+            fts = [
+                \"regular (reg): A regular table view of the DataFrame.\",
+                \"information (info): Shows an overview of the contents in the DataFrame.\",
+                \"describe (desc): Shows numerical statistics like mean, standard deviation, etc.\",
+                \"value counts (vc): Shows the number of times each value appears in a column.\",
+                \"prediction model (pred): Creates a prediction model that can predict values based on the data that is given.\",
+                \"find value (fv): Shows occurrences of a chosen value and the location(s) of those occurrences.\",
+                \"find and replace (fr): Shows occurrences of a chosen value and the location(s) of those occurrences, and allows you to replace them with another value.\",
+                \"save as (s): Lets you save the DataFrame as a .csv file.\",
+                \"edit/modify: Lets you edit values in the DataFrame.\"
+            ]
+    
+            if action == \"q\" or action == \"quit\" or action == \"close\" or action == \"exit\" or action == \"return\":
+                print(\"\\nApp Closed.\")
+                break
+    
+            elif action == \"formats\" or action == \"fts\" or action == \"f\":
+                print()
+                for i in fts:
+                    print(\" -\", i)
+    
+            else:
+    
+                if action == \"regular\" or action == \"reg\" or action == \"plain\" or action == \"df\" or action == \"dataframe\" or action == \"table\":
+    
+                    column = input(\"Enter the column you want to search for in here (type \\\'all\\\' to view all columns or \\\'multi\\\' to view multiple columns): \").lower()
+    
+                    if column == \"all\":
                         s = int(input(\"Enter the starting row number for your selection: \"))
-                        e = int(input(\"Enter the ending row number for your selection: \")) - 1
-                        print(f\"\\n{df.loc[s:e, column]}\")
+                        e = int(input(\"Enter the ending row number for your selection: \")) + 1
+                        print(f\"\\n{df[s:e]}\")
+    
+                    elif column == \"multi\" or column == \"multiple\":
+    
+                        cnum = int(input(\"How many columns do you want to select? \"))
+                        cols = []
+    
+                        for i in range(cnum):
+                            col = input(f\"Column {i + 1}: \")
+                            if col in df.columns:
+                                cols.append(col)
+                            else:
+                                print(f\"The \\\'{col}\\\' column is not in this DataFrame.\\n\")
+                                break
+    
+                        if len(cols) == cnum:
+                            s = int(input(\"Enter the starting row number for your selection: \"))
+                            e = int(input(\"Enter the ending row number for your selection: \")) - 1
+    
+                            print(f\"\\n{df.loc[s:e, cols]}\")
+    
+                        else:
+                            pass
+    
+                    else:
+    
+                        if column in df.columns:
+                            s = int(input(\"Enter the starting row number for your selection: \"))
+                            e = int(input(\"Enter the ending row number for your selection: \")) - 1
+                            print(f\"\\n{df.loc[s:e, column]}\")
+                        else:
+                            print(\"Invalid column. Please try again.\")
+    
+                elif action == \"info\" or action == \"information\":
+                    print(df.info())
+    
+                elif action == \"desc\" or action == \"describe\" or action == \"description\":
+                    print(df.describe())
+    
+                elif action == \"value counts\" or action == \"vc\" or action == \"value_counts\":
+                    column = input(\"Enter the column you want to search for in here: \").lower()
+                    if column in df.columns:
+                        print(df[column].value_counts())
                     else:
                         print(\"Invalid column. Please try again.\")
-
-            elif action == \"info\" or action == \"information\":
-                print(df.info())
-
-            elif action == \"desc\" or action == \"describe\" or action == \"description\":
-                print(df.describe())
-
-            elif action == \"value counts\" or action == \"vc\" or action == \"value_counts\":
-                column = input(\"Enter the column you want to search for in here: \").lower()
-                if column in df.columns:
-                    print(df[column].value_counts())
-                else:
-                    print(\"Invalid column. Please try again.\")
-
-            elif action == \"pred\" or action == \"prediction\" or action == \"predict\" or action == \"predict value\" or action == \"p\" or action == \"prediction model\":
-
-                cnum = input(\"How many columns do you want to use as feature (x axis) variables (type \\\'auto\\\' to automatically select the best columns for prediction)? \").lower()
-                s = input(\"Enter the starting row number for your selection (type \\\'all\\\' to select all rows - this is more accurate but will result in a large predicted output): \")
-
-                if s == \"all\" or s == \"everything\":
-                    s = 0
-                    e = df.shape[0]
-
-                else:
-                    e = int(input(\"Enter the ending row number for your selection: \")) + 1
-
-                if cnum == \"auto\" or cnum == \"automatic\":
-
-                    predcol = input(\"What column do you want to predict? \")
-                    t = df.loc[s:e, predcol]
-
-                    print(\"\\nCreating model...\\n\")
-
-                    cols = []
-
-                    for i in range(len(df.corr()[predcol])):
-                        if df.corr()[predcol][i] >= 0.5:
-                            cols.append(df.corr()[predcol].index[i])
-
-                else:
-
-                    cnum = int(cnum)
-                    cols = [input(f\"Column {i+1}: \") for i in range(cnum)]
-                    t = df[input(\"What column do you want to predict? \")]
-
-                    print(\"\\nCreating model...\\n\")
-
-                for x in df.columns:
-
-                    if type(df[x][0]) != int and type(df[x][0]) != float:
-                        dfd = pd.get_dummies(df[x], dtype=int)
-                        df.drop(columns=[x])
-
-                        for y in dfd.columns:
-                            df[y] = dfd[y]
-
-                f = df.loc[s:e, cols]
-
-                xtrain, xtest, ytrain, ytest = tts(f, t, test_size=0.3, random_state=20)
-                lr = lreg().fit(xtrain, ytrain)
-                pred = lr.predict(xtest)
-
-                print(f\"Mean of Predicted Values: {pred.mean()}\\n\\nModel Accuracy: {lr.score(xtest, ytest)*100}%.\")
-
-                view = input(\"Would you like to view a list of the predicted values? \").lower()
-
-                if view == \"yes\" or view == \"y\" or view == \"ye\" or view == \"ya\" or view == \"yep\" or view == \"yeah\" or view == \"yea\" or view == \"yah\":
-                    print(\"\\nPredicted Values:\\n\")
-                    for i in pred:
-                        print(f\" - {i}\")
-
-            elif action == \"find\" or action == \"search\" or action == \"value search\" or action == \"find value\" or action == \"vs\" or action == \"fv\":
-
-                cnum = input(\"How many columns do you want to use (type \\\'all\\\' for all columns)? \")
-
-                if cnum == \"all\":
-                    cols = [i for i in df.columns]
-                else:
-                    cnum = int(cnum)
-                    cols = []
-
-                    for i in range(cnum):
-                        col = input(f\"Column {i + 1}: \")
-                        if col in df.columns:
-                            cols.append(col)
-                        else:
-                            print(f\"The \\\'{col}\\\' column is not in this DataFrame.\\n\")
-                            break
-
-
-                value = input(\"What value do you want to search for? \").lower()
-                view = input(\"Do you want to view the occurences of this value (y/n)? \").lower()
-
-                for x in cols:
-
-                    print(f\"\\n\\\'{x}\\\' Column:\\n\")
-                    count = 0
-
-                    for y in df[x]:
-                        if str(y).lower() == value:
-                            count += 1
-
-                    print(f\"Found {count} occurences of {value}.\\n\")
-
-                    if view == \"yes\" or view == \"y\" or view == \"ye\" or view == \"yeah\" or view == \"ya\" or view == \"yep\" or view == \"yea\" or view == \"yah\" or view == \"yeh\":
-
-                        print(\"Occurences:\\n\")
-
-                        for z in range(len(df[x])):
-                            if str(df[x][z]).lower() == value:
-                                print(f\" - Row {z+1}\")
-
-            elif action == \"find and replace\" or action == \"fr\" or action == \"replace\" or action == \"rep\":
-
-                print(\"\\nDisclaimer: DataFrame modifications will only be applied in the current session.\\n\")
-
-                value = input(\"What value do you want to search for? \").lower()
-                rep = input(\"What value do you want to replace it with? \")
-                view = input(\"Do you want to view the occurences of this value (y/n)? \").lower()
-
-                for x in df.columns:
-
-                    print(f\"\\n\\\'{x}\\\' Column:\\n\")
-                    count = 0
-                    lst = []
-
-                    for y in df[x]:
-                        if str(y).lower() == value:
-                            count += 1
-
-                    if count == 0:
-                        print(f\"Could not find occurences of {value}.\\n\")
-
+    
+                elif action == \"pred\" or action == \"prediction\" or action == \"predict\" or action == \"predict value\" or action == \"p\" or action == \"prediction model\":
+    
+                    cnum = input(\"How many columns do you want to use as feature (x axis) variables (type \\\'auto\\\' to automatically select the best columns for prediction)? \").lower()
+                    s = input(\"Enter the starting row number for your selection (type \\\'all\\\' to select all rows - this is more accurate but will result in a large predicted output): \")
+    
+                    if s == \"all\" or s == \"everything\":
+                        s = 0
+                        e = df.shape[0]
+    
                     else:
-
-                        if view == \"yes\" or view == \"y\" or view == \"ye\" or view == \"yeah\" or view == \"ya\" or view == \"yep\" or view == \"yea\" or view == \"yah\" or view == \"yeh\":
-
-                            print(\"Occurences:\\n\")
-
-                            for o in range(len(df[x])):
-                                if str(df[x][y]).lower() == value:
-                                    print(f\" - Row {o+1}\")
-
-                        print(f\"Found {count} occurences of {value}.\\n\")
-
-                        replace = input(f\"\\nDo you want to replace the occurences of \\\'{value}\\\' in the \\\'{x}\\\' column (y/n)? \").lower()
-
-                        if replace == \"yes\" or replace == \"y\" or replace == \"ye\" or replace == \"yeah\" or replace == \"ya\" or replace == \"yep\" or replace == \"yea\" or replace == \"yah\" or replace == \"yeh\":
-
-                            for i in df[x]:
-
-                                if str(df[x][y]).lower() == str(value).lower():
-                                    lst.append(rep)
-
-                                else:
-                                    lst.append(str(df[x][y]).lower())
-
+                        e = int(input(\"Enter the ending row number for your selection: \")) + 1
+    
+                    if cnum == \"auto\" or cnum == \"automatic\":
+    
+                        predcol = input(\"What column do you want to predict? \")
+                        t = df.loc[s:e, predcol]
+    
+                        print(\"\\nCreating model...\\n\")
+    
+                        cols = []
+    
+                        for i in range(len(df.corr()[predcol])):
+                            if df.corr()[predcol][i] >= 0.5:
+                                cols.append(df.corr()[predcol].index[i])
+    
+                    else:
+    
+                        cnum = int(cnum)
+                        cols = [input(f\"Column {i+1}: \") for i in range(cnum)]
+                        t = df[input(\"What column do you want to predict? \")]
+    
+                        print(\"\\nCreating model...\\n\")
+    
+                    for x in df.columns:
+    
+                        if type(df[x][0]) != int and type(df[x][0]) != float:
+                            dfd = pd.get_dummies(df[x], dtype=int)
                             df.drop(columns=[x])
-                            df[x] = pd.Series(lst)
-            
-            elif action == \"save\" or action == \"save as\" or action == \"s\":
-
-                print(\"\\nNote: Console must be shut down for file(s) to be saved.\\n\")
-
-                loc = input(\"What do you want to name your saved file? \")
-                loc = loc+\".csv"
-
-                df.to_csv(loc)
-                print(f"Successfully saved file as {loc}.")
-
-
-            elif action == "edit" or action == "modify":
-
-                col = input("\\nWhat column do you want to edit? ")
-                lst = list(df[col])
-
-                print(f"\\n\\nEditing {col}:\\n\")
-
-                while True:
-
-                    row = input(\"\\nWhat row do you want to edit (type \\\'return\\\' to go back)? \")
-
-                    if row == \"q\" or row == \"quit\" or row == \"close\" or row == \"exit\" or row == \"return\" or row == \"back\":
-                        break
-
+    
+                            for y in dfd.columns:
+                                df[y] = dfd[y]
+    
+                    f = df.loc[s:e, cols]
+    
+                    xtrain, xtest, ytrain, ytest = tts(f, t, test_size=0.3, random_state=20)
+                    lr = lreg().fit(xtrain, ytrain)
+                    pred = lr.predict(xtest)
+    
+                    print(f\"Mean of Predicted Values: {pred.mean()}\\n\\nModel Accuracy: {lr.score(xtest, ytest)*100}%.\")
+    
+                    view = input(\"Would you like to view a list of the predicted values? \").lower()
+    
+                    if view == \"yes\" or view == \"y\" or view == \"ye\" or view == \"ya\" or view == \"yep\" or view == \"yeah\" or view == \"yea\" or view == \"yah\":
+                        print(\"\\nPredicted Values:\\n\")
+                        for i in pred:
+                            print(f\" - {i}\")
+    
+                elif action == \"find\" or action == \"search\" or action == \"value search\" or action == \"find value\" or action == \"vs\" or action == \"fv\":
+    
+                    cnum = input(\"How many columns do you want to use (type \\\'all\\\' for all columns)? \")
+    
+                    if cnum == \"all\":
+                        cols = [i for i in df.columns]
                     else:
-
-                        row = int(row)-1
-
-                        print(f\"\\nCurrent Value: {lst[row]}\")
-
-                        value = input(\"New value: \")
-
-                        try:
-                            value = float(value)
-                        except:
-                            value = str(value)
-
-                        lst[row] = value
-
-                df.drop(columns=[col])
-                df[col] = pd.Series(lst)
-            
-            else:
-                print(\"Invalid choice. Please try again.\\n\")
+                        cnum = int(cnum)
+                        cols = []
+    
+                        for i in range(cnum):
+                            col = input(f\"Column {i + 1}: \")
+                            if col in df.columns:
+                                cols.append(col)
+                            else:
+                                print(f\"The \\\'{col}\\\' column is not in this DataFrame.\\n\")
+                                break
+    
+    
+                    value = input(\"What value do you want to search for? \").lower()
+                    view = input(\"Do you want to view the occurences of this value (y/n)? \").lower()
+    
+                    for x in cols:
+    
+                        print(f\"\\n\\\'{x}\\\' Column:\\n\")
+                        count = 0
+    
+                        for y in df[x]:
+                            if str(y).lower() == value:
+                                count += 1
+    
+                        print(f\"Found {count} occurences of {value}.\\n\")
+    
+                        if view == \"yes\" or view == \"y\" or view == \"ye\" or view == \"yeah\" or view == \"ya\" or view == \"yep\" or view == \"yea\" or view == \"yah\" or view == \"yeh\":
+    
+                            print(\"Occurences:\\n\")
+    
+                            for z in range(len(df[x])):
+                                if str(df[x][z]).lower() == value:
+                                    print(f\" - Row {z+1}\")
+    
+                elif action == \"find and replace\" or action == \"fr\" or action == \"replace\" or action == \"rep\":
+    
+                    print(\"\\nDisclaimer: DataFrame modifications will only be applied in the current session.\\n\")
+    
+                    value = input(\"What value do you want to search for? \").lower()
+                    rep = input(\"What value do you want to replace it with? \")
+                    view = input(\"Do you want to view the occurences of this value (y/n)? \").lower()
+    
+                    for x in df.columns:
+    
+                        print(f\"\\n\\\'{x}\\\' Column:\\n\")
+                        count = 0
+                        lst = []
+    
+                        for y in df[x]:
+                            if str(y).lower() == value:
+                                count += 1
+    
+                        if count == 0:
+                            print(f\"Could not find occurences of {value}.\\n\")
+    
+                        else:
+    
+                            if view == \"yes\" or view == \"y\" or view == \"ye\" or view == \"yeah\" or view == \"ya\" or view == \"yep\" or view == \"yea\" or view == \"yah\" or view == \"yeh\":
+    
+                                print(\"Occurences:\\n\")
+    
+                                for o in range(len(df[x])):
+                                    if str(df[x][y]).lower() == value:
+                                        print(f\" - Row {o+1}\")
+    
+                            print(f\"Found {count} occurences of {value}.\\n\")
+    
+                            replace = input(f\"\\nDo you want to replace the occurences of \\\'{value}\\\' in the \\\'{x}\\\' column (y/n)? \").lower()
+    
+                            if replace == \"yes\" or replace == \"y\" or replace == \"ye\" or replace == \"yeah\" or replace == \"ya\" or replace == \"yep\" or replace == \"yea\" or replace == \"yah\" or replace == \"yeh\":
+    
+                                for i in df[x]:
+    
+                                    if str(df[x][y]).lower() == str(value).lower():
+                                        lst.append(rep)
+    
+                                    else:
+                                        lst.append(str(df[x][y]).lower())
+    
+                                df.drop(columns=[x])
+                                df[x] = pd.Series(lst)
+    
+                elif action == \"save\" or action == \"save as\" or action == \"s\":
+    
+                    print(\"\\nNote: Console must be shut down for file(s) to be saved.\\n\")
+    
+                    loc = input(\"What do you want to name your saved file? \")
+                    loc = loc+\".csv"
+    
+                    df.to_csv(loc)
+                    print(f"Successfully saved file as {loc}.")
+    
+    
+                elif action == "edit" or action == "modify":
+    
+                    col = input("\\nWhat column do you want to edit? ")
+                    lst = list(df[col])
+    
+                    print(f"\\n\\nEditing {col}:\\n\")
+    
+                    while True:
+    
+                        row = input(\"\\nWhat row do you want to edit (type \\\'return\\\' to go back)? \")
+    
+                        if row == \"q\" or row == \"quit\" or row == \"close\" or row == \"exit\" or row == \"return\" or row == \"back\":
+                            break
+    
+                        else:
+    
+                            row = int(row)-1
+    
+                            print(f\"\\nCurrent Value: {lst[row]}\")
+    
+                            value = input(\"New value: \")
+    
+                            try:
+                                value = float(value)
+                            except:
+                                value = str(value)
+    
+                            lst[row] = value
+    
+                    df.drop(columns=[col])
+                    df[col] = pd.Series(lst)
+    
+                else:
+                    print(\"Invalid choice. Please try again.\\n\")
+                    
+        except:
+            print(\"There was an error. Please try again.\")
 """
     fit = """def fit():
 
@@ -1150,15 +1173,17 @@ explanation helps you understand what's really going on behind the scenes.
         info[\"Sex\"] = \"N/A\"
 
     while True:
+    
+        try:
 
-        choice = input(\"\\nWhat do you want to do (type \\\'actions\\\' to list things that you can do or type \\\'quit\\\' to quit)? \").lower()
-
-        if choice == \"q\" or choice == \"quit\" or choice == \"close\" or choice == \"exit\" or choice == \"back\" or choice == \"return\" or choice == \"exit\":
-            print(\"\\nApp Closed.\")
-            break
-
-        else:
-
+            choice = input(\"\\nWhat do you want to do (type \\\'actions\\\' to list things that you can do or type \\\'quit\\\' to quit)? \").lower()
+    
+            if choice == \"q\" or choice == \"quit\" or choice == \"close\" or choice == \"exit\" or choice == \"back\" or choice == \"return\" or choice == \"exit\":
+                print(\"\\nApp Closed.\")
+                break
+    
+            else:
+    
                 if choice == \"acts\" or choice == \"actions\" or choice == \"choices\" or choice == \"lst\":
                     print()
                     for x, y in zip(acts.keys(), acts.values()):
@@ -1232,15 +1257,21 @@ explanation helps you understand what's really going on behind the scenes.
                                         print(f\"Time: {exercises[int(enum) - 1][4]}\")
                                         print(f\"Duration: {exercises[int(enum) - 1][5]} minutes\")
                                         print(f\"Calories Burnt: {exercises[int(enum) - 1][6]}\")
-
-
                 else:
                     print(\"Invalid choice. Please try again.\\n\")
 
-    write = f\"exercises = {exercises}\"
+        except:
+            print(\"There was an error. Please try again.\")    
 
-    source = open(\"fitsource.py\", \"w\")
-    source.write(write)"""
+    try:
+    
+        write = f\"exercises = {exercises}\"
+    
+        source = open(\"fitsource.py\", \"w\")
+        source.write(write)
+    
+    except:
+        print(\"There was an error saving your exercises. Please try again.\")"""
     fm = """def fm():
 
     print(\"-\"*23+\"\\nFile Creator and Editor\\n\"+\"-\"*23)
@@ -2418,10 +2449,10 @@ def settings():
 
                             elif section == \"age\" or section == \"a\":
                                 age = int(input(\"\\nHow old are you (years)? \"))
-                                
+
                             elif section == \"sex\" or section == \"s\":
                                 sex = int(input(\"\\nWhat sex are you (type 0 for female or 1 for male)? \"))
-                            
+
                             elif section == \"weight\" or section == \"w\" or section == \"mass\" or section == \"m\":
                                 weight = float(input(\"\\nWhat is your weight (in kilograms)? \"))
 
@@ -2616,12 +2647,12 @@ hcl = {hcl}
         " - Install all apps (all)"
     ]
 
-
     def install():
 
         while True:
 
-            app = input("What app do you want to install (type \'back\' to go back or \'all\' to install all apps)? ").lower()
+            app = input(
+                "What app do you want to install (type \'back\' to go back or \'all\' to install all apps)? ").lower()
 
             if app == "home" or app == "back" or app == "return" or app == "q" or app == "quit" or app == "close" or app == "exit":
                 break
@@ -2751,7 +2782,8 @@ hcl = {hcl}
 
         while True:
 
-            app = input("What app do you want to delete (type \'back\' to go back or \'all\' to delete all apps)? ").lower()
+            app = input(
+                "What app do you want to delete (type \'back\' to go back or \'all\' to delete all apps)? ").lower()
 
             if app == "home" or app == "back" or app == "return" or app == "q" or app == "quit" or app == "close" or app == "exit":
                 break
