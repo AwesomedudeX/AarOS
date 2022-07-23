@@ -13,6 +13,7 @@ def aarOS():
         " - Checklist (cl)",
         " - Charts Texture Dictionary (ctd)",
         " - DataFrames (df)",
+        " - AarOS Fit (fit)",
         " - File Manager (fm)",
         " - Guess The Number (gtn)",
         " - Morse Code Converter (mcc)",
@@ -72,7 +73,7 @@ def aarOS():
 
         while True:
 
-            app = input("\n\nWhat app would you like to open (type \"home\" to go back to the home page)? ")
+            app = input("\n\nWhat app would you like to open (type \"home\" to go back to the home page)? ").lower()
             print("\n\n")
 
             if app == "home" or app == "back" or app == "return" or app == "q" or app == "quit" or app == "close" or app == "exit":
@@ -80,59 +81,61 @@ def aarOS():
 
             else:
 
-                if app == "appmanager" or app == "app manager" or app == "am" or app == "App Manager" or app == "AppManager":
+                if app == "appmanager" or app == "app manager" or app == "am":
                     import AppManager
                     AppManager.appmanager()
 
-                if app == "Binomial Distribution Calculator" or app == "bdc" or app == "Binomial_Distribution_Calculator":
+                if app == "binomial distribution calculator" or app == "bdc" or app == "binomial_distribution_calculator":
                     import Binomial_Distribution_Calculator as bdc
                     bdc.bdc()
 
-                if app == "Calculator" or app == "calc":
+                if app == "calculator" or app == "calc":
                     import Calculator as calc
                     calc.calc()
 
-                if app == "Central Angle Calculator" or app == "cac" or app == "Central_Angle_Calculator":
+                if app == "central angle calculator" or app == "cac" or app == "central_angle_calculator":
                     import Central_Angle_Calculator as cac
                     cac.cac()
 
-                if app == "charts" or app == "Charts" or app == "ct":
+                if app == "charts" or app == "ct":
                     import Charts as ct
                     ct.charts()
 
-                if app == "Checklist" or app == "checklist" or app == "cl":
+                if app == "checklist" or app == "cl":
                     import Checklist
                     Checklist.cl()
 
-                if app == "ctd" or app == "Chart Texture Dictionary" or app == "ChartTextureDictionary":
+                if app == "ctd" or app == "chart texture dictionary" or app == "charttexturedictionary":
                     import ChartTextureDictionary as ctd
                     ctd.ctd()
 
-                if app == "df" or app == "DataFrames" or app == "DataFrame" or app == "dfs":
+                if app == "df" or app == "dataframes" or app == "dataframe" or app == "dfs":
                     import DataFrames as dfs
                     dfs.df()
 
-                if app == "File_Manager" or app == "fm" or app == "File Manager":
+
+
+                if app == "file_manager" or app == "fm" or app == "file manager":
                     import File_Manager as fm
                     fm.fm()
 
-                if app == "gtn" or app == "Guess The Number" or app == "Guess_The_Number":
+                if app == "gtn" or app == "guess the number" or app == "guess_the_number":
                     import Guess_The_Number as gtn
                     gtn.gtn()
 
-                if app == "Morse Code Converter" or app == "MorseCodeConverter" or app == "Morse_Code_Converter" or app == "mcc":
+                if app == "morse code converter" or app == "morsecodeconverter" or app == "morse_code_converter" or app == "mcc":
                     import Morse_Code_Converter as mcc
                     mcc.mcc()
 
-                if app == "rng" or app == "RandomNumberGenerator" or app == "Random Number Generator":
+                if app == "rng" or app == "randomnumbergenerator" or app == "random number generator":
                     import RandomNumberGenerator as rng
                     rng.rng()
 
-                if app == "Random Password Generator" or app == "rpg" or app == "RandomPasswordGenerator":
+                if app == "random password generator" or app == "rpg" or app == "randompasswordgenerator":
                     import RandomPasswordGenerator as rpg
                     rpg.rpg()
 
-                if app == "Rock Paper Scissors" or app == "Rock_Paper_Scissors" or app == "rps":
+                if app == "rock paper scissors" or app == "rock_paper_scissors" or app == "rps":
                     import Rock_Paper_Scissors as rps
                     rps.rps()
 
@@ -140,7 +143,7 @@ def aarOS():
                     import Settings
                     Settings.settings()
 
-                if app == "TriangleAreaFinder" or app == "Triangle Area Finder" or app == "taf":
+                if app == "triangleareafinder" or app == "triangle area finder" or app == "taf":
                     import TriangleAreaFinder as taf
                     taf.taf()
 
