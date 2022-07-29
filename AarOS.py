@@ -7,6 +7,7 @@ def aarOS():
     applist = [
         " - AarOS App Manager (am)",
         " - Binomial Distribution Calculator (bdc)",
+        " - Calendar (cal)",
         " - Calculator (calc)",
         " - Central Angle Calculator (cac)",
         " - Charts (ct)",
@@ -88,6 +89,10 @@ def aarOS():
                 if app == "binomial distribution calculator" or app == "bdc" or app == "binomial_distribution_calculator":
                     import Binomial_Distribution_Calculator as bdc
                     bdc.bdc()
+
+                if app == "calendar" or app == "cal":
+                    import Calendar as cal
+                    cal.cal()
 
                 if app == "calculator" or app == "calc":
                     import Calculator as calc
