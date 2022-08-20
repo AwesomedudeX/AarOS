@@ -1,4 +1,3 @@
-
 def bdc():
 
     print("\n" + "-" * len("Binomial Distribution Calculator") + "\nBinomial Distribution Calculator\n" + "-" * len("Binomial Distribution Calculator"))
@@ -21,6 +20,7 @@ def bdc():
     def pcbd():
 
         try:
+
             n = int(input("\nEnter the total number of events that you want to use: "))
             sub = int(input("Enter the total number of possibilities that there are for each event: "))
             sp = int(input("Enter the total number of possibilities for each event that are successful: "))
@@ -38,7 +38,7 @@ def bdc():
                 print(f"The probability of {r} out of {n} events being successful in this case is {round(prob, 9) * 100}%.")
 
         except:
-            print("\nThere was an error. Please try again.\n")
+            print("There was an error. Please try again.")
 
     desc = """
 Binomial distributions are used to figure out probabilities of double-layered possibilities. What this means, is that instead of finding the probability of getting
@@ -70,7 +70,7 @@ explanation helps you understand what's really going on behind the scenes.
         choice = input("\nWhat do you want to do (\'calc\' to start the calculator, \'desc\' to view the description of what binomial distributions are or \'quit\' to quit)? ").lower()
 
         if choice == "q" or choice == "quit" or choice == "exit" or choice == "close":
-            print("\nApp closed.")
+            print("\nApp Closed.")
             break
 
         elif choice == "calc" or choice == "start" or choice == "calculator" or choice == "c" or choice == "s":
