@@ -28,7 +28,7 @@ def gtn():
             break
 
         elif mode == "Easy" or mode == "easy" or mode == "ez" or mode == "e" or mode == "E" or mode == "EZ":
-            num = int(random.randint(0, 10))
+            num = int(random.randint(1, 10))
             print("I am thinking of a number between 1 and 10. What is it?")
             answer = int(input("Enter your guess here: "))
 
@@ -44,7 +44,7 @@ def gtn():
                 losses += 1
 
         elif mode == "Medium" or mode == "medium" or mode == "med" or mode == "Med" or mode == "mid" or mode == "Mid" or mode == "M" or mode == "m":
-            num = int(random.randint(0, 100))
+            num = int(random.randint(1, 100))
             print("I am thinking of a number between 1 and 100. What is it?")
             answer = int(input("Enter your guess here: "))
 
@@ -61,7 +61,7 @@ def gtn():
 
 
         elif mode == "Hard" or mode == "hard" or mode == "h" or mode == "H":
-            num = int(random.randint(0, 1000))
+            num = int(random.randint(1, 1000))
             print("I am thinking of a number between 1 and 1000. What is it?")
             answer = int(input("Enter your guess here: "))
 
@@ -78,7 +78,7 @@ def gtn():
 
 
         elif mode == "Insane" or mode == "insane" or mode == "in" or mode == "In":
-            num = int(random.randint(0, 10000))
+            num = int(random.randint(1, 10000))
             print("I am thinking of a number between 1 and 10 000. What is it?")
             answer = int(input("Enter your guess here: "))
 
@@ -97,7 +97,7 @@ def gtn():
                 errors += 1
 
         elif mode == "Impossible" or mode == "impossible" or mode == "im" or mode == "Im":
-            num = int(random.randint(0, 100000))
+            num = int(random.randint(1, 100000))
             print("I am thinking of a number between 1 and 100 000. What is it?")
             answer = int(input("Enter your guess here: "))
 
@@ -113,7 +113,7 @@ def gtn():
                 losses += 1
 
         elif mode == "ImpossibleX" or mode == "impossibleX" or mode == "imx" or mode == "Imx" or mode == "Impossiblex" or mode == "impossiblex" or mode == "ImX" or mode == "imX":
-            num = int(random.randint(0, 1000000))
+            num = int(random.randint(1, 1000000))
             print("I am thinking of a number between 1 and 1 000 000. What is it?")
             answer = int(input("Enter your guess here: "))
 
@@ -131,5 +131,3 @@ def gtn():
         else:
             print("\nThere was an error.")
             errors += 1
-
-# gtn()
